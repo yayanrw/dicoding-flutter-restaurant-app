@@ -6,7 +6,7 @@ class ColorTheme {
   static Color primaryLight = HexColor("#fed250");
 
   static Color secondary = HexColor("#141414");
-  static Color secondaryLight = HexColor("#8c8c8c");
+  static Color secondaryLight = Color(0xFFD8D8D8);
 }
 
 class HexColor extends Color {
