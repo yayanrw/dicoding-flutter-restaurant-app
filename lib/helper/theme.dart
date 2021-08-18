@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_app/helper/size_config.dart';
 import 'color_theme.dart';
 
 ThemeData theme() {
@@ -39,3 +40,14 @@ InputDecorationTheme inputDecorationTheme() {
           borderSide: BorderSide(color: ColorTheme.primaryDark),
           gapPadding: 10));
 }
+
+ButtonStyle flatButtonStyle = TextButton.styleFrom(
+  backgroundColor: ColorTheme.primary,
+  primary: Colors.white,
+  textStyle: TextStyle(fontSize: getProportionateScreenWidth(18)),
+  minimumSize: Size(88, 36),
+  padding: EdgeInsets.symmetric(horizontal: 12.0),
+  shape: const RoundedRectangleBorder(
+    borderRadius: BorderRadius.all(Radius.circular(20)),
+  ),
+);
