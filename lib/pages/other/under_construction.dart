@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:restaurant_app/helper/theme/color_theme.dart';
 import 'package:restaurant_app/helper/theme/text_theme.dart';
 
 class UnderConstruction extends StatelessWidget {
@@ -25,7 +26,7 @@ class UnderConstruction extends StatelessWidget {
             ),
             Text(
               'Under Construction!',
-              style: textTheme().headline5,
+              style: textTheme(ColorTheme.secondary).headline5,
             )
           ],
         ),

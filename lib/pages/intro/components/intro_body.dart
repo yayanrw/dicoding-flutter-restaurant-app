@@ -92,7 +92,7 @@ class _IntroBodyState extends State<IntroBody> {
   Text textAppName() {
     return Text(
       App.appName,
-      style: textTheme().headline3,
+      style: textTheme(ColorTheme.primary).headline3,
     );
   }
 }

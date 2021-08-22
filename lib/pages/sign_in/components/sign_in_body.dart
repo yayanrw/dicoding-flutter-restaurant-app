@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_app/helper/theme/color_theme.dart';
 import 'package:restaurant_app/helper/theme/text_theme.dart';
 import 'package:restaurant_app/pages/sign_in/components/sign_form.dart';
 import 'package:restaurant_app/pages/sign_in/components/social_card.dart';
@@ -21,10 +22,11 @@ class _SignInBodyState extends State<SignInBody> {
           child: Column(
             children: [
               SizedBox(height: 24),
-              Text("Welcome Back", style: textTheme().headline4),
+              Text("Welcome Back",
+                  style: textTheme(ColorTheme.primary).headline4),
               Text(
                 "Sign in with your email and password \nor continue with social media",
-                style: textTheme().subtitle1,
+                style: textTheme(ColorTheme.secondary).subtitle1,
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 40),
