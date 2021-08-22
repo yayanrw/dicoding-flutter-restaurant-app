@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/helper/app.dart';
-import 'package:restaurant_app/helper/color_theme.dart';
-import 'package:restaurant_app/helper/theme.dart';
+import 'package:restaurant_app/helper/theme/color_theme.dart';
+import 'package:restaurant_app/helper/theme/text_theme.dart';
 import 'components/slider_content.dart';
 
 class Intro extends StatefulWidget {
@@ -14,8 +14,6 @@ class Intro extends StatefulWidget {
 class _IntroState extends State<Intro> {
   int currentPage = 0;
 
-  final ButtonStyle style =
-      ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,7 +82,7 @@ class _IntroState extends State<Intro> {
         width: double.infinity,
         child: ElevatedButton(
           onPressed: () {
-            Navigator.pushNamed(context, '/login');
+            Navigator.pushNamed(context, '/sign_in');
           },
           child: const Text('Continue'),
         ),
