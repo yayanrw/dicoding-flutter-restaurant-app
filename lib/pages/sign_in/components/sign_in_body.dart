@@ -3,14 +3,14 @@ import 'package:restaurant_app/helper/theme/text_theme.dart';
 import 'package:restaurant_app/pages/sign_in/components/sign_form.dart';
 import 'package:restaurant_app/pages/sign_in/components/social_card.dart';
 
-class Body extends StatefulWidget {
-  const Body({Key? key}) : super(key: key);
+class SignInBody extends StatefulWidget {
+  const SignInBody({Key? key}) : super(key: key);
 
   @override
-  _BodyState createState() => _BodyState();
+  _SignInBodyState createState() => _SignInBodyState();
 }
 
-class _BodyState extends State<Body> {
+class _SignInBodyState extends State<SignInBody> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(

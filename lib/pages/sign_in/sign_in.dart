@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/helper/theme/text_theme.dart';
-import 'package:restaurant_app/pages/sign_in/components/body.dart';
-import 'components/sign_form.dart';
-import 'components/social_card.dart';
+import 'package:restaurant_app/pages/sign_in/components/sign_in_body.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -18,7 +15,7 @@ class _SignInState extends State<SignIn> {
       appBar: AppBar(
         title: Text("Sign In"),
       ),
-      body: Body(),
+      body: SignInBody(),
     );
   }
 }
