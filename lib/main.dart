@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/helper/routes.dart';
-import 'package:restaurant_app/helper/theme.dart';
-import 'package:restaurant_app/pages/intro/intro.dart';
+
+import 'helper/theme/theme.dart';
 
 void main() {
   runApp(MyApp());
