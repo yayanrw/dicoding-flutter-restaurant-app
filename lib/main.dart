@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_app/helper/routes.dart';
 import 'package:restaurant_app/helper/theme.dart';
-import 'package:restaurant_app/pages/intro.dart';
+import 'package:restaurant_app/pages/intro/intro.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +15,9 @@ class MyApp extends StatelessWidget {
       title: 'Restaurant App',
       // debugShowCheckedModeBanner: false,
       theme: theme(),
-      home: Intro(),
+      // home: Intro(),
+      initialRoute: '/intro',
+      routes: routes,
     );
   }
 }
