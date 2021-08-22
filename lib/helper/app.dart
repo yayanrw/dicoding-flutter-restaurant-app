@@ -1,5 +1,8 @@
+import 'package:line_icons/line_icons.dart';
+
 class App {
   static String appName = 'Restaurant App';
+
   static List<Map<String, String>> sliderData = [
     {
       "image": "assets/images/breakfast.svg",
@@ -17,5 +20,13 @@ class App {
       "image": "assets/images/eating_together.svg",
       "text": "Let's shop and eating together!",
     },
+  ];
+
+  static List<Map<String, dynamic>> menuCategories = [
+    {"icon": LineIcons.map, "text": "Near me"},
+    {"icon": LineIcons.ribbon, "text": "Best seller"},
+    {"icon": LineIcons.piggyBank, "text": "Budget meal"},
+    {"icon": LineIcons.percent, "text": "Discount"},
+    {"icon": LineIcons.heartbeat, "text": "Healthy food"},
   ];
 }
