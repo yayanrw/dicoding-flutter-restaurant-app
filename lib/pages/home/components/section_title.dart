@@ -23,7 +23,7 @@ class SectionTitle extends StatelessWidget {
         children: [
           Text(
             text,
-            style: textTheme(ColorTheme.secondary).headline6,
+            style: textTheme(ColorTheme.secondary, FontWeight.w700).headline6,
           ),
           Visibility(
             visible: isMoreable,
