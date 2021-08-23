@@ -9,6 +9,7 @@ class ColorTheme {
   static Color secondary = HexColor("#141414");
   static Color secondaryLight = Color(0xFFD8D8D8);
   static Color secondaryLight2 = Color(0xFF979797);
+  static Color secondary2 = Color(0xFF343434);
 
   static Color purple = Color(0xFF4A3298);
 }
