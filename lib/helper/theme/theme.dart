@@ -14,7 +14,7 @@ ThemeData theme() {
       fontFamily: "Poppins",
       appBarTheme: appBarTheme(),
       inputDecorationTheme: inputDecorationTheme(),
-      textTheme: textTheme(),
+      textTheme: textTheme(ColorTheme.secondary),
       visualDensity: VisualDensity.adaptivePlatformDensity,
       textSelectionTheme: textSelectionThemeData(),
       elevatedButtonTheme: elevatedButtonThemeData(),

@@ -19,14 +19,15 @@ class DiscountBanner extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
           width: double.infinity,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(32), color: ColorTheme.purple),
+              borderRadius: BorderRadius.circular(32),
+              color: ColorTheme.purple),
           child: Text.rich(TextSpan(
               text: 'A Summer Surprise\n',
               style: TextStyle(color: Colors.white),
               children: [
                 TextSpan(
                     text: 'Cashback 20%',
-                    style: textTheme(Colors.white).headline4)
+                    style: textTheme(Colors.white, FontWeight.w700).headline4)
               ])),
         ),
       ),
