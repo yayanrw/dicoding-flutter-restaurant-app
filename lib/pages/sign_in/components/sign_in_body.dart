@@ -15,27 +15,30 @@ class _SignInBodyState extends State<SignInBody> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: SizedBox(
-        width: double.infinity,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-          child: Column(
-            children: [
-              SizedBox(height: 24),
-              Text("Welcome Back",
-                  style: textTheme(ColorTheme.primary).headline4),
-              Text(
-                "Sign in with your email and password \nor continue with social media",
-                style: textTheme(ColorTheme.secondary).subtitle1,
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(height: 40),
-              SignForm(),
-              SizedBox(height: 40),
-              socialMedia(),
-              SizedBox(height: 24),
-              noAccountText(context)
-            ],
+      child: SingleChildScrollView(
+        child: SizedBox(
+          width: double.infinity,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+            child: Column(
+              children: [
+                SizedBox(height: 24),
+                Text("Welcome Back",
+                    style: textTheme(ColorTheme.primary, FontWeight.w700)
+                        .headline4),
+                Text(
+                  "Sign in with your email and password \nor continue with social media",
+                  style: textTheme(ColorTheme.secondary).subtitle1,
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 40),
+                SignForm(),
+                SizedBox(height: 40),
+                socialMedia(),
+                SizedBox(height: 24),
+                noAccountText(context)
+              ],
+            ),
           ),
         ),
       ),
