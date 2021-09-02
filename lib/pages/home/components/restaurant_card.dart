@@ -50,7 +50,17 @@ class RestaurantCard extends StatelessWidget {
                       Image.network(
                         image,
                         fit: BoxFit.cover,
-                      )
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                              ColorTheme.secondary2.withOpacity(0.4),
+                              ColorTheme.secondary2.withOpacity(0.15),
+                            ])),
+                      ),
                     ],
                   ),
                 ),
@@ -74,7 +84,9 @@ class RestaurantCard extends StatelessWidget {
                         color: ColorTheme.primaryDark,
                       ),
                       Text(rating.toString(),
-                          style: textTheme(ColorTheme.secondary).caption)
+                          style:
+                              textTheme(ColorTheme.secondary, FontWeight.bold)
+                                  .caption)
                     ],
                   )
                 ],
