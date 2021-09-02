@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icons.dart';
+import 'package:restaurant_app/helper/theme/color_theme.dart';
+import 'package:restaurant_app/helper/theme/text_theme.dart';
 import 'package:restaurant_app/model/restaurant.dart';
-import 'package:restaurant_app/pages/restaurant_detail/components/restaurant_pict.dart';
+import 'package:restaurant_app/pages/restaurant_detail/components/header.dart';
+import 'package:restaurant_app/pages/restaurant_detail/components/restaurant_descriptions.dart';
 
 class RestaurantDetailBody extends StatelessWidget {
   final RestaurantRestaurants restaurant;
@@ -14,7 +18,9 @@ class RestaurantDetailBody extends StatelessWidget {
         child: SingleChildScrollView(
       child: Column(
         children: [
-          RestaurantPict(restaurant: restaurant),
+          Header(restaurant: restaurant),
+          SizedBox(height: 8),
+          RestaurantDescriptions(restaurant: restaurant)
         ],
       ),
     ));
