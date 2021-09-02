@@ -27,22 +27,30 @@ class SpecialOffer extends StatelessWidget {
                   name: 'Warung',
                   image: 'assets/images/restaurant.jpg',
                   numOfMenus: 10,
-                  press: () {}),
+                  press: () {
+                    Navigator.pushNamed(context, '/under_construction');
+                  }),
               SpecialOfferCard(
                   name: 'Warung',
                   image: 'assets/images/restaurant.jpg',
                   numOfMenus: 10,
-                  press: () {}),
+                  press: () {
+                    Navigator.pushNamed(context, '/under_construction');
+                  }),
               SpecialOfferCard(
                   name: 'Warung',
                   image: 'assets/images/restaurant.jpg',
                   numOfMenus: 10,
-                  press: () {}),
+                  press: () {
+                    Navigator.pushNamed(context, '/under_construction');
+                  }),
               SpecialOfferCard(
                   name: 'Warung',
                   image: 'assets/images/restaurant.jpg',
                   numOfMenus: 10,
-                  press: () {}),
+                  press: () {
+                    Navigator.pushNamed(context, '/under_construction');
+                  }),
             ],
           ),
         )
