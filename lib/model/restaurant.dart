@@ -242,3 +242,15 @@ List<RestaurantRestaurants> parseRestaurant(String? json) {
   final List parsed = jsonDecode(json);
   return parsed.map((json) => RestaurantRestaurants.fromJson(json)).toList();
 }
+
+List<RestaurantRestaurants> parseBestRestaurant(String? json) {
+  if (json == null) {
+    return [];
+  }
+
+  final List parsed = jsonDecode(json);
+
+  parsed.removeWhere((x) => x["rating"] < 4.4);
+
+  return parsed.map((json) => RestaurantRestaurants.fromJson(json)).toList();
+}
