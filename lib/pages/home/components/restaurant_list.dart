@@ -30,25 +30,38 @@ class _RestaurantListState extends State<RestaurantList> {
             future: DefaultAssetBundle.of(context)
                 .loadString('assets/local_restaurant.json'),
             builder: (context, snapshot) {
-              // var obj = Restaurant.fromJson(jsonDecode(snapshot.data!));
-              // String encodedJson = jsonEncode(obj.toJson()["restaurants"]);
-              final List<RestaurantRestaurants> restaurant = parseRestaurant(
-                  jsonEncode(jsonDecode(snapshot.data!)["restaurants"]));
-              return ListView.builder(
-                shrinkWrap: true,
-                itemCount: restaurant.length,
-                itemBuilder: (context, index) {
-                  return RestaurantCard(
-                      name: restaurant[index].name!,
-                      city: restaurant[index].city!,
-                      image: restaurant[index].pictureId!,
-                      rating: restaurant[index].rating!,
-                      press: () {
-                        Navigator.pushNamed(context, '/restaurant_detail',
-                            arguments: restaurant[index]);
-                      });
-                },
-              );
+              if (snapshot.connectionState != ConnectionState.done) {
+                return Text("Loading");
+              } else {
+                if (snapshot.hasError) {
+                  return Text("Error");
+                } else {
+                  if (snapshot.hasData) {
+                    final List<RestaurantRestaurants> restaurant =
+                        parseRestaurant(jsonEncode(
+                            jsonDecode(snapshot.data!)["restaurants"]));
+                    return ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: restaurant.length,
+                      itemBuilder: (context, index) {
+                        return RestaurantCard(
+                            name: restaurant[index].name!,
+                            city: restaurant[index].city!,
+                            image: restaurant[index].pictureId!,
+                            rating: restaurant[index].rating!,
+                            press: () {
+                              Navigator.pushNamed(context, '/restaurant_detail',
+                                  arguments: restaurant[index]);
+                            });
+                      },
+                    );
+                  } else {
+                    return Center(
+                      child: Image.asset('assets/images/no_data.svg'),
+                    );
+                  }
+                }
+              }
             })
       ],
     );
