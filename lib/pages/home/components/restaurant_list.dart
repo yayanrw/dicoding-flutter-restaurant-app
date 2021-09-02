@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:restaurant_app/model/restaurant.dart';
 import 'package:restaurant_app/pages/home/components/restaurant_card.dart';
 import 'package:restaurant_app/pages/home/components/section_title.dart';
-import 'package:restaurant_app/pages/restaurant_detail/restaurant_detail.dart';
 
 class RestaurantList extends StatefulWidget {
   const RestaurantList({Key? key}) : super(key: key);
@@ -46,8 +45,7 @@ class _RestaurantListState extends State<RestaurantList> {
                       rating: restaurant[index].rating!,
                       press: () {
                         Navigator.pushNamed(context, '/restaurant_detail',
-                            arguments: RestaurantDetailArgument(
-                                restaurant: restaurant[index]));
+                            arguments: restaurant[index]);
                       });
                 },
               );
