@@ -25,6 +25,16 @@ class Header extends StatelessWidget {
               restaurant.pictureId!,
               fit: BoxFit.cover,
             ),
+            Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                    ColorTheme.secondary2.withOpacity(0.4),
+                    ColorTheme.secondary2.withOpacity(0.15),
+                  ])),
+            ),
             Positioned(
                 top: 16,
                 left: 16,
@@ -62,7 +72,7 @@ class Header extends StatelessWidget {
                     children: [
                       const SizedBox(width: 5),
                       Text(
-                        "4.4",
+                        restaurant.rating.toString(),
                         style: const TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
