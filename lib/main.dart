@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_app/helper/app.dart';
 import 'package:restaurant_app/helper/routes.dart';
 
 import 'helper/theme/theme.dart';
@@ -12,8 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Restaurant App',
-      // debugShowCheckedModeBanner: false,
+      title: App.appName,
+      debugShowCheckedModeBanner: false,
       theme: theme(),
       // home: Intro(),
       initialRoute: '/intro',
