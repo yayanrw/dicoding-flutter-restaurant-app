@@ -46,13 +46,20 @@ class _IntroBodyState extends State<IntroBody> {
     );
   }
 
+  PageController pageController = PageController(
+    initialPage: 0,
+    keepPage: true,
+  );
+
   Expanded customSlider() {
     return Expanded(
         flex: 3,
         child: PageView.builder(
+            controller: pageController,
             onPageChanged: (value) {
               setState(() {
                 currentPage = value;
+                print(value);
               });
             },
             itemCount: App.sliderData.length,
@@ -81,7 +88,15 @@ class _IntroBodyState extends State<IntroBody> {
         width: double.infinity,
         child: ElevatedButton(
           onPressed: () {
-            Navigator.pushNamed(context, '/sign_in');
+            if (currentPage < 3) {
+              setState(() {
+                currentPage++;
+                pageController.animateToPage(currentPage,
+                    duration: Duration(milliseconds: 500), curve: Curves.ease);
+              });
+            } else {
+              Navigator.pushNamed(context, '/sign_in');
+            }
           },
           child: const Text('Continue'),
         ),
@@ -96,4 +111,3 @@ class _IntroBodyState extends State<IntroBody> {
     );
   }
 }
-  
