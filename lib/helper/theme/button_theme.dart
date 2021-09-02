@@ -6,9 +6,9 @@ ElevatedButtonThemeData elevatedButtonThemeData() {
       style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all<Color>(ColorTheme.primary),
           padding: MaterialStateProperty.all<EdgeInsets>(
-              EdgeInsets.symmetric(horizontal: 24.0, vertical: 24.0)),
+              EdgeInsets.symmetric(horizontal: 24.0, vertical: 18.0)),
           textStyle:
-              MaterialStateProperty.all<TextStyle>(TextStyle(fontSize: 16)),
+              MaterialStateProperty.all<TextStyle>(TextStyle(fontSize: 18)),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(24)))));

@@ -42,6 +42,7 @@ class _RestaurantListState extends State<RestaurantList> {
                             jsonDecode(snapshot.data!)["restaurants"]));
                     return ListView.builder(
                       shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
                       itemCount: restaurant.length,
                       itemBuilder: (context, index) {
                         return RestaurantCard(
