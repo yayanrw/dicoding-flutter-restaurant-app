@@ -1,11 +1,9 @@
 import 'dart:convert';
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:restaurant_app/model/restaurant.dart';
 import 'package:restaurant_app/pages/home/components/restaurant_card.dart';
 import 'package:restaurant_app/pages/home/components/section_title.dart';
+import 'package:restaurant_app/pages/restaurant_detail/restaurant_detail.dart';
 
 class RestaurantList extends StatefulWidget {
   const RestaurantList({Key? key}) : super(key: key);
@@ -33,10 +31,10 @@ class _RestaurantListState extends State<RestaurantList> {
             future: DefaultAssetBundle.of(context)
                 .loadString('assets/local_restaurant.json'),
             builder: (context, snapshot) {
-              var obj = Restaurant.fromJson(jsonDecode(snapshot.data!));
-              String encodedJson = jsonEncode(obj.toJson()["restaurants"]);
-              final List<RestaurantRestaurants> restaurant =
-                  parseRestaurant(encodedJson);
+              // var obj = Restaurant.fromJson(jsonDecode(snapshot.data!));
+              // String encodedJson = jsonEncode(obj.toJson()["restaurants"]);
+              final List<RestaurantRestaurants> restaurant = parseRestaurant(
+                  jsonEncode(jsonDecode(snapshot.data!)["restaurants"]));
               return ListView.builder(
                 shrinkWrap: true,
                 itemCount: restaurant.length,
@@ -46,7 +44,11 @@ class _RestaurantListState extends State<RestaurantList> {
                       city: restaurant[index].city!,
                       image: restaurant[index].pictureId!,
                       rating: restaurant[index].rating!,
-                      press: () {});
+                      press: () {
+                        Navigator.pushNamed(context, '/restaurant_detail',
+                            arguments: RestaurantDetailArgument(
+                                restaurant: restaurant[index]));
+                      });
                 },
               );
             })
