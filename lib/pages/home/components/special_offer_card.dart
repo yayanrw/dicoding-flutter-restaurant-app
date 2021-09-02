@@ -8,12 +8,13 @@ class SpecialOfferCard extends StatelessWidget {
       {Key? key,
       required this.name,
       required this.image,
-      required this.numOfMenus,
-      required this.press})
+      required this.press,
+      required this.city,
+      required this.rating})
       : super(key: key);
 
-  final String name, image;
-  final int numOfMenus;
+  final String name, city, image;
+  final double rating;
   final VoidCallback press;
 
   @override
@@ -25,12 +26,22 @@ class SpecialOfferCard extends StatelessWidget {
         child: Container(
           width: 260,
           height: 130,
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 0.6,
+                blurRadius: 7,
+                offset: Offset(1, 0), // changes position of shadow
+              ),
+            ],
+          ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: Stack(
               fit: StackFit.expand,
               children: [
-                Image.asset('assets/images/restaurant.jpg', fit: BoxFit.cover),
+                Image.network(image, fit: BoxFit.cover),
                 Container(
                   decoration: BoxDecoration(
                       gradient: LinearGradient(
@@ -55,30 +66,10 @@ class SpecialOfferCard extends StatelessWidget {
                               .headline6,
                         ),
                         TextSpan(
-                            text: '10',
-                            style: textTheme(Colors.white, FontWeight.w700)
-                                .caption,
-                            children: [
-                              TextSpan(
-                                  text: ' foods and ',
-                                  style:
-                                      textTheme(Colors.white, FontWeight.w500)
-                                          .caption,
-                                  children: [
-                                    TextSpan(
-                                        text: '15',
-                                        style: textTheme(
-                                                Colors.white, FontWeight.w700)
-                                            .caption,
-                                        children: [
-                                          TextSpan(
-                                              text: ' drinks',
-                                              style: textTheme(Colors.white,
-                                                      FontWeight.w500)
-                                                  .caption)
-                                        ])
-                                  ])
-                            ]),
+                          text: city,
+                          style:
+                              textTheme(Colors.white, FontWeight.w700).caption,
+                        ),
                       ],
                     ),
                   ),
@@ -93,7 +84,8 @@ class SpecialOfferCard extends StatelessWidget {
                         size: 14,
                         color: Colors.white,
                       ),
-                      Text('4.5', style: textTheme(Colors.white).subtitle2)
+                      Text(rating.toString(),
+                          style: textTheme(Colors.white).subtitle2)
                     ],
                   ),
                 )
