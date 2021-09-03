@@ -65,31 +65,33 @@ class RestaurantCard extends StatelessWidget {
                   ),
                 ),
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(name,
-                      style: textTheme(ColorTheme.secondary, FontWeight.w900)
-                          .headline6),
-                  Text(city,
-                      style: textTheme(ColorTheme.secondaryLight2).caption),
-                  SizedBox(height: 8),
-                  Row(
-                    children: [
-                      Icon(
-                        LineIcons.starAlt,
-                        size: 16,
-                        color: ColorTheme.primaryDark,
-                      ),
-                      Text(rating.toString(),
-                          style:
-                              textTheme(ColorTheme.secondary, FontWeight.bold)
-                                  .caption)
-                    ],
-                  )
-                ],
+              Flexible(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(name,
+                        style: textTheme(ColorTheme.secondary, FontWeight.w900)
+                            .headline6),
+                    Text(city,
+                        style: textTheme(ColorTheme.secondaryLight2).caption),
+                    SizedBox(height: 8),
+                    Row(
+                      children: [
+                        Icon(
+                          LineIcons.starAlt,
+                          size: 16,
+                          color: ColorTheme.primaryDark,
+                        ),
+                        Text(rating.toString(),
+                            style:
+                                textTheme(ColorTheme.secondary, FontWeight.bold)
+                                    .caption)
+                      ],
+                    )
+                  ],
+                ),
               )
             ],
           ),
