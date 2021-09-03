@@ -108,6 +108,7 @@ class _IntroBodyState extends State<IntroBody> {
     return Text(
       App.appName,
       style: textTheme(ColorTheme.primary, FontWeight.w700).headline3,
+      textAlign: TextAlign.center,
     );
   }
 }
