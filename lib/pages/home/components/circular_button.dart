@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_app/helper/size_config.dart';
 import 'package:restaurant_app/helper/theme/color_theme.dart';
 
 class CircularButton extends StatelessWidget {
@@ -20,8 +21,8 @@ class CircularButton extends StatelessWidget {
       borderRadius: BorderRadius.circular(50),
       child: Stack(children: [
         Container(
-            width: 48,
-            height: 48,
+            width: getProportionateScreenWidth(48),
+            height: getProportionateScreenHeight(48),
             decoration: BoxDecoration(
                 color: ColorTheme.secondaryLight2.withOpacity(0.1),
                 shape: BoxShape.circle),
@@ -31,8 +32,8 @@ class CircularButton extends StatelessWidget {
           child: Positioned(
               right: 0,
               child: Container(
-                height: 16,
-                width: 16,
+                height: getProportionateScreenHeight(16),
+                width: getProportionateScreenWidth(16),
                 decoration: BoxDecoration(
                     color: ColorTheme.primary,
                     shape: BoxShape.circle,

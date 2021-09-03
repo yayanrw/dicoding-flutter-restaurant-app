@@ -9,14 +9,12 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: App.appName,
       debugShowCheckedModeBanner: false,
       theme: theme(),
-      // home: Intro(),
       initialRoute: '/intro',
       routes: routes,
     );

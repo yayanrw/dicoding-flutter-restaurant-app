@@ -25,12 +25,10 @@ class _IntroBodyState extends State<IntroBody> {
             children: <Widget>[
               textAppName(),
               customSlider(),
-              Spacer(),
+              SizedBox(height: 24),
               customDot(),
               Spacer(),
               btnContinue(context),
-              // Slider(),
-              // btnContinue(context),
             ],
           ),
         ),
@@ -59,7 +57,6 @@ class _IntroBodyState extends State<IntroBody> {
             onPageChanged: (value) {
               setState(() {
                 currentPage = value;
-                print(value);
               });
             },
             itemCount: App.sliderData.length,
@@ -107,7 +104,7 @@ class _IntroBodyState extends State<IntroBody> {
   Text textAppName() {
     return Text(
       App.appName,
-      style: textTheme(ColorTheme.primary, FontWeight.w700).headline3,
+      style: textTheme(ColorTheme.primary, FontWeight.w700).headline4,
       textAlign: TextAlign.center,
     );
   }

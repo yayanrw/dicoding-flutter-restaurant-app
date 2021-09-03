@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_app/helper/size_config.dart';
 import 'package:restaurant_app/helper/theme/color_theme.dart';
 
 class CategoryCard extends StatelessWidget {
@@ -18,7 +19,7 @@ class CategoryCard extends StatelessWidget {
     return GestureDetector(
       onTap: press,
       child: SizedBox(
-        width: 64,
+        width: getProportionateScreenWidth(64),
         child: Column(
           children: [
             AspectRatio(

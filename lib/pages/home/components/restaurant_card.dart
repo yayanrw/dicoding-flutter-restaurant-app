@@ -72,6 +72,8 @@ class RestaurantCard extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(name,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                         style: textTheme(ColorTheme.secondary, FontWeight.w900)
                             .headline6),
                     Text(city,

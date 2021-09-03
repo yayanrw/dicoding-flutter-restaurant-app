@@ -45,7 +45,6 @@ class _RestaurantDescriptionsState extends State<RestaurantDescriptions> {
               onTap: () {
                 setState(() {
                   isFavorite = !isFavorite;
-                  print(widget.restaurant.menus);
                 });
               },
               child: Container(

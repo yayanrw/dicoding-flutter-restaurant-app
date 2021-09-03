@@ -24,6 +24,7 @@ class _SignInBodyState extends State<SignInBody> {
               children: [
                 SizedBox(height: 24),
                 Text("Welcome Back",
+                    textAlign: TextAlign.center,
                     style: textTheme(ColorTheme.primary, FontWeight.w700)
                         .headline4),
                 Text(
@@ -49,7 +50,7 @@ class _SignInBodyState extends State<SignInBody> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text('Don\'t have an account?'),
+        Flexible(child: Text('Don\'t have an account?')),
         Padding(
           padding: const EdgeInsets.only(left: 8),
           child: TextButton(

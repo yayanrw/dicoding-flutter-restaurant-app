@@ -59,13 +59,15 @@ class _SignFormState extends State<SignForm> {
             });
           },
         ),
-        Text("Remember me"),
+        Flexible(child: Text("Remember me")),
         Spacer(),
-        GestureDetector(
-          onTap: () => {Navigator.pushNamed(context, '/under_construction')},
-          child: Text(
-            "Forgot Password",
-            style: TextStyle(decoration: TextDecoration.underline),
+        Flexible(
+          child: GestureDetector(
+            onTap: () => {Navigator.pushNamed(context, '/under_construction')},
+            child: Text(
+              "Forgot Password",
+              style: TextStyle(decoration: TextDecoration.underline),
+            ),
           ),
         )
       ],

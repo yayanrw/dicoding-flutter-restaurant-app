@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:restaurant_app/helper/size_config.dart';
 import 'package:restaurant_app/helper/theme/color_theme.dart';
 
 class SliderContent extends StatelessWidget {
@@ -20,8 +21,8 @@ class SliderContent extends StatelessWidget {
         ),
         SvgPicture.asset(
           image!,
-          height: 200,
-          width: 180,
+          height: getProportionateScreenHeight(200),
+          width: getProportionateScreenWidth(180),
         ),
       ],
     );

@@ -18,7 +18,7 @@ class SpecialOffer extends StatelessWidget {
           text: 'Best restaurant',
           isMoreable: true,
           press: () {
-            Navigator.pushNamed(context, 'under_construction');
+            Navigator.pushNamed(context, '/under_construction');
           },
         ),
         SizedBox(height: 16),
