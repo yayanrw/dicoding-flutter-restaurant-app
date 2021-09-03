@@ -26,18 +26,20 @@ class _RestaurantDescriptionsState extends State<RestaurantDescriptions> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 16),
-              child: Text.rich(TextSpan(children: [
-                TextSpan(
-                  text: widget.restaurant.name! + "\n",
-                  style: textTheme(ColorTheme.secondary, FontWeight.w900)
-                      .headline5,
-                ),
-                TextSpan(
-                    text: widget.restaurant.city,
-                    style: textTheme(ColorTheme.secondaryLight2).bodyText2)
-              ])),
+            Flexible(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 16),
+                child: Text.rich(TextSpan(children: [
+                  TextSpan(
+                    text: widget.restaurant.name! + "\n",
+                    style: textTheme(ColorTheme.secondary, FontWeight.w900)
+                        .headline5,
+                  ),
+                  TextSpan(
+                      text: widget.restaurant.city,
+                      style: textTheme(ColorTheme.secondaryLight2).bodyText2)
+                ])),
+              ),
             ),
             GestureDetector(
               onTap: () {
