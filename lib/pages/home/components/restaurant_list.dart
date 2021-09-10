@@ -1,6 +1,6 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/model/restaurant.dart';
+import 'package:restaurant_app/data/api/api_service.dart';
+import 'package:restaurant_app/data/model/cls_restaurant.dart';
 import 'package:restaurant_app/pages/home/components/restaurant_card.dart';
 import 'package:restaurant_app/pages/home/components/section_title.dart';
 
@@ -12,7 +12,13 @@ class RestaurantList extends StatefulWidget {
 }
 
 class _RestaurantListState extends State<RestaurantList> {
-  late List restaurant = [];
+  late Future<ClsRestaurant> _restaurant;
+
+  @override
+  void initState() {
+    super.initState();
+    _restaurant = ApiService().fetchAllRestaurant();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,41 +32,35 @@ class _RestaurantListState extends State<RestaurantList> {
           },
         ),
         SizedBox(height: 16),
-        FutureBuilder<String>(
-            future: DefaultAssetBundle.of(context)
-                .loadString('assets/local_restaurant.json'),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState != ConnectionState.done) {
-                return Text("Loading");
+        FutureBuilder(
+            future: _restaurant,
+            builder: (context, AsyncSnapshot<ClsRestaurant> snapshot) {
+              var state = snapshot.connectionState;
+              if (state != ConnectionState.done) {
+                return Center(child: CircularProgressIndicator());
               } else {
-                if (snapshot.hasError) {
-                  return Text("Error");
+                if (snapshot.hasData) {
+                  return ListView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: snapshot.data?.restaurants.length,
+                    itemBuilder: (context, index) {
+                      var restaurant = snapshot.data?.restaurants[index];
+                      return RestaurantCard(
+                          name: restaurant!.name,
+                          city: restaurant.city,
+                          image: ApiService.imageDir + restaurant.pictureId,
+                          rating: restaurant.rating,
+                          press: () {
+                            Navigator.pushNamed(context, '/restaurant_detail',
+                                arguments: restaurant);
+                          });
+                    },
+                  );
+                } else if (snapshot.hasError) {
+                  return Center(child: Text(snapshot.error.toString()));
                 } else {
-                  if (snapshot.hasData) {
-                    final List<RestaurantRestaurants> restaurant =
-                        parseRestaurant(jsonEncode(
-                            jsonDecode(snapshot.data!)["restaurants"]));
-                    return ListView.builder(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: restaurant.length,
-                      itemBuilder: (context, index) {
-                        return RestaurantCard(
-                            name: restaurant[index].name!,
-                            city: restaurant[index].city!,
-                            image: restaurant[index].pictureId!,
-                            rating: restaurant[index].rating!,
-                            press: () {
-                              Navigator.pushNamed(context, '/restaurant_detail',
-                                  arguments: restaurant[index]);
-                            });
-                      },
-                    );
-                  } else {
-                    return Center(
-                      child: Image.asset('assets/images/no_data.svg'),
-                    );
-                  }
+                  return Text('');
                 }
               }
             })

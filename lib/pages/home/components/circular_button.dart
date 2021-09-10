@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/helper/size_config.dart';
-import 'package:restaurant_app/helper/theme/color_theme.dart';
+import 'package:restaurant_app/theme/color_theme.dart';
 
 class CircularButton extends StatelessWidget {
   const CircularButton({
