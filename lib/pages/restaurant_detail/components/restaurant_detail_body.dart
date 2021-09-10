@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/model/restaurant.dart';
+import 'package:restaurant_app/data/model/cls_restaurant_detail.dart';
 import 'package:restaurant_app/pages/restaurant_detail/components/menus.dart';
 import 'package:restaurant_app/pages/restaurant_detail/components/header.dart';
 import 'package:restaurant_app/pages/restaurant_detail/components/restaurant_descriptions.dart';
 
 class RestaurantDetailBody extends StatelessWidget {
-  final RestaurantRestaurants restaurant;
+  final ClsRestaurantDetailElement restaurant;
 
   const RestaurantDetailBody({Key? key, required this.restaurant})
       : super(key: key);
@@ -21,8 +21,8 @@ class RestaurantDetailBody extends StatelessWidget {
           RestaurantDescriptions(restaurant: restaurant),
           SizedBox(height: 24),
           Menus(
-            menus: restaurant.menus!,
-            rating: restaurant.rating!,
+            menus: restaurant.menus,
+            rating: restaurant.rating,
           ),
           SizedBox(height: 24),
         ],

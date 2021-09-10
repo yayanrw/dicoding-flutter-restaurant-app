@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:restaurant_app/helper/theme/color_theme.dart';
-import 'package:restaurant_app/helper/theme/text_theme.dart';
-import 'package:restaurant_app/model/restaurant.dart';
+import 'package:restaurant_app/data/model/cls_restaurant_detail.dart';
+import 'package:restaurant_app/pages/restaurant_detail/components/chip_text.dart';
+import 'package:restaurant_app/theme/color_theme.dart';
+import 'package:restaurant_app/theme/text_theme.dart';
 
 class RestaurantDescriptions extends StatefulWidget {
   const RestaurantDescriptions({Key? key, required this.restaurant})
       : super(key: key);
 
-  final RestaurantRestaurants restaurant;
+  final ClsRestaurantDetailElement restaurant;
 
   @override
   _RestaurantDescriptionsState createState() => _RestaurantDescriptionsState();
@@ -31,7 +32,7 @@ class _RestaurantDescriptionsState extends State<RestaurantDescriptions> {
                 padding: const EdgeInsets.only(left: 16),
                 child: Text.rich(TextSpan(children: [
                   TextSpan(
-                    text: widget.restaurant.name! + "\n",
+                    text: widget.restaurant.name + "\n",
                     style: textTheme(ColorTheme.secondary, FontWeight.w900)
                         .headline5,
                   ),
@@ -67,7 +68,7 @@ class _RestaurantDescriptionsState extends State<RestaurantDescriptions> {
         ),
         Padding(
           padding: EdgeInsets.only(top: 16, left: 16, right: 16),
-          child: Text(widget.restaurant.description!,
+          child: Text(widget.restaurant.description,
               style: textTheme(ColorTheme.secondaryLight2).bodyText2,
               textAlign: TextAlign.justify,
               maxLines: maxLine,
@@ -94,7 +95,20 @@ class _RestaurantDescriptionsState extends State<RestaurantDescriptions> {
                 isMore ? "See less" : "See more detail",
                 style: textTheme(ColorTheme.primary, FontWeight.bold).bodyText2,
               )),
-        )
+        ),
+        Padding(
+            padding: EdgeInsets.only(left: 16, top: 16),
+            child: Container(
+              height: 32,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  itemCount: widget.restaurant.categories.length,
+                  itemBuilder: (context, index) {
+                    return ChipText(
+                        name: widget.restaurant.categories[index].name);
+                  }),
+            ))
       ],
     );
   }

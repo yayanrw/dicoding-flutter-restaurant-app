@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:restaurant_app/data/api/api_service.dart';
+import 'package:restaurant_app/data/model/cls_restaurant_detail.dart';
 import 'package:restaurant_app/helper/size_config.dart';
-import 'package:restaurant_app/helper/theme/color_theme.dart';
-import 'package:restaurant_app/model/restaurant.dart';
+import 'package:restaurant_app/theme/color_theme.dart';
 
 class Header extends StatelessWidget {
   const Header({
@@ -10,7 +11,7 @@ class Header extends StatelessWidget {
     required this.restaurant,
   }) : super(key: key);
 
-  final RestaurantRestaurants restaurant;
+  final ClsRestaurantDetailElement restaurant;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class Header extends StatelessWidget {
           fit: StackFit.expand,
           children: [
             Image.network(
-              restaurant.pictureId!,
+              ApiService.imageDir + restaurant.pictureId,
               fit: BoxFit.cover,
             ),
             Container(
