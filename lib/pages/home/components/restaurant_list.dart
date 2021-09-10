@@ -58,7 +58,7 @@ class _RestaurantListState extends State<RestaurantList> {
                     },
                   );
                 } else if (snapshot.hasError) {
-                  return Center(child: Text(snapshot.error.toString()));
+                  return Center(child: Text("No internet connections."));
                 } else {
                   return Text('');
                 }

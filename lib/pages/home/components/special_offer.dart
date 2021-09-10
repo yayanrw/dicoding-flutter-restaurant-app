@@ -27,7 +27,7 @@ class _SpecialOfferState extends State<SpecialOffer> {
     return Column(
       children: [
         SectionTitle(
-          text: 'Best restaurant',
+          text: 'Our recommendations',
           isMoreable: true,
           press: () {
             Navigator.pushNamed(context, '/under_construction');
@@ -37,36 +37,41 @@ class _SpecialOfferState extends State<SpecialOffer> {
         FutureBuilder(
             future: _restaurant,
             builder: (context, AsyncSnapshot<ClsRestaurant> snapshot) {
-              var state = snapshot.connectionState;
-              if (state != ConnectionState.done) {
-                return Center(child: CircularProgressIndicator());
-              } else {
-                if (snapshot.hasData) {
-                  return Container(
-                    height: 130,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      shrinkWrap: true,
-                      itemCount: snapshot.data?.restaurants.length,
-                      itemBuilder: (context, index) {
-                        var restaurant = snapshot.data?.restaurants[index];
-                        return SpecialOfferCard(
-                            name: restaurant!.name,
-                            city: restaurant.city,
-                            image: ApiService.imageDir + restaurant.pictureId,
-                            rating: restaurant.rating,
-                            press: () {
-                              Navigator.pushNamed(context, '/restaurant_detail',
-                                  arguments: restaurant);
-                            });
-                      },
-                    ),
-                  );
-                } else if (snapshot.hasError) {
-                  return Center(child: Text(snapshot.error.toString()));
+              try {
+                var state = snapshot.connectionState;
+                if (state != ConnectionState.done) {
+                  return Center(child: CircularProgressIndicator());
                 } else {
-                  return Text('');
+                  if (snapshot.hasData) {
+                    return Container(
+                      height: 130,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        itemCount: 5,
+                        itemBuilder: (context, index) {
+                          var restaurant = snapshot.data?.restaurants[index];
+                          return SpecialOfferCard(
+                              name: restaurant!.name,
+                              city: restaurant.city,
+                              image: ApiService.imageDir + restaurant.pictureId,
+                              rating: restaurant.rating,
+                              press: () {
+                                Navigator.pushNamed(
+                                    context, '/restaurant_detail',
+                                    arguments: restaurant);
+                              });
+                        },
+                      ),
+                    );
+                  } else if (snapshot.hasError) {
+                    return Center(child: Text("No internet connections."));
+                  } else {
+                    return Text('');
+                  }
                 }
+              } catch (e) {
+                return Text('No internet connection');
               }
             })
       ],

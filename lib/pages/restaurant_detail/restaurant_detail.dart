@@ -41,7 +41,7 @@ class _RestaurantDetailState extends State<RestaurantDetail> {
                     restaurant: snapshot.data!.restaurant,
                   );
                 } else if (snapshot.hasError) {
-                  return Center(child: Text(snapshot.error.toString()));
+                  return Center(child: Text("No internet connections"));
                 } else {
                   return Text('');
                 }
