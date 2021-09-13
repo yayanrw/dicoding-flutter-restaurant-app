@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/data/api/api_service.dart';
 import 'package:restaurant_app/data/model/cls_restaurant.dart';
+import 'package:restaurant_app/helper/size_config.dart';
 import 'package:restaurant_app/pages/restaurant_detail/components/restaurant_detail_body.dart';
 import 'package:restaurant_app/data/model/cls_restaurant_detail.dart';
 
@@ -28,6 +29,7 @@ class _RestaurantDetailState extends State<RestaurantDetail> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
         body: FutureBuilder(
             future: _restaurant,
