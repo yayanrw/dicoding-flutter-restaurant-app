@@ -10,18 +10,28 @@ class SearchField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: SizeConfig.screenWidth! * 0.6,
-      decoration: BoxDecoration(
-          color: ColorTheme.secondaryLight2.withOpacity(0.1),
-          borderRadius: BorderRadius.circular(16)),
-      child: TextField(
-        decoration: InputDecoration(
-            enabledBorder: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            hintText: "Search restaurant...",
-            prefixIcon: Icon(LineIcons.search),
-            contentPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 12)),
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, '/search');
+      },
+      child: Container(
+        width: SizeConfig.screenWidth! * 0.6,
+        decoration: BoxDecoration(
+            color: ColorTheme.secondaryLight2.withOpacity(0.1),
+            borderRadius: BorderRadius.circular(16)),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+          child: Row(
+            children: [
+              Icon(LineIcons.search),
+              SizedBox(width: 8),
+              Text(
+                "Search restaurant...",
+                style: TextStyle(color: ColorTheme.secondaryLight2),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
