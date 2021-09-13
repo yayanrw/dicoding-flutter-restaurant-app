@@ -54,7 +54,7 @@ class _RestaurantListState extends State<RestaurantList> {
           } else if (state.state == ResultState.NoData) {
             return Center(child: Text(state.message));
           } else if (state.state == ResultState.Error) {
-            return Center(child: Text(state.message));
+            return Center(child: Text("No internet connections."));
           } else {
             return Center(child: Text(''));
           }
