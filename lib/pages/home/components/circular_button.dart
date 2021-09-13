@@ -26,7 +26,12 @@ class CircularButton extends StatelessWidget {
             decoration: BoxDecoration(
                 color: ColorTheme.secondaryLight2.withOpacity(0.1),
                 shape: BoxShape.circle),
-            child: Icon(icon)),
+            child: (icon == Icons.arrow_back_ios
+                ? Padding(
+                    padding: const EdgeInsets.only(left: 4),
+                    child: Icon(icon),
+                  )
+                : Icon(icon))),
         Visibility(
           visible: isCountable,
           child: Positioned(
