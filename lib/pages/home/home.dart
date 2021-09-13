@@ -15,19 +15,13 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   late StreamSubscription sub;
-  bool isConnected = false;
 
   @override
   void initState() {
     super.initState();
     sub = Connectivity().onConnectivityChanged.listen((result) {
-      setState(() {
-        isConnected = (result != ConnectivityResult.none);
-
-        isConnected
-            ? showSnackbar("Connected")
-            : showSnackbar("No internet connections");
-      });
+      if (result == ConnectivityResult.none)
+        showSnackbar("No internet connections");
     });
   }
 
