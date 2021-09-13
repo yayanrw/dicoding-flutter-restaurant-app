@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:restaurant_app/data/api/api_service.dart';
 import 'package:restaurant_app/pages/home/components/categories.dart';
 import 'package:restaurant_app/pages/home/components/discount_banner.dart';
 import 'package:restaurant_app/pages/home/components/home_header.dart';
 import 'package:restaurant_app/pages/home/components/restaurant_list.dart';
 import 'package:restaurant_app/pages/home/components/special_offer.dart';
+import 'package:restaurant_app/provider/restaurant_provider.dart';
 
 class HomeBody extends StatefulWidget {
   const HomeBody({Key? key}) : super(key: key);
@@ -28,7 +31,10 @@ class _HomeBodyState extends State<HomeBody> {
           SizedBox(height: 24),
           SpecialOffer(),
           SizedBox(height: 24),
-          RestaurantList(),
+          ChangeNotifierProvider<RestaurantProvider>(
+            create: (_) => RestaurantProvider(apiService: ApiService()),
+            child: RestaurantList(),
+          ),
           SizedBox(height: 24),
         ],
       ),
