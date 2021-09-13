@@ -29,7 +29,10 @@ class _HomeBodyState extends State<HomeBody> {
           SizedBox(height: 24),
           Categories(),
           SizedBox(height: 24),
-          SpecialOffer(),
+          ChangeNotifierProvider<RestaurantProvider>(
+            create: (_) => RestaurantProvider(apiService: ApiService()),
+            child: SpecialOffer(),
+          ),
           SizedBox(height: 24),
           ChangeNotifierProvider<RestaurantProvider>(
             create: (_) => RestaurantProvider(apiService: ApiService()),
