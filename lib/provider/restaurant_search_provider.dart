@@ -7,25 +7,29 @@ enum ResultState { Loading, NoData, HasData, Error }
 class RestaurantSearchProvider extends ChangeNotifier {
   final ApiService apiService;
 
-  RestaurantSearchProvider({required this.apiService}) {
-    fetchSearchRestaurant();
-  }
+  RestaurantSearchProvider({required this.apiService});
 
   ClsRestaurantSearch? _clsRestaurant;
   String _message = '';
   ResultState? _state;
+  String _search = '';
 
   String get message => _message;
-
+  String get search => _search;
   ClsRestaurantSearch? get result => _clsRestaurant;
-
   ResultState? get state => _state;
 
-  Future<dynamic> fetchSearchRestaurant() async {
+  set searchText(String text) {
+    _search = text;
+    notifyListeners();
+    fetchSearchRestaurant(text);
+  }
+
+  Future<dynamic> fetchSearchRestaurant(_search) async {
     try {
       _state = ResultState.Loading;
       notifyListeners();
-      final restaurant = await apiService.fetchSearchRestaurant("senja");
+      final restaurant = await apiService.fetchSearchRestaurant(_search);
       if (restaurant.restaurants.isEmpty) {
         _state = ResultState.NoData;
         notifyListeners();
