@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'button_theme.dart';
 import 'color_theme.dart';
 import 'text_theme.dart';
@@ -7,7 +8,6 @@ ThemeData theme() {
   return ThemeData(
       scaffoldBackgroundColor: Colors.white,
       primaryColor: ColorTheme.primary,
-      accentColor: ColorTheme.primaryDark,
       primaryTextTheme: TextTheme(
         headline6: TextStyle(color: Colors.white),
       ),
@@ -32,7 +32,7 @@ TextSelectionThemeData textSelectionThemeData() {
 AppBarTheme appBarTheme() {
   return AppBarTheme(
     elevation: 0,
-    brightness: Brightness.light,
+    systemOverlayStyle: SystemUiOverlayStyle.light,
     iconTheme: IconThemeData(color: Colors.white),
     backgroundColor: ColorTheme.primary,
   );
