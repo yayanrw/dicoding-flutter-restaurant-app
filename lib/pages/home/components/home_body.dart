@@ -8,14 +8,9 @@ import 'package:restaurant_app/pages/home/components/restaurant_list.dart';
 import 'package:restaurant_app/pages/home/components/special_offer.dart';
 import 'package:restaurant_app/provider/restaurant_provider.dart';
 
-class HomeBody extends StatefulWidget {
+class HomeBody extends StatelessWidget {
   const HomeBody({Key? key}) : super(key: key);
 
-  @override
-  _HomeBodyState createState() => _HomeBodyState();
-}
-
-class _HomeBodyState extends State<HomeBody> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
