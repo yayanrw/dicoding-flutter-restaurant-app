@@ -5,14 +5,9 @@ import 'package:restaurant_app/pages/search/components/restaurant_list.dart';
 import 'package:restaurant_app/pages/search/components/search_header.dart';
 import 'package:restaurant_app/provider/restaurant_search_provider.dart';
 
-class SearchBody extends StatefulWidget {
+class SearchBody extends StatelessWidget {
   const SearchBody({Key? key}) : super(key: key);
 
-  @override
-  _SearchBodyState createState() => _SearchBodyState();
-}
-
-class _SearchBodyState extends State<SearchBody> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
