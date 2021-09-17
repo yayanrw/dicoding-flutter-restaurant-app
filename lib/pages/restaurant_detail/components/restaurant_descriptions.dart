@@ -16,9 +16,9 @@ class RestaurantDescriptions extends StatefulWidget {
 }
 
 class _RestaurantDescriptionsState extends State<RestaurantDescriptions> {
-  bool isFavorite = false;
-  bool isMore = false;
-  int maxLine = 5;
+  bool _isFavorite = false;
+  bool _isMore = false;
+  int _maxLine = 5;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -45,14 +45,14 @@ class _RestaurantDescriptionsState extends State<RestaurantDescriptions> {
             GestureDetector(
               onTap: () {
                 setState(() {
-                  isFavorite = !isFavorite;
+                  _isFavorite = !_isFavorite;
                 });
               },
               child: Container(
                 padding: EdgeInsets.all(16),
                 width: 64,
                 decoration: BoxDecoration(
-                  color: isFavorite ? Color(0xFFFFE6E6) : Color(0xFFF5F6F9),
+                  color: _isFavorite ? Color(0xFFFFE6E6) : Color(0xFFF5F6F9),
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(20),
                     bottomLeft: Radius.circular(20),
@@ -60,7 +60,7 @@ class _RestaurantDescriptionsState extends State<RestaurantDescriptions> {
                 ),
                 child: Icon(
                   LineIcons.heartAlt,
-                  color: isFavorite ? Color(0xFFFF4848) : Color(0xFFDBDEE4),
+                  color: _isFavorite ? Color(0xFFFF4848) : Color(0xFFDBDEE4),
                 ),
               ),
             ),
@@ -71,7 +71,7 @@ class _RestaurantDescriptionsState extends State<RestaurantDescriptions> {
           child: Text(widget.restaurant.description,
               style: textTheme(ColorTheme.secondaryLight2).bodyText2,
               textAlign: TextAlign.justify,
-              maxLines: maxLine,
+              maxLines: _maxLine,
               overflow: TextOverflow.ellipsis),
         ),
         Padding(
@@ -79,20 +79,20 @@ class _RestaurantDescriptionsState extends State<RestaurantDescriptions> {
           child: TextButton(
               onPressed: () {
                 setState(() {
-                  isMore = !isMore;
-                  if (isMore) {
+                  _isMore = !_isMore;
+                  if (_isMore) {
                     setState(() {
-                      maxLine = 1000;
+                      _maxLine = 1000;
                     });
                   } else {
                     setState(() {
-                      maxLine = 5;
+                      _maxLine = 5;
                     });
                   }
                 });
               },
               child: Text(
-                isMore ? "See less" : "See more detail",
+                _isMore ? "See less" : "See more detail",
                 style: textTheme(ColorTheme.primary, FontWeight.bold).bodyText2,
               )),
         ),
