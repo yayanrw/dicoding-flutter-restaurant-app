@@ -5,20 +5,8 @@ import 'package:restaurant_app/pages/home/components/section_title.dart';
 import 'package:restaurant_app/pages/home/components/special_offer_card.dart';
 import 'package:restaurant_app/provider/restaurant_provider.dart';
 
-class SpecialOffer extends StatefulWidget {
-  const SpecialOffer({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  _SpecialOfferState createState() => _SpecialOfferState();
-}
-
-class _SpecialOfferState extends State<SpecialOffer> {
-  @override
-  void initState() {
-    super.initState();
-  }
+class SpecialOffer extends StatelessWidget {
+  const SpecialOffer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
