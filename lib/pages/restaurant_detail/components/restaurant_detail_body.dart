@@ -1,32 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/data/model/cls_restaurant_detail.dart';
-import 'package:restaurant_app/pages/restaurant_detail/components/menus.dart';
+import 'package:provider/provider.dart';
+import 'package:restaurant_app/data/api/api_service.dart';
 import 'package:restaurant_app/pages/restaurant_detail/components/header.dart';
+import 'package:restaurant_app/pages/restaurant_detail/components/menus.dart';
 import 'package:restaurant_app/pages/restaurant_detail/components/restaurant_descriptions.dart';
+import 'package:restaurant_app/provider/restaurant_detail_provider.dart';
 
 class RestaurantDetailBody extends StatelessWidget {
-  final ClsRestaurantDetailElement restaurant;
-
-  const RestaurantDetailBody({Key? key, required this.restaurant})
-      : super(key: key);
+  final String id;
+  const RestaurantDetailBody({Key? key, required this.id}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: SingleChildScrollView(
+            child: ChangeNotifierProvider<RestaurantDetailProvider>(
+      create: (context) =>
+          RestaurantDetailProvider(apiService: ApiService(), id: id),
       child: Column(
         children: [
-          Header(restaurant: restaurant),
+          Header(),
           SizedBox(height: 8),
-          RestaurantDescriptions(restaurant: restaurant),
+          RestaurantDescriptions(),
           SizedBox(height: 24),
-          Menus(
-            menus: restaurant.menus,
-            rating: restaurant.rating,
-          ),
+          Menus(),
           SizedBox(height: 24),
         ],
       ),
-    ));
+    )));
   }
 }
