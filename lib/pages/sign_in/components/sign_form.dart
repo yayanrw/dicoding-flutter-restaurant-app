@@ -10,7 +10,7 @@ class SignForm extends StatefulWidget {
 }
 
 class _SignFormState extends State<SignForm> {
-  bool remember = false;
+  bool _remember = false;
 
   @override
   Widget build(BuildContext context) {
@@ -51,11 +51,11 @@ class _SignFormState extends State<SignForm> {
     return Row(
       children: [
         Checkbox(
-          value: remember,
+          value: _remember,
           activeColor: ColorTheme.primary,
           onChanged: (value) {
             setState(() {
-              remember = value!;
+              _remember = value!;
             });
           },
         ),
