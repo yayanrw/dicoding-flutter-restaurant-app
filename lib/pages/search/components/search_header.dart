@@ -6,14 +6,9 @@ import 'package:restaurant_app/pages/home/components/circular_button.dart';
 import 'package:restaurant_app/provider/restaurant_search_provider.dart';
 import 'package:restaurant_app/theme/color_theme.dart';
 
-class SearchHeader extends StatefulWidget {
+class SearchHeader extends StatelessWidget {
   const SearchHeader({Key? key}) : super(key: key);
 
-  @override
-  _SearchHeaderState createState() => _SearchHeaderState();
-}
-
-class _SearchHeaderState extends State<SearchHeader> {
   @override
   Widget build(BuildContext context) {
     return Padding(
