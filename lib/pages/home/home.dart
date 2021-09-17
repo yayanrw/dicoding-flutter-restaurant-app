@@ -14,20 +14,20 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  late StreamSubscription sub;
+  late StreamSubscription _sub;
 
   @override
   void initState() {
     super.initState();
-    sub = Connectivity().onConnectivityChanged.listen((result) {
+    _sub = Connectivity().onConnectivityChanged.listen((result) {
       if (result == ConnectivityResult.none)
-        showSnackbar("No internet connections");
+        _showSnackbar("No internet connections");
     });
   }
 
   @override
   void dispose() {
-    sub.cancel();
+    _sub.cancel();
     super.dispose();
   }
 
@@ -39,7 +39,7 @@ class _HomeState extends State<Home> {
     );
   }
 
-  showSnackbar(String message) {
+  _showSnackbar(String message) {
     var snackBar = SnackBar(
       content: Text(
         message,
