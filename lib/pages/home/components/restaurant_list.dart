@@ -5,18 +5,8 @@ import 'package:restaurant_app/pages/home/components/restaurant_card.dart';
 import 'package:restaurant_app/pages/home/components/section_title.dart';
 import 'package:restaurant_app/provider/restaurant_provider.dart';
 
-class RestaurantList extends StatefulWidget {
+class RestaurantList extends StatelessWidget {
   const RestaurantList({Key? key}) : super(key: key);
-
-  @override
-  _RestaurantListState createState() => _RestaurantListState();
-}
-
-class _RestaurantListState extends State<RestaurantList> {
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
