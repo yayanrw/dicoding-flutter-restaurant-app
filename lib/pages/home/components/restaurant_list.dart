@@ -1,18 +1,12 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/model/restaurant.dart';
+import 'package:provider/provider.dart';
+import 'package:restaurant_app/data/api/api_service.dart';
 import 'package:restaurant_app/pages/home/components/restaurant_card.dart';
 import 'package:restaurant_app/pages/home/components/section_title.dart';
+import 'package:restaurant_app/provider/restaurant_provider.dart';
 
-class RestaurantList extends StatefulWidget {
+class RestaurantList extends StatelessWidget {
   const RestaurantList({Key? key}) : super(key: key);
-
-  @override
-  _RestaurantListState createState() => _RestaurantListState();
-}
-
-class _RestaurantListState extends State<RestaurantList> {
-  late List restaurant = [];
 
   @override
   Widget build(BuildContext context) {
@@ -26,44 +20,35 @@ class _RestaurantListState extends State<RestaurantList> {
           },
         ),
         SizedBox(height: 16),
-        FutureBuilder<String>(
-            future: DefaultAssetBundle.of(context)
-                .loadString('assets/local_restaurant.json'),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState != ConnectionState.done) {
-                return Text("Loading");
-              } else {
-                if (snapshot.hasError) {
-                  return Text("Error");
-                } else {
-                  if (snapshot.hasData) {
-                    final List<RestaurantRestaurants> restaurant =
-                        parseRestaurant(jsonEncode(
-                            jsonDecode(snapshot.data!)["restaurants"]));
-                    return ListView.builder(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: restaurant.length,
-                      itemBuilder: (context, index) {
-                        return RestaurantCard(
-                            name: restaurant[index].name!,
-                            city: restaurant[index].city!,
-                            image: restaurant[index].pictureId!,
-                            rating: restaurant[index].rating!,
-                            press: () {
-                              Navigator.pushNamed(context, '/restaurant_detail',
-                                  arguments: restaurant[index]);
-                            });
-                      },
-                    );
-                  } else {
-                    return Center(
-                      child: Image.asset('assets/images/no_data.svg'),
-                    );
-                  }
-                }
-              }
-            })
+        Consumer<RestaurantProvider>(builder: (context, state, _) {
+          if (state.state == ResultState.Loading) {
+            return Center(child: CircularProgressIndicator());
+          } else if (state.state == ResultState.HasData) {
+            return ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: state.result!.restaurants.length,
+              itemBuilder: (context, index) {
+                var restaurant = state.result!.restaurants[index];
+                return RestaurantCard(
+                    name: restaurant.name,
+                    city: restaurant.city,
+                    image: ApiService.imageDir + restaurant.pictureId,
+                    rating: restaurant.rating,
+                    press: () {
+                      Navigator.pushNamed(context, '/restaurant_detail',
+                          arguments: restaurant);
+                    });
+              },
+            );
+          } else if (state.state == ResultState.NoData) {
+            return Center(child: Text(state.message));
+          } else if (state.state == ResultState.Error) {
+            return Center(child: Text("No internet connections."));
+          } else {
+            return Center(child: Text(''));
+          }
+        }),
       ],
     );
   }

@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/helper/theme/color_theme.dart';
-import 'package:restaurant_app/helper/theme/text_theme.dart';
 import 'package:restaurant_app/pages/sign_in/components/sign_form.dart';
 import 'package:restaurant_app/pages/sign_in/components/social_card.dart';
+import 'package:restaurant_app/theme/color_theme.dart';
+import 'package:restaurant_app/theme/text_theme.dart';
 
-class SignInBody extends StatefulWidget {
+class SignInBody extends StatelessWidget {
   const SignInBody({Key? key}) : super(key: key);
 
-  @override
-  _SignInBodyState createState() => _SignInBodyState();
-}
-
-class _SignInBodyState extends State<SignInBody> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -35,7 +30,7 @@ class _SignInBodyState extends State<SignInBody> {
                 SizedBox(height: 40),
                 SignForm(),
                 SizedBox(height: 40),
-                socialMedia(),
+                socialMedia(context),
                 SizedBox(height: 24),
                 noAccountText(context)
               ],
@@ -63,7 +58,7 @@ class _SignInBodyState extends State<SignInBody> {
     );
   }
 
-  Row socialMedia() {
+  Row socialMedia(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [

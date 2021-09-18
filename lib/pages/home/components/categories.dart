@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/helper/app.dart';
+import 'package:restaurant_app/config/app.dart';
 import 'package:restaurant_app/pages/home/components/category_card.dart';
 
 class Categories extends StatelessWidget {

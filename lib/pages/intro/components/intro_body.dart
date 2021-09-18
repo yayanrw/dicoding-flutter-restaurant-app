@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/helper/app.dart';
-import 'package:restaurant_app/helper/theme/color_theme.dart';
-import 'package:restaurant_app/helper/theme/text_theme.dart';
+import 'package:restaurant_app/config/app.dart';
 import 'package:restaurant_app/pages/intro/components/slider_content.dart';
+import 'package:restaurant_app/theme/color_theme.dart';
+import 'package:restaurant_app/theme/text_theme.dart';
 
 class IntroBody extends StatefulWidget {
   const IntroBody({Key? key}) : super(key: key);
@@ -12,7 +12,7 @@ class IntroBody extends StatefulWidget {
 }
 
 class _IntroBodyState extends State<IntroBody> {
-  int currentPage = 0;
+  int _currentPage = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +56,7 @@ class _IntroBodyState extends State<IntroBody> {
             controller: pageController,
             onPageChanged: (value) {
               setState(() {
-                currentPage = value;
+                _currentPage = value;
               });
             },
             itemCount: App.sliderData.length,
@@ -70,9 +70,9 @@ class _IntroBodyState extends State<IntroBody> {
         duration: Duration(milliseconds: 200),
         margin: EdgeInsets.only(right: 5),
         height: 6,
-        width: currentPage == index ? 20 : 6,
+        width: _currentPage == index ? 20 : 6,
         decoration: BoxDecoration(
-            color: currentPage == index
+            color: _currentPage == index
                 ? ColorTheme.primary
                 : ColorTheme.secondaryLight,
             borderRadius: BorderRadius.circular(3)));
@@ -85,10 +85,10 @@ class _IntroBodyState extends State<IntroBody> {
         width: double.infinity,
         child: ElevatedButton(
           onPressed: () {
-            if (currentPage < 3) {
+            if (_currentPage < 3) {
               setState(() {
-                currentPage++;
-                pageController.animateToPage(currentPage,
+                _currentPage++;
+                pageController.animateToPage(_currentPage,
                     duration: Duration(milliseconds: 500), curve: Curves.ease);
               });
             } else {

@@ -1,4 +1,5 @@
 # restaurant_app
+# Load data from local json
 
 A new Flutter project.
 
