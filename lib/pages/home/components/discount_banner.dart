@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/theme/color_theme.dart';
-import 'package:restaurant_app/theme/text_theme.dart';
+
+import '../../../theme/color_theme.dart';
+import '../../../theme/text_theme.dart';
 
 class DiscountBanner extends StatelessWidget {
   const DiscountBanner({

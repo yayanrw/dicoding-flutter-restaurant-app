@@ -1,8 +1,10 @@
 import 'dart:convert';
+
 import 'package:http/http.dart' as http;
-import 'package:restaurant_app/data/model/cls_restaurant.dart';
-import 'package:restaurant_app/data/model/cls_restaurant_detail.dart';
-import 'package:restaurant_app/data/model/cls_restaurant_search.dart';
+
+import '../model/cls_restaurant.dart';
+import '../model/cls_restaurant_detail.dart';
+import '../model/cls_restaurant_search.dart';
 
 class ApiService {
   static final String _baseUrl = 'restaurant-api.dicoding.dev';

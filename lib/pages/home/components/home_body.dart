@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:restaurant_app/data/api/api_service.dart';
-import 'package:restaurant_app/pages/home/components/categories.dart';
-import 'package:restaurant_app/pages/home/components/discount_banner.dart';
-import 'package:restaurant_app/pages/home/components/home_header.dart';
-import 'package:restaurant_app/pages/home/components/restaurant_list.dart';
-import 'package:restaurant_app/pages/home/components/special_offer.dart';
-import 'package:restaurant_app/provider/restaurant_provider.dart';
+import '../../../data/api/api_service.dart';
+import 'categories.dart';
+import 'discount_banner.dart';
+import 'home_header.dart';
+import 'restaurant_list.dart';
+import 'special_offer.dart';
+import '../../../provider/restaurant_provider.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({Key? key}) : super(key: key);

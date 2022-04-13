@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
-TextTheme textTheme([Color? color, FontWeight? weight]) {
+import 'my_colors.dart';
+
+TextTheme myTextTheme({Color? color, FontWeight? weight}) {
+  color = color ?? MyColors.textBlack;
+  weight = weight ?? FontWeight.w500;
+
   return TextTheme(
     headline1: TextStyle(
         fontSize: 93, fontWeight: weight, letterSpacing: -1.5, color: color),

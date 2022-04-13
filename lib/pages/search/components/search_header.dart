@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:provider/provider.dart';
-import 'package:restaurant_app/helper/size_config.dart';
-import 'package:restaurant_app/pages/home/components/circular_button.dart';
-import 'package:restaurant_app/provider/restaurant_search_provider.dart';
-import 'package:restaurant_app/theme/color_theme.dart';
+
+import '../../../helper/size_config.dart';
+import '../../../provider/restaurant_search_provider.dart';
+import '../../../theme/color_theme.dart';
+import '../../home/components/circular_button.dart';
 
 class SearchHeader extends StatelessWidget {
   const SearchHeader({Key? key}) : super(key: key);

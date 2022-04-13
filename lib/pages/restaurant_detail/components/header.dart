@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:provider/provider.dart';
-import 'package:restaurant_app/data/api/api_service.dart';
-import 'package:restaurant_app/helper/size_config.dart';
-import 'package:restaurant_app/provider/restaurant_detail_provider.dart';
-import 'package:restaurant_app/theme/color_theme.dart';
+
+import '../../../data/api/api_service.dart';
+import '../../../helper/size_config.dart';
+import '../../../provider/restaurant_detail_provider.dart';
+import '../../../theme/color_theme.dart';
 
 class Header extends StatelessWidget {
   const Header({

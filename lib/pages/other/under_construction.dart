@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:restaurant_app/theme/color_theme.dart';
-import 'package:restaurant_app/theme/text_theme.dart';
+
+import '../../theme/color_theme.dart';
+import '../../theme/text_theme.dart';
 
 class UnderConstruction extends StatelessWidget {
   const UnderConstruction({Key? key}) : super(key: key);

@@ -1,5 +1,5 @@
 import 'package:path/path.dart';
-import 'package:restaurant_app/data/model/cls_restaurant_db.dart';
+import '../model/cls_restaurant_db.dart';
 import 'package:sqflite/sqflite.dart';
 
 class RestaurantDatabase {

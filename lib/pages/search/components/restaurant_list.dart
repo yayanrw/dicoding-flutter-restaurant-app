@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:restaurant_app/data/api/api_service.dart';
-import 'package:restaurant_app/pages/home/components/restaurant_card.dart';
-import 'package:restaurant_app/provider/restaurant_search_provider.dart';
+
+import '../../../data/api/api_service.dart';
+import '../../../provider/restaurant_search_provider.dart';
+import '../../home/components/restaurant_card.dart';
 
 class RestaurantList extends StatelessWidget {
   const RestaurantList({Key? key}) : super(key: key);

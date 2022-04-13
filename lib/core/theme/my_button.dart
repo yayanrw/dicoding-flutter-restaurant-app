@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'color_theme.dart';
 
-ElevatedButtonThemeData elevatedButtonThemeData() {
+import 'my_colors.dart';
+
+ElevatedButtonThemeData myElevatedButtonThemeData() {
   return ElevatedButtonThemeData(
       style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(ColorTheme.primary),
+          backgroundColor: MaterialStateProperty.all<Color>(MyColors.primary),
           padding: MaterialStateProperty.all<EdgeInsets>(
               EdgeInsets.symmetric(horizontal: 24.0, vertical: 18.0)),
           textStyle:
@@ -14,9 +15,9 @@ ElevatedButtonThemeData elevatedButtonThemeData() {
                   borderRadius: BorderRadius.circular(24)))));
 }
 
-TextButtonThemeData textButtonThemeData() {
+TextButtonThemeData myTextButtonThemeData() {
   return TextButtonThemeData(
       style: ButtonStyle(
-    foregroundColor: MaterialStateProperty.all<Color>(ColorTheme.primaryDark),
+    foregroundColor: MaterialStateProperty.all<Color>(MyColors.primaryDark),
   ));
 }

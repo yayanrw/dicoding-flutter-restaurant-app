@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/config/app.dart';
-import 'package:restaurant_app/pages/intro/components/slider_content.dart';
-import 'package:restaurant_app/theme/color_theme.dart';
-import 'package:restaurant_app/theme/text_theme.dart';
+import '../../../config/app.dart';
+import 'slider_content.dart';
+import '../../../theme/color_theme.dart';
+import '../../../theme/text_theme.dart';
 
 class IntroBody extends StatefulWidget {
   const IntroBody({Key? key}) : super(key: key);

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:restaurant_app/helper/size_config.dart';
-import 'package:restaurant_app/theme/color_theme.dart';
+
+import '../../../helper/size_config.dart';
+import '../../../theme/color_theme.dart';
 
 class SearchField extends StatelessWidget {
   const SearchField({

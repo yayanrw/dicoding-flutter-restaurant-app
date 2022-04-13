@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/data/model/cls_restaurant.dart';
-import 'package:restaurant_app/helper/size_config.dart';
-import 'package:restaurant_app/pages/restaurant_detail/components/restaurant_detail_body.dart';
+
+import '../../data/model/cls_restaurant.dart';
+import '../../helper/size_config.dart';
+import 'components/restaurant_detail_body.dart';
 
 class RestaurantDetail extends StatelessWidget {
   final ClsRestaurantElement restaurantDetail;

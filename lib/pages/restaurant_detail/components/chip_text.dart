@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/theme/color_theme.dart';
+
+import '../../../theme/color_theme.dart';
 
 class ChipText extends StatelessWidget {
   const ChipText({

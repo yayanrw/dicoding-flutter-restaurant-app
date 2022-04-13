@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/pages/sign_in/components/sign_form.dart';
-import 'package:restaurant_app/pages/sign_in/components/social_card.dart';
-import 'package:restaurant_app/theme/color_theme.dart';
-import 'package:restaurant_app/theme/text_theme.dart';
+
+import '../../../theme/color_theme.dart';
+import '../../../theme/text_theme.dart';
+import 'sign_form.dart';
+import 'social_card.dart';
 
 class SignInBody extends StatelessWidget {
   const SignInBody({Key? key}) : super(key: key);

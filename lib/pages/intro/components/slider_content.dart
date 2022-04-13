@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:restaurant_app/helper/size_config.dart';
-import 'package:restaurant_app/theme/color_theme.dart';
+
+import '../../../helper/size_config.dart';
+import '../../../theme/color_theme.dart';
 
 class SliderContent extends StatelessWidget {
   const SliderContent({Key? key, this.text, this.image}) : super(key: key);

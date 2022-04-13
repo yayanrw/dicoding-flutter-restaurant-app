@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/helper/size_config.dart';
-import 'package:restaurant_app/pages/home/components/home_body.dart';
-import 'package:restaurant_app/theme/color_theme.dart';
+import '../../helper/size_config.dart';
+import 'components/home_body.dart';
+import '../../theme/color_theme.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:restaurant_app/pages/home/components/section_title.dart';
-import 'package:restaurant_app/pages/home/components/special_offer_card.dart';
-import 'package:restaurant_app/provider/restaurant_detail_provider.dart';
+import '../../home/components/section_title.dart';
+import '../../home/components/special_offer_card.dart';
+import '../../../provider/restaurant_detail_provider.dart';
 
 class Menus extends StatelessWidget {
   const Menus({Key? key}) : super(key: key);

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:provider/provider.dart';
-import 'package:restaurant_app/pages/restaurant_detail/components/chip_text.dart';
-import 'package:restaurant_app/provider/restaurant_detail_provider.dart';
-import 'package:restaurant_app/theme/color_theme.dart';
-import 'package:restaurant_app/theme/text_theme.dart';
+
+import '../../../provider/restaurant_detail_provider.dart';
+import '../../../theme/color_theme.dart';
+import '../../../theme/text_theme.dart';
+import 'chip_text.dart';
 
 class RestaurantDescriptions extends StatefulWidget {
   const RestaurantDescriptions({Key? key}) : super(key: key);
