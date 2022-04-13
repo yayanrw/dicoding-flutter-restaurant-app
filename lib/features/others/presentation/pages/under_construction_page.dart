@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import '../../../../core/theme/my_text_theme.dart';
+import '../../../../core/utils/my_strings.dart';
 
-import '../../theme/color_theme.dart';
-import '../../theme/text_theme.dart';
-
-class UnderConstruction extends StatelessWidget {
-  const UnderConstruction({Key? key}) : super(key: key);
+class UnderConstructionPages extends StatelessWidget {
+  const UnderConstructionPages({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Under Construction"),
+        title: Text(MyStrings.underConstruction),
       ),
       body: Center(
         child: Column(
@@ -26,8 +25,8 @@ class UnderConstruction extends StatelessWidget {
               ),
             ),
             Text(
-              'Under Construction!',
-              style: textTheme(ColorTheme.secondary).headline5,
+              MyStrings.underConstruction,
+              style: myTextTheme().headline5,
             )
           ],
         ),

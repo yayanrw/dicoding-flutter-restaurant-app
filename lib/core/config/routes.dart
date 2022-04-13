@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 
 import '../../data/model/cls_restaurant.dart';
 import '../../pages/home/home.dart';
-import '../../features/others/presentation/pages/intro.dart';
-import '../../pages/other/under_construction.dart';
+import '../../features/others/presentation/pages/intro_page.dart';
+import '../../features/others/presentation/pages/under_construction_page.dart';
 import '../../pages/restaurant_detail/restaurant_detail.dart';
 import '../../pages/search/search.dart';
 import '../../pages/sign_in/sign_in.dart';
