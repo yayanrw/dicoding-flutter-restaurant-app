@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../helper/size_config.dart';
+import '../../../core/utils/size_config.dart';
 import '../../../theme/color_theme.dart';
 
 class CategoryCard extends StatelessWidget {

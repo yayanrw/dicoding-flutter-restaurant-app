@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../helper/size_config.dart';
+import '../../core/utils/size_config.dart';
 import 'components/search_body.dart';
 
 class Search extends StatelessWidget {

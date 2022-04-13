@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-import '../../../helper/size_config.dart';
-import '../../../theme/color_theme.dart';
+import '../../../../core/theme/my_colors.dart';
+import '../../../../core/utils/size_config.dart';
 
 class SliderContent extends StatelessWidget {
   const SliderContent({Key? key, this.text, this.image}) : super(key: key);
@@ -14,7 +13,7 @@ class SliderContent extends StatelessWidget {
       children: [
         Text(
           text!,
-          style: TextStyle(color: ColorTheme.secondary),
+          style: TextStyle(color: MyColors.secondary),
           textAlign: TextAlign.center,
         ),
         Spacer(

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import '../../../config/app.dart';
+import '../../../../core/config/apps_config.dart';
+import '../../../../core/theme/my_colors.dart';
+import '../../../../core/theme/my_text_theme.dart';
+import '../../../../core/utils/my_strings.dart';
+import '../../domain/entities/slider_data.dart';
 import 'slider_content.dart';
-import '../../../theme/color_theme.dart';
-import '../../../theme/text_theme.dart';
 
 class IntroBody extends StatefulWidget {
   const IntroBody({Key? key}) : super(key: key);
@@ -39,8 +41,8 @@ class _IntroBodyState extends State<IntroBody> {
   Row customDot() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: List.generate(
-          App.sliderData.length, (index) => dotContent(index: index)),
+      children:
+          List.generate(sliderData.length, (index) => dotContent(index: index)),
     );
   }
 
@@ -59,10 +61,9 @@ class _IntroBodyState extends State<IntroBody> {
                 _currentPage = value;
               });
             },
-            itemCount: App.sliderData.length,
+            itemCount: sliderData.length,
             itemBuilder: (context, index) => SliderContent(
-                image: App.sliderData[index]["image"],
-                text: App.sliderData[index]["text"])));
+                image: sliderData[index].image, text: sliderData[index].text)));
   }
 
   AnimatedContainer dotContent({required int index}) {
@@ -73,8 +74,8 @@ class _IntroBodyState extends State<IntroBody> {
         width: _currentPage == index ? 20 : 6,
         decoration: BoxDecoration(
             color: _currentPage == index
-                ? ColorTheme.primary
-                : ColorTheme.secondaryLight,
+                ? MyColors.primary
+                : MyColors.secondaryLight,
             borderRadius: BorderRadius.circular(3)));
   }
 
@@ -95,7 +96,7 @@ class _IntroBodyState extends State<IntroBody> {
               Navigator.pushNamed(context, '/sign_in');
             }
           },
-          child: const Text('Continue'),
+          child: const Text(MyStrings.sContinue),
         ),
       ),
     );
@@ -103,8 +104,9 @@ class _IntroBodyState extends State<IntroBody> {
 
   Text textAppName() {
     return Text(
-      App.appName,
-      style: textTheme(ColorTheme.primary, FontWeight.w700).headline4,
+      AppsConfig.appTitle,
+      style: myTextTheme(color: MyColors.primary, weight: FontWeight.w700)
+          .headline4,
       textAlign: TextAlign.center,
     );
   }

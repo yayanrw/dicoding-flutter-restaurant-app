@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 
 import '../../data/model/cls_restaurant.dart';
 import '../../pages/home/home.dart';
-import '../../pages/intro/intro.dart';
+import '../../features/others/presentation/pages/intro.dart';
 import '../../pages/other/under_construction.dart';
 import '../../pages/restaurant_detail/restaurant_detail.dart';
 import '../../pages/search/search.dart';

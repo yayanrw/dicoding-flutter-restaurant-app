@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
-import '../../helper/size_config.dart';
+import '../../core/utils/size_config.dart';
 import 'components/home_body.dart';
 import '../../theme/color_theme.dart';
 

@@ -3,7 +3,7 @@ import 'package:line_icons/line_icons.dart';
 import 'package:provider/provider.dart';
 
 import '../../../data/api/api_service.dart';
-import '../../../helper/size_config.dart';
+import '../../../core/utils/size_config.dart';
 import '../../../provider/restaurant_detail_provider.dart';
 import '../../../theme/color_theme.dart';
 
