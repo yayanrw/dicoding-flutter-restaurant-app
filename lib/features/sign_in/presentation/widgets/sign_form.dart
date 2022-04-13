@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
-
-import '../../../theme/color_theme.dart';
+import 'package:restaurant_app/core/utils/my_strings.dart';
+import '../../../../core/theme/my_colors.dart';
 
 class SignForm extends StatefulWidget {
   const SignForm({Key? key}) : super(key: key);
@@ -43,7 +43,7 @@ class _SignFormState extends State<SignForm> {
         onPressed: () {
           Navigator.pushNamed(context, '/home');
         },
-        child: const Text('Log In'),
+        child: const Text(MyStrings.logIn),
       ),
     );
   }
@@ -53,20 +53,20 @@ class _SignFormState extends State<SignForm> {
       children: [
         Checkbox(
           value: _remember,
-          activeColor: ColorTheme.primary,
+          activeColor: MyColors.primary,
           onChanged: (value) {
             setState(() {
               _remember = value!;
             });
           },
         ),
-        Flexible(child: Text("Remember me")),
+        Flexible(child: Text(MyStrings.rememberMe)),
         Spacer(),
         Flexible(
           child: GestureDetector(
             onTap: () => {Navigator.pushNamed(context, '/under_construction')},
             child: Text(
-              "Forgot Password",
+              MyStrings.forgotPassword,
               style: TextStyle(decoration: TextDecoration.underline),
             ),
           ),
@@ -79,13 +79,13 @@ class _SignFormState extends State<SignForm> {
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
-          labelText: "Email",
-          hintText: "Enter your email",
+          labelText: MyStrings.email,
+          hintText: MyStrings.enterYourEmail,
           suffixIcon: Padding(
             padding: EdgeInsets.only(right: 25),
             child: Icon(LineIcons.envelope),
           )),
-      cursorColor: ColorTheme.primaryDark,
+      cursorColor: MyColors.primaryDark,
     );
   }
 
@@ -93,14 +93,14 @@ class _SignFormState extends State<SignForm> {
     return TextFormField(
       obscureText: true,
       decoration: InputDecoration(
-        labelText: "Password",
-        hintText: "Enter your password",
+        labelText: MyStrings.password,
+        hintText: MyStrings.enterYourPassword,
         suffixIcon: Padding(
           padding: EdgeInsets.only(right: 25),
           child: Icon(LineIcons.lock),
         ),
       ),
-      cursorColor: ColorTheme.primaryDark,
+      cursorColor: MyColors.primaryDark,
     );
   }
 }

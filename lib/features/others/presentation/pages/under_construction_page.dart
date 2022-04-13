@@ -3,8 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import '../../../../core/theme/my_text_theme.dart';
 import '../../../../core/utils/my_strings.dart';
 
-class UnderConstructionPages extends StatelessWidget {
-  const UnderConstructionPages({Key? key}) : super(key: key);
+class UnderConstructionPage extends StatelessWidget {
+  const UnderConstructionPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
