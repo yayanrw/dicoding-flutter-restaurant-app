@@ -5,7 +5,6 @@ import 'package:restaurant_app/core/router/router.gr.dart';
 import 'package:restaurant_app/core/theme/my_colors.dart';
 import 'package:restaurant_app/core/theme/my_text_theme.dart';
 import 'package:restaurant_app/core/utils/my_strings.dart';
-import 'package:restaurant_app/features/others/presentation/pages/under_construction_page.dart';
 import 'package:restaurant_app/features/sign_in/presentation/widgets/sign_form.dart';
 import 'package:restaurant_app/features/sign_in/presentation/widgets/social_card.dart';
 
@@ -21,7 +20,7 @@ class SignInBody extends StatelessWidget {
           padding: const EdgeInsets.only(left: 8),
           child: TextButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/under_construction');
+                context.router.push(const UnderConstructionRoute());
               },
               child: Text(MyStrings.signUp)),
         )

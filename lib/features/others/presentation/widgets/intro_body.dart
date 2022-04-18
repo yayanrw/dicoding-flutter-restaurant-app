@@ -1,10 +1,12 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../../../core/config/apps_config.dart';
-import '../../../../core/theme/my_colors.dart';
-import '../../../../core/theme/my_text_theme.dart';
-import '../../../../core/utils/my_strings.dart';
-import '../../domain/entities/slider_data.dart';
-import 'slider_content.dart';
+import 'package:restaurant_app/core/config/apps_config.dart';
+import 'package:restaurant_app/core/router/router.gr.dart';
+import 'package:restaurant_app/core/theme/my_colors.dart';
+import 'package:restaurant_app/core/theme/my_text_theme.dart';
+import 'package:restaurant_app/core/utils/my_strings.dart';
+import 'package:restaurant_app/features/others/domain/entities/slider_data.dart';
+import 'package:restaurant_app/features/others/presentation/widgets/slider_content.dart';
 
 class IntroBody extends StatefulWidget {
   const IntroBody({Key? key}) : super(key: key);
@@ -14,29 +16,12 @@ class IntroBody extends StatefulWidget {
 }
 
 class _IntroBodyState extends State<IntroBody> {
-  int _currentPage = 0;
+  PageController pageController = PageController(
+    initialPage: 0,
+    keepPage: true,
+  );
 
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: SizedBox(
-        width: double.infinity,
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 32),
-          child: Column(
-            children: <Widget>[
-              textAppName(),
-              customSlider(),
-              SizedBox(height: 24),
-              customDot(),
-              Spacer(),
-              btnContinue(context),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
+  int _currentPage = 0;
 
   Row customDot() {
     return Row(
@@ -45,11 +30,6 @@ class _IntroBodyState extends State<IntroBody> {
           List.generate(sliderData.length, (index) => dotContent(index: index)),
     );
   }
-
-  PageController pageController = PageController(
-    initialPage: 0,
-    keepPage: true,
-  );
 
   Expanded customSlider() {
     return Expanded(
@@ -93,7 +73,7 @@ class _IntroBodyState extends State<IntroBody> {
                     duration: Duration(milliseconds: 500), curve: Curves.ease);
               });
             } else {
-              Navigator.pushNamed(context, '/sign_in');
+              context.router.push(const SignInRoute());
             }
           },
           child: const Text(MyStrings.sContinue),
@@ -108,6 +88,28 @@ class _IntroBodyState extends State<IntroBody> {
       style: myTextTheme(color: MyColors.primary, weight: FontWeight.w700)
           .headline4,
       textAlign: TextAlign.center,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: SizedBox(
+        width: double.infinity,
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 32),
+          child: Column(
+            children: <Widget>[
+              textAppName(),
+              customSlider(),
+              SizedBox(height: 24),
+              customDot(),
+              Spacer(),
+              btnContinue(context),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

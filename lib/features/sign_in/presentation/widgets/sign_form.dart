@@ -1,7 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:restaurant_app/core/router/router.gr.dart';
+import 'package:restaurant_app/core/theme/my_colors.dart';
 import 'package:restaurant_app/core/utils/my_strings.dart';
-import '../../../../core/theme/my_colors.dart';
 
 class SignForm extends StatefulWidget {
   const SignForm({Key? key}) : super(key: key);
@@ -13,35 +15,12 @@ class SignForm extends StatefulWidget {
 class _SignFormState extends State<SignForm> {
   bool _remember = false;
 
-  @override
-  Widget build(BuildContext context) {
-    return Form(
-      child: Column(
-        children: [
-          buildEmailFormField(),
-          SizedBox(
-            height: 24,
-          ),
-          buildPasswordFormField(),
-          SizedBox(
-            height: 24,
-          ),
-          rememberMe(),
-          SizedBox(
-            height: 24,
-          ),
-          btnLogin(context)
-        ],
-      ),
-    );
-  }
-
   SizedBox btnLogin(BuildContext context) {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
         onPressed: () {
-          Navigator.pushNamed(context, '/home');
+          context.router.push(const HomeRoute());
         },
         child: const Text(MyStrings.logIn),
       ),
@@ -64,7 +43,7 @@ class _SignFormState extends State<SignForm> {
         Spacer(),
         Flexible(
           child: GestureDetector(
-            onTap: () => {Navigator.pushNamed(context, '/under_construction')},
+            onTap: () => {context.router.push(const UnderConstructionRoute())},
             child: Text(
               MyStrings.forgotPassword,
               style: TextStyle(decoration: TextDecoration.underline),
@@ -101,6 +80,29 @@ class _SignFormState extends State<SignForm> {
         ),
       ),
       cursorColor: MyColors.primaryDark,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      child: Column(
+        children: [
+          buildEmailFormField(),
+          SizedBox(
+            height: 24,
+          ),
+          buildPasswordFormField(),
+          SizedBox(
+            height: 24,
+          ),
+          rememberMe(),
+          SizedBox(
+            height: 24,
+          ),
+          btnLogin(context)
+        ],
+      ),
     );
   }
 }
