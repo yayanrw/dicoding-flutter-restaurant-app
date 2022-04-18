@@ -3,9 +3,9 @@ import 'package:restaurant_app/core/utils/size_config.dart';
 import 'package:restaurant_app/data/model/cls_restaurant.dart';
 import 'package:restaurant_app/features/home/presentation/widgets/restaurant_detail/restaurant_detail_body.dart';
 
-class RestaurantDetail extends StatelessWidget {
+class RestaurantDetailPage extends StatelessWidget {
   final ClsRestaurantElement restaurantDetail;
-  const RestaurantDetail({Key? key, required this.restaurantDetail})
+  const RestaurantDetailPage({Key? key, required this.restaurantDetail})
       : super(key: key);
 
   @override

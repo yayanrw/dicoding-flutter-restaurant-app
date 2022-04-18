@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:provider/provider.dart';
-
-import '../../../core/utils/size_config.dart';
-import '../../../provider/restaurant_search_provider.dart';
-import '../../../theme/color_theme.dart';
-import '../../home/components/circular_button.dart';
+import 'package:restaurant_app/core/theme/my_colors.dart';
+import 'package:restaurant_app/core/utils/my_strings.dart';
+import 'package:restaurant_app/core/utils/size_config.dart';
+import 'package:restaurant_app/features/home/presentation/widgets/home/circular_button.dart';
 
 class SearchHeader extends StatelessWidget {
   const SearchHeader({Key? key}) : super(key: key);
@@ -27,7 +26,7 @@ class SearchHeader extends StatelessWidget {
           Container(
             width: SizeConfig.screenWidth! * 0.75,
             decoration: BoxDecoration(
-                color: ColorTheme.secondaryLight2.withOpacity(0.1),
+                color: MyColors.secondaryLight2.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(16)),
             child: Consumer<RestaurantSearchProvider>(
               builder: (context, state, _) => TextField(
@@ -36,7 +35,7 @@ class SearchHeader extends StatelessWidget {
                 decoration: InputDecoration(
                     enabledBorder: InputBorder.none,
                     focusedBorder: InputBorder.none,
-                    hintText: "Search restaurant...",
+                    hintText: MyStrings.searchRestaurants,
                     prefixIcon: Icon(LineIcons.search),
                     contentPadding:
                         EdgeInsets.symmetric(horizontal: 24, vertical: 12)),

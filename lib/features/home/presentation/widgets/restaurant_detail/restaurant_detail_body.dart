@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import '../../../../data/api/api_service.dart';
-import '../../../../provider/restaurant_detail_provider.dart';
-import '../header.dart';
-import '../menus.dart';
-import '../restaurant_descriptions.dart';
+import 'package:restaurant_app/features/home/presentation/widgets/restaurant_detail/header.dart';
+import 'package:restaurant_app/features/home/presentation/widgets/restaurant_detail/menus.dart';
+import 'package:restaurant_app/features/home/presentation/widgets/restaurant_detail/restaurant_descriptions.dart';
 
 class RestaurantDetailBody extends StatelessWidget {
   final String id;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../../core/theme/my_text_theme.dart';
-import '../../../../core/utils/my_strings.dart';
+import 'package:restaurant_app/core/theme/my_text_theme.dart';
+import 'package:restaurant_app/core/utils/my_strings.dart';
 
 class UnderConstructionPage extends StatelessWidget {
   const UnderConstructionPage({Key? key}) : super(key: key);

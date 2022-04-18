@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../../data/api/api_service.dart';
-import 'restaurant_list.dart';
-import 'search_header.dart';
-import '../../../provider/restaurant_search_provider.dart';
+import 'package:restaurant_app/features/home/presentation/widgets/search/restaurant_list.dart';
+import 'package:restaurant_app/features/home/presentation/widgets/search/search_header.dart';
 
 class SearchBody extends StatelessWidget {
   const SearchBody({Key? key}) : super(key: key);

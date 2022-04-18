@@ -20,4 +20,5 @@ class MyStrings {
   static const cashback20 = 'Cashback 20%';
   static const summerSurprise = 'A Summer Surprise\n';
   static const seeMore = 'See more';
+  static const searchRestaurants = 'Search restaurants...';
 }
