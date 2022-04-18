@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-
-import '../../../theme/color_theme.dart';
-import '../../../theme/text_theme.dart';
+import 'package:restaurant_app/core/theme/my_colors.dart';
+import 'package:restaurant_app/core/theme/my_text_theme.dart';
+import 'package:restaurant_app/core/utils/my_strings.dart';
 
 class SectionTitle extends StatelessWidget {
   const SectionTitle({
@@ -24,15 +24,17 @@ class SectionTitle extends StatelessWidget {
         children: [
           Text(
             text,
-            style: textTheme(ColorTheme.secondary, FontWeight.w700).headline6,
+            style:
+                myTextTheme(color: MyColors.secondary, weight: FontWeight.w700)
+                    .headline6,
           ),
           Visibility(
             visible: isMoreable,
             child: GestureDetector(
                 onTap: press,
                 child: Text(
-                  'See more',
-                  style: textTheme(ColorTheme.secondaryLight2).caption,
+                  MyStrings.seeMore,
+                  style: myTextTheme(color: MyColors.secondaryLight2).caption,
                 )),
           )
         ],

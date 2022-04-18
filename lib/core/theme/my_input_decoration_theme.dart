@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../config/apps_config.dart';
-import 'my_colors.dart';
+import 'package:restaurant_app/core/config/apps_config.dart';
+import 'package:restaurant_app/core/theme/my_colors.dart';
 
 InputDecorationTheme myInputDecorationTheme() {
   return InputDecorationTheme(

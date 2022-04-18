@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
-import '../../../core/utils/size_config.dart';
-import '../../../theme/color_theme.dart';
-import '../../../theme/text_theme.dart';
+import 'package:restaurant_app/core/theme/my_colors.dart';
+import 'package:restaurant_app/core/theme/my_text_theme.dart';
+import 'package:restaurant_app/core/utils/size_config.dart';
 
 class RestaurantCard extends StatelessWidget {
   const RestaurantCard({
@@ -57,8 +57,8 @@ class RestaurantCard extends StatelessWidget {
                                 begin: Alignment.topCenter,
                                 end: Alignment.bottomCenter,
                                 colors: [
-                              ColorTheme.secondary2.withOpacity(0.4),
-                              ColorTheme.secondary2.withOpacity(0.15),
+                              MyColors.secondary2.withOpacity(0.4),
+                              MyColors.secondary2.withOpacity(0.15),
                             ])),
                       ),
                     ],
@@ -74,22 +74,23 @@ class RestaurantCard extends StatelessWidget {
                     Text(name,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: textTheme(ColorTheme.secondary, FontWeight.w900)
-                            .headline6),
+                        style: myTextTheme(weight: FontWeight.w900).headline6),
                     Text(city,
-                        style: textTheme(ColorTheme.secondaryLight2).caption),
+                        style: myTextTheme(color: MyColors.secondaryLight2)
+                            .caption),
                     SizedBox(height: 8),
                     Row(
                       children: [
                         Icon(
                           LineIcons.starAlt,
                           size: 16,
-                          color: ColorTheme.primaryDark,
+                          color: MyColors.primaryDark,
                         ),
                         Text(rating.toString(),
-                            style:
-                                textTheme(ColorTheme.secondary, FontWeight.bold)
-                                    .caption)
+                            style: myTextTheme(
+                                    color: MyColors.secondary,
+                                    weight: FontWeight.bold)
+                                .caption)
                       ],
                     )
                   ],

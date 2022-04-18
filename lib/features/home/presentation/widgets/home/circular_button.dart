@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../core/utils/size_config.dart';
-import '../../../theme/color_theme.dart';
+import 'package:restaurant_app/core/theme/my_colors.dart';
+import 'package:restaurant_app/core/utils/size_config.dart';
 
 class CircularButton extends StatelessWidget {
   const CircularButton({
@@ -24,7 +24,7 @@ class CircularButton extends StatelessWidget {
             width: getProportionateScreenWidth(48),
             height: getProportionateScreenHeight(48),
             decoration: BoxDecoration(
-                color: ColorTheme.secondaryLight2.withOpacity(0.1),
+                color: MyColors.secondaryLight2.withOpacity(0.1),
                 shape: BoxShape.circle),
             child: (icon == Icons.arrow_back_ios
                 ? Padding(
@@ -40,7 +40,7 @@ class CircularButton extends StatelessWidget {
                 height: getProportionateScreenHeight(16),
                 width: getProportionateScreenWidth(16),
                 decoration: BoxDecoration(
-                    color: ColorTheme.primary,
+                    color: MyColors.primary,
                     shape: BoxShape.circle,
                     border: Border.all(color: Colors.white, width: 1.5)),
               )),

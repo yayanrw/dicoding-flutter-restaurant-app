@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../core/utils/size_config.dart';
-import '../../../theme/color_theme.dart';
+import 'package:restaurant_app/core/config/apps_config.dart';
+import 'package:restaurant_app/core/theme/my_colors.dart';
+import 'package:restaurant_app/core/utils/size_config.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
@@ -25,13 +26,14 @@ class CategoryCard extends StatelessWidget {
             AspectRatio(
               aspectRatio: 1,
               child: Container(
-                padding: EdgeInsets.all(8),
+                padding: EdgeInsets.all(AppsConfig.defaultPadding / 2),
                 decoration: BoxDecoration(
-                    color: ColorTheme.primarySmooth,
-                    borderRadius: BorderRadius.circular(10)),
+                    color: MyColors.primarySmooth,
+                    borderRadius:
+                        BorderRadius.circular(AppsConfig.defaultRadius / 2)),
                 child: Icon(
                   icon,
-                  color: ColorTheme.primaryDark,
+                  color: MyColors.primaryDark,
                 ),
               ),
             ),

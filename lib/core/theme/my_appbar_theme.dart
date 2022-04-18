@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'my_colors.dart';
+import 'package:restaurant_app/core/theme/my_colors.dart';
 
 AppBarTheme myAppBarTheme() {
   return AppBarTheme(

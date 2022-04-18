@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../theme/color_theme.dart';
+import 'package:restaurant_app/core/theme/my_colors.dart';
 
 class ChipText extends StatelessWidget {
   const ChipText({
@@ -18,14 +17,13 @@ class ChipText extends StatelessWidget {
       decoration: BoxDecoration(
           color: Colors.transparent,
           borderRadius: BorderRadius.circular(14),
-          border: Border.all(color: ColorTheme.secondaryLight2)),
+          border: Border.all(color: MyColors.secondaryLight2)),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(name,
-              style: TextStyle(color: ColorTheme.secondary, fontSize: 12))
+          Text(name, style: TextStyle(color: MyColors.secondary, fontSize: 12))
         ],
       ),
     );

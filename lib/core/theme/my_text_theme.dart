@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'my_colors.dart';
+import 'package:restaurant_app/core/theme/my_colors.dart';
 
 TextTheme myTextTheme({Color? color, FontWeight? weight}) {
   color = color ?? MyColors.textBlack;

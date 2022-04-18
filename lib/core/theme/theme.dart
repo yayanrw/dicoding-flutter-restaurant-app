@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import '../config/apps_config.dart';
-import 'my_appbar_theme.dart';
-import 'my_button.dart';
-import 'my_colors.dart';
-import 'my_input_decoration_theme.dart';
-import 'my_text_selection_theme_data.dart';
-import 'my_text_theme.dart';
+import 'package:restaurant_app/core/config/apps_config.dart';
+import 'package:restaurant_app/core/theme/my_appbar_theme.dart';
+import 'package:restaurant_app/core/theme/my_button.dart';
+import 'package:restaurant_app/core/theme/my_colors.dart';
+import 'package:restaurant_app/core/theme/my_input_decoration_theme.dart';
+import 'package:restaurant_app/core/theme/my_text_selection_theme_data.dart';
+import 'package:restaurant_app/core/theme/my_text_theme.dart';
 
 ThemeData myThemes() {
   return ThemeData(

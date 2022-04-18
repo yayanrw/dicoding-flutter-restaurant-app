@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../../data/api/api_service.dart';
 import 'section_title.dart';
 import 'special_offer_card.dart';
-import '../../../provider/restaurant_provider.dart';
 
 class SpecialOffer extends StatelessWidget {
   const SpecialOffer({Key? key}) : super(key: key);

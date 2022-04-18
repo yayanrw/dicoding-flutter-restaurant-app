@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
-
-import '../../../core/utils/size_config.dart';
-import '../../../theme/color_theme.dart';
+import 'package:restaurant_app/core/theme/my_colors.dart';
+import 'package:restaurant_app/core/utils/size_config.dart';
 
 class SearchField extends StatelessWidget {
   const SearchField({
@@ -18,7 +17,7 @@ class SearchField extends StatelessWidget {
       child: Container(
         width: SizeConfig.screenWidth! * 0.6,
         decoration: BoxDecoration(
-            color: ColorTheme.secondaryLight2.withOpacity(0.1),
+            color: MyColors.secondaryLight2.withOpacity(0.1),
             borderRadius: BorderRadius.circular(16)),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
@@ -28,7 +27,7 @@ class SearchField extends StatelessWidget {
               SizedBox(width: 8),
               Text(
                 "Search restaurant...",
-                style: TextStyle(color: ColorTheme.secondaryLight2),
+                style: TextStyle(color: MyColors.secondaryLight2),
               )
             ],
           ),

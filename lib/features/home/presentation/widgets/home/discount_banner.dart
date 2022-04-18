@@ -1,7 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-
-import '../../../theme/color_theme.dart';
-import '../../../theme/text_theme.dart';
+import 'package:restaurant_app/core/router/router.gr.dart';
+import 'package:restaurant_app/core/theme/my_colors.dart';
+import 'package:restaurant_app/core/theme/my_text_theme.dart';
+import 'package:restaurant_app/core/utils/my_strings.dart';
 
 class DiscountBanner extends StatelessWidget {
   const DiscountBanner({
@@ -14,21 +16,22 @@ class DiscountBanner extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: GestureDetector(
         onTap: () {
-          Navigator.pushNamed(context, '/under_construction');
+          context.router.push(const UnderConstructionRoute());
         },
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
           width: double.infinity,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(32),
-              color: ColorTheme.purple),
+              borderRadius: BorderRadius.circular(32), color: MyColors.purple),
           child: Text.rich(TextSpan(
-              text: 'A Summer Surprise\n',
+              text: MyStrings.summerSurprise,
               style: TextStyle(color: Colors.white),
               children: [
                 TextSpan(
-                    text: 'Cashback 20%',
-                    style: textTheme(Colors.white, FontWeight.w700).headline4)
+                    text: MyStrings.cashback20,
+                    style: myTextTheme(
+                            color: MyColors.light, weight: FontWeight.w700)
+                        .headline4)
               ])),
         ),
       ),

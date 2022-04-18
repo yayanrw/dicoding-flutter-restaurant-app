@@ -16,4 +16,8 @@ class MyStrings {
       'Sign in with your email and password \nor continue with social media';
   static const dontHaveAccount = 'Don\'t have an account?';
   static const signUp = 'Sign Up';
+  static const noInternet = 'No internet connections';
+  static const cashback20 = 'Cashback 20%';
+  static const summerSurprise = 'A Summer Surprise\n';
+  static const seeMore = 'See more';
 }

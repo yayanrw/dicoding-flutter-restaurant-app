@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
-
-import '../../../theme/color_theme.dart';
-import '../../../theme/text_theme.dart';
+import 'package:restaurant_app/core/theme/my_colors.dart';
+import 'package:restaurant_app/core/theme/my_text_theme.dart';
 
 class SpecialOfferCard extends StatelessWidget {
   const SpecialOfferCard(
@@ -49,8 +48,8 @@ class SpecialOfferCard extends StatelessWidget {
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
                           colors: [
-                        ColorTheme.secondary2.withOpacity(0.4),
-                        ColorTheme.secondary2.withOpacity(0.15),
+                        MyColors.secondary2.withOpacity(0.4),
+                        MyColors.secondary2.withOpacity(0.15),
                       ])),
                 ),
                 Padding(
@@ -63,13 +62,17 @@ class SpecialOfferCard extends StatelessWidget {
                       children: [
                         TextSpan(
                           text: "$name\n",
-                          style: textTheme(Colors.white, FontWeight.w700)
+                          style: myTextTheme(
+                                  color: MyColors.light,
+                                  weight: FontWeight.w700)
                               .headline6,
                         ),
                         TextSpan(
                           text: city,
-                          style:
-                              textTheme(Colors.white, FontWeight.w700).caption,
+                          style: myTextTheme(
+                                  color: MyColors.light,
+                                  weight: FontWeight.w700)
+                              .caption,
                         ),
                       ],
                     ),
@@ -86,7 +89,7 @@ class SpecialOfferCard extends StatelessWidget {
                         color: Colors.white,
                       ),
                       Text(rating.toString(),
-                          style: textTheme(Colors.white).subtitle2)
+                          style: myTextTheme(color: MyColors.light).subtitle2)
                     ],
                   ),
                 )
