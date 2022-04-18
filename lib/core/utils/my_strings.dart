@@ -1,5 +1,3 @@
-import 'package:restaurant_app/features/others/presentation/pages/under_construction_page.dart';
-
 class MyStrings {
   static const sContinue = 'Continue';
   static const underConstruction = 'UnderConstruction';
@@ -21,4 +19,6 @@ class MyStrings {
   static const summerSurprise = 'A Summer Surprise\n';
   static const seeMore = 'See more';
   static const searchRestaurants = 'Search restaurants...';
+  static const seeMoreDetail = 'See more detail';
+  static const seeLess = 'See less';
 }

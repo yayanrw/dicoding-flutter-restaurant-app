@@ -14,14 +14,12 @@ import 'package:auto_route/auto_route.dart' as _i7;
 import 'package:flutter/material.dart' as _i8;
 
 import '../../data/model/cls_restaurant.dart' as _i9;
-import '../../features/home/presentation/pages/home_page.dart' as _i4;
-import '../../features/home/presentation/pages/restaurant_detail_page.dart'
-    as _i6;
-import '../../features/home/presentation/pages/search_page.dart' as _i5;
-import '../../features/others/presentation/pages/intro_page.dart' as _i1;
-import '../../features/others/presentation/pages/under_construction_page.dart'
-    as _i2;
-import '../../features/sign_in/presentation/pages/sign_in_page.dart' as _i3;
+import '../../features/presentation/pages/home_page.dart' as _i4;
+import '../../features/presentation/pages/intro_page.dart' as _i1;
+import '../../features/presentation/pages/restaurant_detail_page.dart' as _i6;
+import '../../features/presentation/pages/search_page.dart' as _i5;
+import '../../features/presentation/pages/sign_in_page.dart' as _i3;
+import '../../features/presentation/pages/under_construction_page.dart' as _i2;
 
 class AppRouter extends _i7.RootStackRouter {
   AppRouter([_i8.GlobalKey<_i8.NavigatorState>? navigatorKey])

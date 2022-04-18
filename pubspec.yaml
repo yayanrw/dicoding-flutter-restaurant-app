@@ -30,7 +30,10 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_svg: ^0.22.0
+  get_it: ^7.2.0
   http: ^0.13.3
+  injectable: ^1.5.3
+  injectable_generator: ^1.5.3
   line_icons: ^2.0.1
   path: ^1.8.0
   provider: ^6.0.0

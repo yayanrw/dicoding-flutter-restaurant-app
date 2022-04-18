@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:restaurant_app/core/config/env.dart';
+import 'package:restaurant_app/core/injection/injection.dart';
 import 'package:restaurant_app/core/router/router.gr.dart';
 import 'core/config/apps_config.dart';
 import 'core/theme/theme.dart';
 
 void main() {
+  configureInjection(Env.dev);
   runApp(MyApp());
 }
 
