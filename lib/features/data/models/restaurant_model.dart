@@ -1,42 +1,6 @@
-import 'dart:convert';
+import 'package:equatable/equatable.dart';
 
-RestaurantModel restaurantModelFromJson(String str) =>
-    RestaurantModel.fromJson(json.decode(str));
-
-String restaurantModelToJson(RestaurantModel data) =>
-    json.encode(data.toJson());
-
-class RestaurantModel {
-  RestaurantModel({
-    required this.error,
-    required this.message,
-    required this.count,
-    required this.restaurants,
-  });
-
-  final bool error;
-  final String message;
-  final int count;
-  final List<Restaurant> restaurants;
-
-  factory RestaurantModel.fromJson(Map<String, dynamic> json) =>
-      RestaurantModel(
-        error: json["error"],
-        message: json["message"],
-        count: json["count"],
-        restaurants: List<Restaurant>.from(
-            json["restaurants"].map((x) => Restaurant.fromJson(x))),
-      );
-
-  Map<String, dynamic> toJson() => {
-        "error": error,
-        "message": message,
-        "count": count,
-        "restaurants": List<dynamic>.from(restaurants.map((x) => x.toJson())),
-      };
-}
-
-class Restaurant {
+class Restaurant extends Equatable {
   Restaurant({
     required this.id,
     required this.name,
@@ -70,4 +34,7 @@ class Restaurant {
         "city": city,
         "rating": rating,
       };
+
+  @override
+  List<Object?> get props => [id, name, description, pictureId, city, rating];
 }
