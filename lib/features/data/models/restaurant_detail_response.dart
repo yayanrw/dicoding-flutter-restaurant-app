@@ -17,13 +17,13 @@ class RestaurantDetailResponse extends Equatable {
 
   final bool error;
   final String message;
-  final RestaurantDetail restaurant;
+  final RestaurantDetailModel restaurant;
 
   factory RestaurantDetailResponse.fromJson(Map<String, dynamic> json) =>
       RestaurantDetailResponse(
         error: json["error"],
         message: json["message"],
-        restaurant: RestaurantDetail.fromJson(json["restaurant"]),
+        restaurant: RestaurantDetailModel.fromJson(json["restaurant"]),
       );
 
   Map<String, dynamic> toJson() => {

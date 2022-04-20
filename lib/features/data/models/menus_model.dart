@@ -1,20 +1,20 @@
 import 'package:equatable/equatable.dart';
 import 'package:restaurant_app/features/data/models/category_model.dart';
 
-class Menus extends Equatable {
-  Menus({
+class MenusModel extends Equatable {
+  MenusModel({
     required this.foods,
     required this.drinks,
   });
 
-  final List<Category> foods;
-  final List<Category> drinks;
+  final List<CategoryModel> foods;
+  final List<CategoryModel> drinks;
 
-  factory Menus.fromJson(Map<String, dynamic> json) => Menus(
-        foods:
-            List<Category>.from(json["foods"].map((x) => Category.fromJson(x))),
-        drinks: List<Category>.from(
-            json["drinks"].map((x) => Category.fromJson(x))),
+  factory MenusModel.fromJson(Map<String, dynamic> json) => MenusModel(
+        foods: List<CategoryModel>.from(
+            json["foods"].map((x) => CategoryModel.fromJson(x))),
+        drinks: List<CategoryModel>.from(
+            json["drinks"].map((x) => CategoryModel.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {

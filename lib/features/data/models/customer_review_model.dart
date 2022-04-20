@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
-class CustomerReview extends Equatable {
-  CustomerReview({
+class CustomerReviewModel extends Equatable {
+  CustomerReviewModel({
     required this.name,
     required this.review,
     required this.date,
@@ -11,7 +11,8 @@ class CustomerReview extends Equatable {
   final String review;
   final String date;
 
-  factory CustomerReview.fromJson(Map<String, dynamic> json) => CustomerReview(
+  factory CustomerReviewModel.fromJson(Map<String, dynamic> json) =>
+      CustomerReviewModel(
         name: json["name"],
         review: json["review"],
         date: json["date"],

@@ -3,8 +3,8 @@ import 'package:restaurant_app/features/data/models/category_model.dart';
 import 'package:restaurant_app/features/data/models/customer_review_model.dart';
 import 'package:restaurant_app/features/data/models/menus_model.dart';
 
-class RestaurantDetail extends Equatable {
-  RestaurantDetail({
+class RestaurantDetailModel extends Equatable {
+  RestaurantDetailModel({
     required this.id,
     required this.name,
     required this.description,
@@ -24,12 +24,12 @@ class RestaurantDetail extends Equatable {
   final String address;
   final String pictureId;
   final double rating;
-  final List<Category> categories;
-  final Menus menus;
-  final List<CustomerReview> customerReviews;
+  final List<CategoryModel> categories;
+  final MenusModel menus;
+  final List<CustomerReviewModel> customerReviews;
 
-  factory RestaurantDetail.fromJson(Map<String, dynamic> json) =>
-      RestaurantDetail(
+  factory RestaurantDetailModel.fromJson(Map<String, dynamic> json) =>
+      RestaurantDetailModel(
         id: json["id"],
         name: json["name"],
         description: json["description"],
@@ -37,11 +37,11 @@ class RestaurantDetail extends Equatable {
         address: json["address"],
         pictureId: json["pictureId"],
         rating: json["rating"].toDouble(),
-        categories: List<Category>.from(
-            json["categories"].map((x) => Category.fromJson(x))),
-        menus: Menus.fromJson(json["menus"]),
-        customerReviews: List<CustomerReview>.from(
-            json["customerReviews"].map((x) => CustomerReview.fromJson(x))),
+        categories: List<CategoryModel>.from(
+            json["categories"].map((x) => CategoryModel.fromJson(x))),
+        menus: MenusModel.fromJson(json["menus"]),
+        customerReviews: List<CustomerReviewModel>.from(json["customerReviews"]
+            .map((x) => CustomerReviewModel.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {

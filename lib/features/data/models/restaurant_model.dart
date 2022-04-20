@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
-class Restaurant extends Equatable {
-  Restaurant({
+class RestaurantModel extends Equatable {
+  RestaurantModel({
     required this.id,
     required this.name,
     required this.description,
@@ -17,7 +17,8 @@ class Restaurant extends Equatable {
   final String city;
   final double rating;
 
-  factory Restaurant.fromJson(Map<String, dynamic> json) => Restaurant(
+  factory RestaurantModel.fromJson(Map<String, dynamic> json) =>
+      RestaurantModel(
         id: json["id"],
         name: json["name"],
         description: json["description"],

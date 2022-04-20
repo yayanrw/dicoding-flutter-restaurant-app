@@ -18,14 +18,14 @@ class RestaurantSearchResponse extends Equatable {
 
   final bool error;
   final int founded;
-  final List<Restaurant> restaurants;
+  final List<RestaurantModel> restaurants;
 
   factory RestaurantSearchResponse.fromJson(Map<String, dynamic> json) =>
       RestaurantSearchResponse(
         error: json["error"],
         founded: json["founded"],
-        restaurants: List<Restaurant>.from(
-            json["restaurants"].map((x) => Restaurant.fromJson(x))),
+        restaurants: List<RestaurantModel>.from(
+            json["restaurants"].map((x) => RestaurantModel.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
