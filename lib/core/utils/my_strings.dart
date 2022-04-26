@@ -25,4 +25,6 @@ class MyStrings {
   static const ourAllRestaurants = 'Our all restaurants';
   static const noRestaurants = 'No restaurants found';
   static const ourRecommendations = 'Our recommendations';
+  static const ourFoods = 'Our foods';
+  static const ourDrinks = 'Our drinks';
 }
