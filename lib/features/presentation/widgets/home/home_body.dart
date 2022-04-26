@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:restaurant_app/features/presentation/widgets/home/categories.dart';
 import 'package:restaurant_app/features/presentation/widgets/home/discount_banner.dart';
 import 'package:restaurant_app/features/presentation/widgets/home/home_header.dart';

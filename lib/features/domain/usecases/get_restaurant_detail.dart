@@ -1,8 +1,10 @@
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 import 'package:restaurant_app/core/utils/error/failure.dart';
 import 'package:restaurant_app/features/domain/entities/restaurant_detail.dart';
 import 'package:restaurant_app/features/domain/repositories/restaurant_repository.dart';
 
+@lazySingleton
 class GetRestaurantDetail {
   final RestaurantRepository restaurantRepository;
 

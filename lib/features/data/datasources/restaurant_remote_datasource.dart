@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:injectable/injectable.dart';
 import 'package:restaurant_app/core/config/apps_config.dart';
 import 'package:restaurant_app/core/utils/error/exceptions.dart';
 import 'package:restaurant_app/features/data/models/restaurant_detail_response.dart';
@@ -12,6 +13,7 @@ abstract class RestaurantRemoteDataSource {
   Future<RestaurantSearchResponse> getRestaurantSearch(String query);
 }
 
+@LazySingleton(as: RestaurantRemoteDataSource)
 class RestaurantRemoteDataSourceImpl implements RestaurantRemoteDataSource {
   final http.Client client;
 

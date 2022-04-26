@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:injectable/injectable.dart';
 import 'package:restaurant_app/core/utils/error/exceptions.dart';
 import 'package:restaurant_app/core/utils/my_strings.dart';
 import 'package:restaurant_app/features/data/datasources/restaurant_remote_datasource.dart';
@@ -8,6 +9,7 @@ import 'package:restaurant_app/core/utils/error/failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:restaurant_app/features/domain/repositories/restaurant_repository.dart';
 
+@lazySingleton
 class RestaurantRepositoryImpl implements RestaurantRepository {
   final RestaurantRemoteDataSource remoteDataSource;
 
