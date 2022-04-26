@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:restaurant_app/features/presentation/widgets/home/categories.dart';
 import 'package:restaurant_app/features/presentation/widgets/home/discount_banner.dart';
 import 'package:restaurant_app/features/presentation/widgets/home/home_header.dart';
+import 'package:restaurant_app/features/presentation/widgets/home/restaurant_list.dart';
+import 'package:restaurant_app/features/presentation/widgets/home/special_offer.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({Key? key}) : super(key: key);
@@ -20,15 +22,9 @@ class HomeBody extends StatelessWidget {
           SizedBox(height: 24),
           Categories(),
           SizedBox(height: 24),
-          ChangeNotifierProvider<RestaurantProvider>(
-            create: (_) => RestaurantProvider(apiService: ApiService()),
-            child: SpecialOffer(),
-          ),
+          SpecialOffer(),
           SizedBox(height: 24),
-          ChangeNotifierProvider<RestaurantProvider>(
-            create: (_) => RestaurantProvider(apiService: ApiService()),
-            child: RestaurantList(),
-          ),
+          RestaurantList(),
           SizedBox(height: 24),
         ],
       ),

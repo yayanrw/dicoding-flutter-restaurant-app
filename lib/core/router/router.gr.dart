@@ -13,7 +13,6 @@
 import 'package:auto_route/auto_route.dart' as _i7;
 import 'package:flutter/material.dart' as _i8;
 
-import '../../data/model/cls_restaurant.dart' as _i9;
 import '../../features/presentation/pages/home_page.dart' as _i4;
 import '../../features/presentation/pages/intro_page.dart' as _i1;
 import '../../features/presentation/pages/restaurant_detail_page.dart' as _i6;
@@ -51,8 +50,7 @@ class AppRouter extends _i7.RootStackRouter {
       final args = routeData.argsAs<RestaurantDetailRouteArgs>();
       return _i7.MaterialPageX<dynamic>(
           routeData: routeData,
-          child: _i6.RestaurantDetailPage(
-              key: args.key, restaurantDetail: args.restaurantDetail));
+          child: _i6.RestaurantDetailPage(key: args.key, id: args.id));
     }
   };
 
@@ -114,25 +112,23 @@ class SearchRoute extends _i7.PageRouteInfo<void> {
 /// [_i6.RestaurantDetailPage]
 class RestaurantDetailRoute
     extends _i7.PageRouteInfo<RestaurantDetailRouteArgs> {
-  RestaurantDetailRoute(
-      {_i8.Key? key, required _i9.ClsRestaurantElement restaurantDetail})
+  RestaurantDetailRoute({_i8.Key? key, required String id})
       : super(RestaurantDetailRoute.name,
             path: '/restaurant-detail/:restaurant',
-            args: RestaurantDetailRouteArgs(
-                key: key, restaurantDetail: restaurantDetail));
+            args: RestaurantDetailRouteArgs(key: key, id: id));
 
   static const String name = 'RestaurantDetailRoute';
 }
 
 class RestaurantDetailRouteArgs {
-  const RestaurantDetailRouteArgs({this.key, required this.restaurantDetail});
+  const RestaurantDetailRouteArgs({this.key, required this.id});
 
   final _i8.Key? key;
 
-  final _i9.ClsRestaurantElement restaurantDetail;
+  final String id;
 
   @override
   String toString() {
-    return 'RestaurantDetailRouteArgs{key: $key, restaurantDetail: $restaurantDetail}';
+    return 'RestaurantDetailRouteArgs{key: $key, id: $id}';
   }
 }

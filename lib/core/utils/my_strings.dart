@@ -22,4 +22,7 @@ class MyStrings {
   static const seeMoreDetail = 'See more detail';
   static const seeLess = 'See less';
   static const failedConnection = 'Failed to connect to the network';
+  static const ourAllRestaurants = 'Our all restaurants';
+  static const noRestaurants = 'No restaurants found';
+  static const ourRecommendations = 'Our recommendations';
 }
