@@ -21,4 +21,5 @@ class MyStrings {
   static const searchRestaurants = 'Search restaurants...';
   static const seeMoreDetail = 'See more detail';
   static const seeLess = 'See less';
+  static const failedConnection = 'Failed to connect to the network';
 }

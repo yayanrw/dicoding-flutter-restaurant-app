@@ -31,7 +31,8 @@ class RestaurantSearchResponse extends Equatable {
   Map<String, dynamic> toJson() => {
         "error": error,
         "founded": founded,
-        "restaurants": List<dynamic>.from(restaurants.map((x) => x.toJson())),
+        "restaurants":
+            List<RestaurantModel>.from(restaurants.map((x) => x.toJson())),
       };
 
   @override

@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:restaurant_app/features/domain/entities/category.dart';
 
 class CategoryModel extends Equatable {
   CategoryModel({
@@ -14,6 +15,12 @@ class CategoryModel extends Equatable {
   Map<String, dynamic> toJson() => {
         "name": name,
       };
+
+  Category toEntity() {
+    return Category(
+      name: name,
+    );
+  }
 
   @override
   List<Object?> get props => [name];

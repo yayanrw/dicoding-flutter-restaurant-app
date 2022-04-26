@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:restaurant_app/features/domain/entities/restaurant.dart';
 
 class RestaurantModel extends Equatable {
   RestaurantModel({
@@ -35,6 +36,17 @@ class RestaurantModel extends Equatable {
         "city": city,
         "rating": rating,
       };
+
+  Restaurant toEntity() {
+    return Restaurant(
+      id: id,
+      name: name,
+      description: description,
+      pictureId: pictureId,
+      city: city,
+      rating: rating,
+    );
+  }
 
   @override
   List<Object?> get props => [id, name, description, pictureId, city, rating];

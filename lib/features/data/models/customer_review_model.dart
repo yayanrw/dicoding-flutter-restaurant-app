@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:restaurant_app/features/domain/entities/customer_review.dart';
 
 class CustomerReviewModel extends Equatable {
   CustomerReviewModel({
@@ -23,6 +24,14 @@ class CustomerReviewModel extends Equatable {
         "review": review,
         "date": date,
       };
+
+  CustomerReview toEntity() {
+    return CustomerReview(
+      name: name,
+      review: review,
+      date: date,
+    );
+  }
 
   @override
   List<Object?> get props => [name, review, date];
