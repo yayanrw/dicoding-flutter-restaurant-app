@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
+import 'package:injectable/injectable.dart';
 import 'package:restaurant_app/core/utils/request_state.dart';
 import 'package:restaurant_app/features/domain/entities/restaurant_detail.dart';
 import 'package:restaurant_app/features/domain/usecases/get_restaurant_detail.dart';
 
+@injectable
 class RestaurantDetailNotifier extends ChangeNotifier {
   RestaurantDetailNotifier(this.getRestaurantDetail);
 

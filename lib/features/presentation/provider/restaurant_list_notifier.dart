@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 import 'package:restaurant_app/core/utils/request_state.dart';
 import 'package:restaurant_app/features/domain/entities/restaurant.dart';
 import 'package:restaurant_app/features/domain/usecases/get_restaurants.dart';
 
+@injectable
 class RestaurantListNotifier extends ChangeNotifier {
   RestaurantListNotifier(this.getRestaurants);
 
