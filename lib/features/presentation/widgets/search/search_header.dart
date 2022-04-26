@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:restaurant_app/core/theme/my_colors.dart';
 import 'package:restaurant_app/core/utils/my_strings.dart';
 import 'package:restaurant_app/core/utils/size_config.dart';
+import 'package:restaurant_app/features/presentation/provider/restaurant_search_notifier.dart';
 import 'package:restaurant_app/features/presentation/widgets/home/circular_button.dart';
 
 class SearchHeader extends StatelessWidget {
@@ -28,8 +29,8 @@ class SearchHeader extends StatelessWidget {
             decoration: BoxDecoration(
                 color: MyColors.secondaryLight2.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(16)),
-            child: Consumer<RestaurantSearchProvider>(
-              builder: (context, state, _) => TextField(
+            child: Consumer<RestaurantSearchNotifier>(
+              builder: (context, data, child) => TextField(
                 autofocus: true,
                 textInputAction: TextInputAction.search,
                 decoration: InputDecoration(
@@ -40,7 +41,7 @@ class SearchHeader extends StatelessWidget {
                     contentPadding:
                         EdgeInsets.symmetric(horizontal: 24, vertical: 12)),
                 onSubmitted: (value) {
-                  state.searchText = value;
+                  data.searchText = value;
                 },
               ),
             ),

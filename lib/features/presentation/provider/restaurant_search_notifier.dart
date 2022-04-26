@@ -11,6 +11,7 @@ class RestaurantSearchNotifier extends ChangeNotifier {
   final GetRestaurantSearch getRestaurantSearch;
 
   String _message = '';
+  String _searchText = '';
   RequestState _requestState = RequestState.empty;
   List<Restaurant> _restaurants = [];
 
@@ -20,11 +21,17 @@ class RestaurantSearchNotifier extends ChangeNotifier {
 
   List<Restaurant> get restaurants => _restaurants;
 
-  Future<void> fetchRestaurantSearch(String query) async {
+  set searchText(String text) {
+    _searchText = text;
+    notifyListeners();
+    fetchRestaurantSearch();
+  }
+
+  Future<void> fetchRestaurantSearch() async {
     _requestState = RequestState.loading;
     notifyListeners();
 
-    final result = await getRestaurantSearch.call(query);
+    final result = await getRestaurantSearch.call(_searchText);
 
     result.fold(
       (failure) {
