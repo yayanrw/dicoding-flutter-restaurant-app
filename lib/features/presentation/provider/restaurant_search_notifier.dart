@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/core/utils/request_state.dart';
 import 'package:restaurant_app/features/domain/entities/restaurant.dart';
-import 'package:restaurant_app/features/domain/usecases/get_restaurants.dart';
+import 'package:restaurant_app/features/domain/usecases/get_restaurant_search.dart';
 
-class RestaurantListNotifier extends ChangeNotifier {
-  RestaurantListNotifier(this.getRestaurants);
+class RestaurantSearchNotifier extends ChangeNotifier {
+  RestaurantSearchNotifier(this.getRestaurantSearch);
 
-  final GetRestaurants getRestaurants;
+  final GetRestaurantSearch getRestaurantSearch;
 
   String _message = '';
   RequestState _requestState = RequestState.empty;
@@ -18,11 +18,11 @@ class RestaurantListNotifier extends ChangeNotifier {
 
   List<Restaurant> get restaurants => _restaurants;
 
-  Future<void> fetchRestaurants() async {
+  Future<void> fetchRestaurantSearch(String query) async {
     _requestState = RequestState.loading;
     notifyListeners();
 
-    final result = await getRestaurants.call();
+    final result = await getRestaurantSearch.call(query);
 
     result.fold(
       (failure) {
@@ -31,7 +31,7 @@ class RestaurantListNotifier extends ChangeNotifier {
         notifyListeners();
       },
       (success) {
-        _requestState = RequestState.loading;
+        _requestState = RequestState.loaded;
         _restaurants = success;
         notifyListeners();
       },
