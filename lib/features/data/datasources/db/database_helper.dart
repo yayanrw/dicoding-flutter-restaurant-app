@@ -1,17 +1,18 @@
+import 'package:injectable/injectable.dart';
 import 'package:path/path.dart';
-import '../model/cls_restaurant_db.dart';
+import 'package:restaurant_app/features/data/models/restaurant_table.dart';
 import 'package:sqflite/sqflite.dart';
 
-class RestaurantDatabase {
-  static RestaurantDatabase? _restaurantDatabase;
+@lazySingleton
+class DatabaseHelper {
+  static DatabaseHelper? _databaseHelper;
   static late Database _database;
 
-  RestaurantDatabase._internal() {
-    _restaurantDatabase = this;
+  DatabaseHelper._internal() {
+    _databaseHelper = this;
   }
 
-  factory RestaurantDatabase() =>
-      _restaurantDatabase ?? RestaurantDatabase._internal();
+  factory DatabaseHelper() => _databaseHelper ?? DatabaseHelper._internal();
 
   Future<Database> get database async {
     _database = await _initializeDb();
@@ -39,17 +40,17 @@ class RestaurantDatabase {
     return db;
   }
 
-  Future<void> insertRestaurant(ClsRestaurantDb restaurant) async {
+  Future<void> insertRestaurant(RestaurantTable restaurant) async {
     final Database db = await database;
     await db.insert(_tableName, restaurant.toMap());
     print('Data saved');
   }
 
-  Future<List<ClsRestaurantDb>> getRestaurant() async {
+  Future<List<RestaurantTable>> getRestaurant() async {
     final Database db = await database;
     List<Map<String, dynamic>> results = await db.query(_tableName);
 
-    return results.map((res) => ClsRestaurantDb.fromMap(res)).toList();
+    return results.map((res) => RestaurantTable.fromMap(res)).toList();
   }
 
   Future<void> deleteRestaurant(int id) async {
