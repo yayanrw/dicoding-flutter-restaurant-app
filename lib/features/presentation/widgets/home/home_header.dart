@@ -20,17 +20,17 @@ class HomeHeader extends StatelessWidget {
         children: [
           SearchField(),
           CircularButton(
-            icon: LineIcons.bell,
+            icon: LineIcons.heart,
             isCountable: true,
             press: () {
-              context.router.push(const UnderConstructionRoute());
+              context.router.push(const FavoriteRoute());
             },
           ),
           CircularButton(
-            icon: LineIcons.user,
+            icon: LineIcons.cog,
             isCountable: false,
             press: () {
-              context.router.push(const UnderConstructionRoute());
+              context.router.push(const SettingRoute());
             },
           )
         ],

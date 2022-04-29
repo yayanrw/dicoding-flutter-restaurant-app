@@ -27,4 +27,5 @@ class MyStrings {
   static const ourRecommendations = 'Our recommendations';
   static const ourFoods = 'Our foods';
   static const ourDrinks = 'Our drinks';
+  static const favoriteRestaurants = 'Favorite Restaurants';
 }
