@@ -11,9 +11,9 @@ class RestaurantSearchNotifier extends ChangeNotifier {
   final GetRestaurantSearch getRestaurantSearch;
 
   String _message = '';
-  String _searchText = '';
   RequestState _requestState = RequestState.empty;
   List<Restaurant> _restaurants = [];
+  String _searchText = '';
 
   RequestState get requestState => _requestState;
 

@@ -37,7 +37,10 @@ class SearchHeader extends StatelessWidget {
                     enabledBorder: InputBorder.none,
                     focusedBorder: InputBorder.none,
                     hintText: MyStrings.searchRestaurants,
-                    prefixIcon: Icon(LineIcons.search),
+                    prefixIcon: Icon(
+                      LineIcons.search,
+                      color: MyColors.dark,
+                    ),
                     contentPadding:
                         EdgeInsets.symmetric(horizontal: 24, vertical: 12)),
                 onSubmitted: (value) {

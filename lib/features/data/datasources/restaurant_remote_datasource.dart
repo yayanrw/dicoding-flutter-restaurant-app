@@ -21,7 +21,7 @@ class RestaurantRemoteDataSourceImpl implements RestaurantRemoteDataSource {
 
   @override
   Future<RestaurantListResponse> getRestaurants() async {
-    final response = await client. get(Uri.parse('${AppsConfig.baseUrl}/list'));
+    final response = await client.get(Uri.parse('${AppsConfig.baseUrl}/list'));
 
     if (response.statusCode == 200) {
       return RestaurantListResponse.fromJson(json.decode(response.body));
@@ -44,8 +44,8 @@ class RestaurantRemoteDataSourceImpl implements RestaurantRemoteDataSource {
 
   @override
   Future<RestaurantSearchResponse> getRestaurantSearch(String query) async {
-    final response = await client
-        .get(Uri.https(AppsConfig.baseUrl, '/search', {'q': query}));
+    final response = await client.get(Uri.parse('${AppsConfig.baseUrl}/search')
+        .replace(queryParameters: {'q': query}));
 
     if (response.statusCode == 200) {
       return RestaurantSearchResponse.fromJson(json.decode(response.body));
