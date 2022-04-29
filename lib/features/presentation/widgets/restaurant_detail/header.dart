@@ -1,9 +1,12 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:provider/provider.dart';
 import 'package:restaurant_app/core/config/apps_config.dart';
 import 'package:restaurant_app/core/theme/my_colors.dart';
 import 'package:restaurant_app/core/utils/size_config.dart';
 import 'package:restaurant_app/features/domain/entities/restaurant_detail.dart';
+import 'package:restaurant_app/features/presentation/provider/favorite_restaurants_notifier.dart';
 
 class Header extends StatelessWidget {
   const Header({
@@ -44,7 +47,11 @@ class Header extends StatelessWidget {
                 left: 16,
                 child: InkWell(
                   onTap: () {
-                    Navigator.of(context).pop();
+                    context.router.pop().then((value) {
+                      Provider.of<FavoriteRestaurantNotifier>(context,
+                              listen: false)
+                          .fetchFavoriteRestaurants();
+                    });
                   },
                   child: Container(
                     alignment: Alignment.center,
