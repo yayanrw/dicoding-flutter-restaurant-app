@@ -32,7 +32,7 @@ class RestaurantLocalDataSourceImpl implements RestaurantLocalDataSource {
 
   @override
   Future<RestaurantTable?> getRestaurantById(String id) async {
-    final result = await databaseHelper.getResurantById(id);
+    final result = await databaseHelper.getRestaurantById(id);
     if (result != null) {
       return RestaurantTable.fromMap(result);
     } else {

@@ -9,6 +9,6 @@ class RestaurantDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Scaffold(body: RestaurantDetailBody(id: id));
+  return Scaffold(body: RestaurantDetailBody(id: id));
   }
 }

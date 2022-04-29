@@ -3,7 +3,7 @@ import 'package:restaurant_app/features/domain/entities/restaurant.dart';
 
 class RestaurantTable extends Equatable {
   RestaurantTable(
-      {this.id,
+      {required this.id,
       required this.name,
       required this.city,
       required this.pictureId,
@@ -11,7 +11,7 @@ class RestaurantTable extends Equatable {
       required this.description});
 
   factory RestaurantTable.fromEntity(Restaurant restaurant) => RestaurantTable(
-        id: int.parse(restaurant.id),
+        id: restaurant.id,
         name: restaurant.name,
         city: restaurant.city,
         pictureId: restaurant.pictureId,
@@ -30,7 +30,7 @@ class RestaurantTable extends Equatable {
 
   late final String city;
   late final String description;
-  late final int? id;
+  late final String id;
   late final String name;
   late final String pictureId;
   late final String rating;

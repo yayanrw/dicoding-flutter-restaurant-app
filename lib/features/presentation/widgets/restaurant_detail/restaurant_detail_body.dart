@@ -7,8 +7,9 @@ import 'package:restaurant_app/features/presentation/widgets/restaurant_detail/m
 import 'package:restaurant_app/features/presentation/widgets/restaurant_detail/restaurant_descriptions.dart';
 
 class RestaurantDetailBody extends StatefulWidget {
-  final String id;
   const RestaurantDetailBody({Key? key, required this.id}) : super(key: key);
+
+  final String id;
 
   @override
   State<RestaurantDetailBody> createState() => _RestaurantDetailBodyState();

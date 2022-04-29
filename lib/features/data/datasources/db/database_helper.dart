@@ -62,7 +62,7 @@ class DatabaseHelper {
     );
   }
 
-  Future<Map<String, dynamic>?> getResurantById(String id) async {
+  Future<Map<String, dynamic>?> getRestaurantById(String id) async {
     final db = await database;
     final results = await db.query(
       _tableName,

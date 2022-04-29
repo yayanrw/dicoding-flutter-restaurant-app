@@ -16,16 +16,20 @@ import '../../features/data/datasources/restaurant_remote_datasource.dart'
 import '../../features/data/repositories/restaurant_repository_impl.dart'
     as _i8;
 import '../../features/domain/repositories/restaurant_repository.dart' as _i7;
-import '../../features/domain/usecases/get_restaurant_detail.dart' as _i9;
-import '../../features/domain/usecases/get_restaurant_search.dart' as _i10;
-import '../../features/domain/usecases/get_restaurants.dart' as _i11;
+import '../../features/domain/usecases/get_favorite_restaurants.dart' as _i10;
+import '../../features/domain/usecases/get_favorite_status.dart' as _i11;
+import '../../features/domain/usecases/get_restaurant_detail.dart' as _i12;
+import '../../features/domain/usecases/get_restaurant_search.dart' as _i13;
+import '../../features/domain/usecases/get_restaurants.dart' as _i14;
+import '../../features/domain/usecases/remove_favorite.dart' as _i15;
+import '../../features/domain/usecases/save_favorite.dart' as _i9;
 import '../../features/presentation/provider/restaurant_detail_notifier.dart'
-    as _i12;
+    as _i16;
 import '../../features/presentation/provider/restaurant_list_notifier.dart'
-    as _i13;
+    as _i17;
 import '../../features/presentation/provider/restaurant_search_notifier.dart'
-    as _i14;
-import 'register_module.dart' as _i15; // ignore_for_file: unnecessary_lambdas
+    as _i18;
+import 'register_module.dart' as _i19; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -43,19 +47,30 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i7.RestaurantRepository>(() => _i8.RestaurantRepositoryImpl(
       remoteDataSource: get<_i6.RestaurantRemoteDataSource>(),
       localDataSource: get<_i5.RestaurantLocalDataSource>()));
-  gh.lazySingleton<_i9.GetRestaurantDetail>(
-      () => _i9.GetRestaurantDetail(get<_i7.RestaurantRepository>()));
-  gh.lazySingleton<_i10.GetRestaurantSearch>(
-      () => _i10.GetRestaurantSearch(get<_i7.RestaurantRepository>()));
-  gh.lazySingleton<_i11.GetRestaurants>(
-      () => _i11.GetRestaurants(get<_i7.RestaurantRepository>()));
-  gh.factory<_i12.RestaurantDetailNotifier>(
-      () => _i12.RestaurantDetailNotifier(get<_i9.GetRestaurantDetail>()));
-  gh.factory<_i13.RestaurantListNotifier>(
-      () => _i13.RestaurantListNotifier(get<_i11.GetRestaurants>()));
-  gh.factory<_i14.RestaurantSearchNotifier>(
-      () => _i14.RestaurantSearchNotifier(get<_i10.GetRestaurantSearch>()));
+  gh.lazySingleton<_i9.SaveFavorite>(
+      () => _i9.SaveFavorite(get<_i7.RestaurantRepository>()));
+  gh.lazySingleton<_i10.GetFavoriteRestaurants>(
+      () => _i10.GetFavoriteRestaurants(get<_i7.RestaurantRepository>()));
+  gh.lazySingleton<_i11.GetFavoriteStatus>(
+      () => _i11.GetFavoriteStatus(get<_i7.RestaurantRepository>()));
+  gh.lazySingleton<_i12.GetRestaurantDetail>(
+      () => _i12.GetRestaurantDetail(get<_i7.RestaurantRepository>()));
+  gh.lazySingleton<_i13.GetRestaurantSearch>(
+      () => _i13.GetRestaurantSearch(get<_i7.RestaurantRepository>()));
+  gh.lazySingleton<_i14.GetRestaurants>(
+      () => _i14.GetRestaurants(get<_i7.RestaurantRepository>()));
+  gh.lazySingleton<_i15.RemoveFavorite>(
+      () => _i15.RemoveFavorite(get<_i7.RestaurantRepository>()));
+  gh.factory<_i16.RestaurantDetailNotifier>(() => _i16.RestaurantDetailNotifier(
+      get<_i12.GetRestaurantDetail>(),
+      get<_i11.GetFavoriteStatus>(),
+      get<_i9.SaveFavorite>(),
+      get<_i15.RemoveFavorite>()));
+  gh.factory<_i17.RestaurantListNotifier>(
+      () => _i17.RestaurantListNotifier(get<_i14.GetRestaurants>()));
+  gh.factory<_i18.RestaurantSearchNotifier>(
+      () => _i18.RestaurantSearchNotifier(get<_i13.GetRestaurantSearch>()));
   return get;
 }
 
-class _$RegisterModule extends _i15.RegisterModule {}
+class _$RegisterModule extends _i19.RegisterModule {}

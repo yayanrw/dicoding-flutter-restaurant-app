@@ -67,17 +67,19 @@ class RestaurantDetailNotifier extends ChangeNotifier {
         notifyListeners();
       },
     );
+
+    await fetchFavoriteStatus(restaurant.id);
   }
 
   Future<void> removeFromFavorite(String id) async {
     final result = await removeFavorite.call(id);
 
-    await result.fold(
-      (failure) async {
+    result.fold(
+      (failure) {
         _restaurantFavoriteMessage = failure.message;
       },
-      (successMessage) async {
-        _restaurantFavoriteMessage = successMessage;
+      (success) {
+        _restaurantFavoriteMessage = success;
       },
     );
 
