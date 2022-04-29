@@ -9,7 +9,7 @@ import 'package:restaurant_app/core/utils/error/failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:restaurant_app/features/domain/repositories/restaurant_repository.dart';
 
-@lazySingleton
+@LazySingleton(as: RestaurantRepository)
 class RestaurantRepositoryImpl implements RestaurantRepository {
   final RestaurantRemoteDataSource remoteDataSource;
 

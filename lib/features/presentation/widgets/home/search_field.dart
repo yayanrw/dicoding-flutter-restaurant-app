@@ -1,6 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:restaurant_app/core/router/router.gr.dart';
 import 'package:restaurant_app/core/theme/my_colors.dart';
+import 'package:restaurant_app/core/utils/my_strings.dart';
 import 'package:restaurant_app/core/utils/size_config.dart';
 
 class SearchField extends StatelessWidget {
@@ -12,7 +15,7 @@ class SearchField extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, '/search');
+        context.router.push(const SearchRoute());
       },
       child: Container(
         width: SizeConfig.screenWidth! * 0.6,
@@ -26,7 +29,7 @@ class SearchField extends StatelessWidget {
               Icon(LineIcons.search),
               SizedBox(width: 8),
               Text(
-                "Search restaurant...",
+                MyStrings.searchRestaurants,
                 style: TextStyle(color: MyColors.secondaryLight2),
               )
             ],

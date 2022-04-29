@@ -33,7 +33,7 @@ class RestaurantListNotifier extends ChangeNotifier {
         notifyListeners();
       },
       (success) {
-        _requestState = RequestState.loading;
+        _requestState = RequestState.loaded;
         _restaurants = success;
         notifyListeners();
       },

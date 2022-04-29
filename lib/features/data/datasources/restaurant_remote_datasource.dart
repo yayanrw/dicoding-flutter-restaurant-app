@@ -21,7 +21,7 @@ class RestaurantRemoteDataSourceImpl implements RestaurantRemoteDataSource {
 
   @override
   Future<RestaurantListResponse> getRestaurants() async {
-    final response = await client.get(Uri.parse('${AppsConfig.baseUrl}/list'));
+    final response = await client. get(Uri.parse('${AppsConfig.baseUrl}/list'));
 
     if (response.statusCode == 200) {
       return RestaurantListResponse.fromJson(json.decode(response.body));

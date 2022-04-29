@@ -1,8 +1,8 @@
 class MyStrings {
   static const sContinue = 'Continue';
   static const underConstruction = 'UnderConstruction';
-  static const signIn = 'SignIn';
-  static const logIn = 'LogIn';
+  static const signIn = 'Sign In';
+  static const logIn = 'Log In';
   static const email = 'Email';
   static const enterYourEmail = 'Enter your email';
   static const enterYourPassword = 'Enter your password';
