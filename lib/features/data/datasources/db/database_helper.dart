@@ -30,7 +30,7 @@ class DatabaseHelper {
           '''CREATE TABLE $_tableName (
                id INTEGER PRIMARY KEY,
                name TEXT, city TEXT,
-               pictureId TEXT, rating TEXT
+               pictureId TEXT, rating TEXT, description TEXT
              )''',
         );
       },
@@ -40,13 +40,12 @@ class DatabaseHelper {
     return db;
   }
 
-  Future<void> insertRestaurant(RestaurantTable restaurant) async {
+  Future<void> saveRestaurant(RestaurantTable restaurant) async {
     final Database db = await database;
     await db.insert(_tableName, restaurant.toMap());
-    print('Data saved');
   }
 
-  Future<List<Map<String, dynamic>>> getRestaurants() async {
+  Future<List<Map<String, dynamic>>> getFavoriteRestaurants() async {
     final Database db = await database;
     final List<Map<String, dynamic>> results = await db.query(_tableName);
 
@@ -61,5 +60,20 @@ class DatabaseHelper {
       where: 'id = ?',
       whereArgs: [id],
     );
+  }
+
+  Future<Map<String, dynamic>?> getResurantById(int id) async {
+    final db = await database;
+    final results = await db.query(
+      _tableName,
+      where: 'id = ?',
+      whereArgs: [id],
+    );
+
+    if (results.isNotEmpty) {
+      return results.first;
+    } else {
+      return null;
+    }
   }
 }

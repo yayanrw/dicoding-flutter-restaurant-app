@@ -4,11 +4,13 @@ import 'package:restaurant_app/features/data/datasources/db/database_helper.dart
 import 'package:restaurant_app/features/data/models/restaurant_table.dart';
 
 abstract class RestaurantLocalDataSource {
-  Future<String> insertRestaurant(RestaurantTable restaurant);
+  Future<String> saveRestaurant(RestaurantTable restaurant);
 
   Future<String> removeRestaurant(int id);
 
-  Future<List<RestaurantTable>> getRestaurants();
+  Future<List<RestaurantTable>> getFavoriteRestaurants();
+
+  Future<RestaurantTable?> getRestaurantById(int id);
 }
 
 class RestaurantLocalDataSourceImpl implements RestaurantLocalDataSource {
@@ -17,9 +19,9 @@ class RestaurantLocalDataSourceImpl implements RestaurantLocalDataSource {
   final DatabaseHelper databaseHelper;
 
   @override
-  Future<List<RestaurantTable>> getRestaurants() async {
+  Future<List<RestaurantTable>> getFavoriteRestaurants() async {
     try {
-      final result = await databaseHelper.getRestaurants();
+      final result = await databaseHelper.getFavoriteRestaurants();
       return result.map((data) => RestaurantTable.fromMap(data)).toList();
     } catch (e) {
       throw DatabaseException(e.toString());
@@ -27,12 +29,12 @@ class RestaurantLocalDataSourceImpl implements RestaurantLocalDataSource {
   }
 
   @override
-  Future<String> insertRestaurant(RestaurantTable restaurant) async {
-    try {
-      await databaseHelper.insertRestaurant(restaurant);
-      return MyStrings.addedToFavorite;
-    } catch (e) {
-      throw DatabaseException(e.toString());
+  Future<RestaurantTable?> getRestaurantById(int id) async {
+    final result = await databaseHelper.getResurantById(id);
+    if (result != null) {
+      return RestaurantTable.fromMap(result);
+    } else {
+      return null;
     }
   }
 
@@ -41,6 +43,16 @@ class RestaurantLocalDataSourceImpl implements RestaurantLocalDataSource {
     try {
       await databaseHelper.removeRestaurant(id);
       return MyStrings.removedFromFavorite;
+    } catch (e) {
+      throw DatabaseException(e.toString());
+    }
+  }
+
+  @override
+  Future<String> saveRestaurant(RestaurantTable restaurant) async {
+    try {
+      await databaseHelper.saveRestaurant(restaurant);
+      return MyStrings.addedToFavorite;
     } catch (e) {
       throw DatabaseException(e.toString());
     }
