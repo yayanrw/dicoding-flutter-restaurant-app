@@ -25,6 +25,7 @@ class RestaurantList extends StatelessWidget {
             itemBuilder: (context, index) {
               var restaurant = data.restaurants[index];
               return RestaurantCard(
+                  pictureId: restaurant.pictureId,
                   name: restaurant.name,
                   city: restaurant.city,
                   image: AppsConfig.imageDir + restaurant.pictureId,

@@ -22,9 +22,12 @@ class Header extends StatelessWidget {
         child: Stack(
           fit: StackFit.expand,
           children: [
-            Image.network(
-              AppsConfig.imageDir + restaurantDetail.pictureId,
-              fit: BoxFit.cover,
+            Hero(
+              tag: 'restaurant_image_${restaurantDetail.pictureId}',
+              child: Image.network(
+                AppsConfig.imageDir + restaurantDetail.pictureId,
+                fit: BoxFit.cover,
+              ),
             ),
             Container(
               decoration: BoxDecoration(

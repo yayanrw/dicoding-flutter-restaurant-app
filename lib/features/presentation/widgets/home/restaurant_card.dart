@@ -7,13 +7,15 @@ import 'package:restaurant_app/core/utils/size_config.dart';
 class RestaurantCard extends StatelessWidget {
   const RestaurantCard({
     Key? key,
+    required this.pictureId,
     required this.name,
     required this.city,
     required this.image,
     required this.rating,
     required this.press,
   }) : super(key: key);
-  final String name, city, image;
+
+  final String name, city, image, pictureId;
   final double rating;
   final VoidCallback press;
 
@@ -47,9 +49,12 @@ class RestaurantCard extends StatelessWidget {
                   child: Stack(
                     fit: StackFit.expand,
                     children: [
-                      Image.network(
-                        image,
-                        fit: BoxFit.cover,
+                      Hero(
+                        tag: 'restaurant_image_$pictureId',
+                        child: Image.network(
+                          image,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                       Container(
                         decoration: BoxDecoration(
