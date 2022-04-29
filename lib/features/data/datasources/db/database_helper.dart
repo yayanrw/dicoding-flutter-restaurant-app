@@ -46,14 +46,14 @@ class DatabaseHelper {
     print('Data saved');
   }
 
-  Future<List<RestaurantTable>> getRestaurant() async {
+  Future<List<Map<String, dynamic>>> getRestaurants() async {
     final Database db = await database;
-    List<Map<String, dynamic>> results = await db.query(_tableName);
+    final List<Map<String, dynamic>> results = await db.query(_tableName);
 
-    return results.map((res) => RestaurantTable.fromMap(res)).toList();
+    return results;
   }
 
-  Future<void> deleteRestaurant(int id) async {
+  Future<void> removeRestaurant(int id) async {
     final db = await database;
 
     await db.delete(

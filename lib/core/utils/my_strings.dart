@@ -28,4 +28,6 @@ class MyStrings {
   static const ourFoods = 'Our foods';
   static const ourDrinks = 'Our drinks';
   static const favoriteRestaurants = 'Favorite Restaurants';
+  static const addedToFavorite = 'Added to Favorite';
+  static const removedFromFavorite = 'Removed from Favorite';
 }
