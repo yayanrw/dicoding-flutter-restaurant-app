@@ -28,7 +28,7 @@ class DatabaseHelper {
       onCreate: (db, version) async {
         await db.execute(
           '''CREATE TABLE $_tableName (
-               id INTEGER PRIMARY KEY,
+               id TEXT PRIMARY KEY,
                name TEXT, city TEXT,
                pictureId TEXT, rating TEXT, description TEXT
              )''',
@@ -52,7 +52,7 @@ class DatabaseHelper {
     return results;
   }
 
-  Future<void> removeRestaurant(int id) async {
+  Future<void> removeRestaurant(String id) async {
     final db = await database;
 
     await db.delete(
@@ -62,7 +62,7 @@ class DatabaseHelper {
     );
   }
 
-  Future<Map<String, dynamic>?> getResurantById(int id) async {
+  Future<Map<String, dynamic>?> getResurantById(String id) async {
     final db = await database;
     final results = await db.query(
       _tableName,

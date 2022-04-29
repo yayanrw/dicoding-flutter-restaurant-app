@@ -70,7 +70,7 @@ class RestaurantRepositoryImpl implements RestaurantRepository {
   }
 
   @override
-  Future<bool> isAddedToFavorite(int id) async {
+  Future<bool> isAddedToFavorite(String id) async {
     final result = await localDataSource.getRestaurantById(id);
     return result != null;
   }
@@ -78,7 +78,7 @@ class RestaurantRepositoryImpl implements RestaurantRepository {
   @override
   Future<Either<Failure, String>> removeFavorite(String id) async {
     try {
-      final result = await localDataSource.removeRestaurant(int.parse(id));
+      final result = await localDataSource.removeRestaurant(id);
       return Right(result);
     } on DatabaseException catch (e) {
       return Left(DatabaseFailure(e.message));

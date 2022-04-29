@@ -44,7 +44,7 @@ class _RestaurantDetailBodyState extends State<RestaurantDetailBody> {
       } else {
         return Center(
           key: Key('error_message'),
-          child: Text(data.message),
+          child: Text(data.restaurantDetailMessage),
         );
       }
     });

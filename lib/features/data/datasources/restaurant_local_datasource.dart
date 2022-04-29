@@ -7,11 +7,11 @@ import 'package:restaurant_app/features/data/models/restaurant_table.dart';
 abstract class RestaurantLocalDataSource {
   Future<String> saveRestaurant(RestaurantTable restaurant);
 
-  Future<String> removeRestaurant(int id);
+  Future<String> removeRestaurant(String id);
 
   Future<List<RestaurantTable>> getFavoriteRestaurants();
 
-  Future<RestaurantTable?> getRestaurantById(int id);
+  Future<RestaurantTable?> getRestaurantById(String id);
 }
 
 @LazySingleton(as: RestaurantLocalDataSource)
@@ -31,7 +31,7 @@ class RestaurantLocalDataSourceImpl implements RestaurantLocalDataSource {
   }
 
   @override
-  Future<RestaurantTable?> getRestaurantById(int id) async {
+  Future<RestaurantTable?> getRestaurantById(String id) async {
     final result = await databaseHelper.getResurantById(id);
     if (result != null) {
       return RestaurantTable.fromMap(result);
@@ -41,7 +41,7 @@ class RestaurantLocalDataSourceImpl implements RestaurantLocalDataSource {
   }
 
   @override
-  Future<String> removeRestaurant(int id) async {
+  Future<String> removeRestaurant(String id) async {
     try {
       await databaseHelper.removeRestaurant(id);
       return MyStrings.removedFromFavorite;
