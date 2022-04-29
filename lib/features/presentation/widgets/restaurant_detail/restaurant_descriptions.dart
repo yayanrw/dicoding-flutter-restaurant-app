@@ -59,24 +59,26 @@ class _RestaurantDescriptionsState extends State<RestaurantDescriptions> {
                 ),
               ),
               GestureDetector(
-                onTap: () {
+                onTap: () async {
                   if (data.isFavorite) {
-                    Provider.of<RestaurantDetailNotifier>(context,
+                    await Provider.of<RestaurantDetailNotifier>(context,
                             listen: false)
                         .removeFromFavorite(widget.restaurantDetail.id);
                   } else {
-                    Provider.of<RestaurantDetailNotifier>(context,
+                    await Provider.of<RestaurantDetailNotifier>(context,
                             listen: false)
                         .addToFavorite(Restaurant.fromRestaurantDetail(
                             widget.restaurantDetail));
                   }
 
-                  if (data.restaurantFavoriteMessage ==
-                          MyStrings.addedToFavorite ||
-                      data.restaurantFavoriteMessage ==
-                          MyStrings.removedFromFavorite) {
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                        content: Text(data.restaurantFavoriteMessage)));
+                  final message = Provider.of<RestaurantDetailNotifier>(context,
+                          listen: false)
+                      .restaurantFavoriteMessage;
+
+                  if (message == MyStrings.addedToFavorite ||
+                      message == MyStrings.removedFromFavorite) {
+                    ScaffoldMessenger.of(context)
+                        .showSnackBar(SnackBar(content: Text(message)));
                   }
                 },
                 child: Container(

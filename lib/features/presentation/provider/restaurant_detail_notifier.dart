@@ -57,12 +57,12 @@ class RestaurantDetailNotifier extends ChangeNotifier {
   Future<void> addToFavorite(Restaurant restaurant) async {
     final result = await saveFavorite(restaurant);
 
-    result.fold(
-      (failure) {
+    await result.fold(
+      (failure) async {
         _restaurantFavoriteMessage = failure.message;
         notifyListeners();
       },
-      (success) {
+      (success) async {
         _restaurantFavoriteMessage = success;
         notifyListeners();
       },
@@ -74,12 +74,14 @@ class RestaurantDetailNotifier extends ChangeNotifier {
   Future<void> removeFromFavorite(String id) async {
     final result = await removeFavorite.call(id);
 
-    result.fold(
-      (failure) {
+    await result.fold(
+      (failure) async {
         _restaurantFavoriteMessage = failure.message;
+        notifyListeners();
       },
-      (success) {
+      (success) async {
         _restaurantFavoriteMessage = success;
+        notifyListeners();
       },
     );
 
