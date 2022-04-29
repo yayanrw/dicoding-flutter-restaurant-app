@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/core/utils/my_strings.dart';
+import 'package:restaurant_app/features/presentation/widgets/favorite/restaurant_list.dart';
 
 class FavoriteBody extends StatelessWidget {
   const FavoriteBody({Key? key}) : super(key: key);
@@ -12,10 +13,7 @@ class FavoriteBody extends StatelessWidget {
       ),
       body: SingleChildScrollView(
           child: Column(
-        children: [
-          SizedBox(height: 24),
-          
-        ],
+        children: [SizedBox(height: 24), RestaurantList()],
       )),
     );
   }

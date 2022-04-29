@@ -5,15 +5,29 @@ import 'package:restaurant_app/core/config/apps_config.dart';
 import 'package:restaurant_app/core/router/router.gr.dart';
 import 'package:restaurant_app/core/utils/my_strings.dart';
 import 'package:restaurant_app/core/utils/request_state.dart';
-import 'package:restaurant_app/features/presentation/provider/restaurant_search_notifier.dart';
+import 'package:restaurant_app/features/presentation/provider/favorite_restaurants_notifier.dart';
 import 'package:restaurant_app/features/presentation/widgets/home/restaurant_card.dart';
 
-class RestaurantList extends StatelessWidget {
+class RestaurantList extends StatefulWidget {
   const RestaurantList({Key? key}) : super(key: key);
 
   @override
+  State<RestaurantList> createState() => _RestaurantListState();
+}
+
+class _RestaurantListState extends State<RestaurantList> {
+  @override
+  void initState() {
+    super.initState();
+    Future.microtask(() =>
+        Provider.of<FavoriteRestaurantNotifier>(context, listen: false)
+            .fetchFavoriteRestaurants());
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Consumer<RestaurantSearchNotifier>(builder: (context, data, child) {
+    return Consumer<FavoriteRestaurantNotifier>(
+        builder: (context, data, child) {
       if (data.requestState == RequestState.loading) {
         return Center(child: CircularProgressIndicator());
       } else if (data.requestState == RequestState.loaded) {

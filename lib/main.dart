@@ -5,6 +5,7 @@ import 'package:restaurant_app/core/config/env.dart';
 import 'package:restaurant_app/core/injection/injection.dart' as di;
 import 'package:restaurant_app/core/router/router.gr.dart';
 import 'package:restaurant_app/core/theme/theme.dart';
+import 'package:restaurant_app/features/presentation/provider/favorite_restaurants_notifier.dart';
 import 'package:restaurant_app/features/presentation/provider/restaurant_detail_notifier.dart';
 import 'package:restaurant_app/features/presentation/provider/restaurant_list_notifier.dart';
 import 'package:restaurant_app/features/presentation/provider/restaurant_search_notifier.dart';
@@ -27,6 +28,8 @@ class MyApp extends StatelessWidget {
             create: (_) => di.getIt<RestaurantDetailNotifier>()),
         ChangeNotifierProvider(
             create: (_) => di.getIt<RestaurantSearchNotifier>()),
+        ChangeNotifierProvider(
+            create: (_) => di.getIt<FavoriteRestaurantNotifier>()),
       ],
       child: MaterialApp.router(
         title: AppsConfig.appTitle,

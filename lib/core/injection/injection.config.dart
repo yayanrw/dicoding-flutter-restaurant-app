@@ -23,13 +23,15 @@ import '../../features/domain/usecases/get_restaurant_search.dart' as _i13;
 import '../../features/domain/usecases/get_restaurants.dart' as _i14;
 import '../../features/domain/usecases/remove_favorite.dart' as _i15;
 import '../../features/domain/usecases/save_favorite.dart' as _i9;
+import '../../features/presentation/provider/favorite_restaurants_notifier.dart'
+    as _i19;
 import '../../features/presentation/provider/restaurant_detail_notifier.dart'
     as _i16;
 import '../../features/presentation/provider/restaurant_list_notifier.dart'
     as _i17;
 import '../../features/presentation/provider/restaurant_search_notifier.dart'
     as _i18;
-import 'register_module.dart' as _i19; // ignore_for_file: unnecessary_lambdas
+import 'register_module.dart' as _i20; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -70,7 +72,9 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i17.RestaurantListNotifier(get<_i14.GetRestaurants>()));
   gh.factory<_i18.RestaurantSearchNotifier>(
       () => _i18.RestaurantSearchNotifier(get<_i13.GetRestaurantSearch>()));
+  gh.factory<_i19.FavoriteRestaurantNotifier>(() =>
+      _i19.FavoriteRestaurantNotifier(get<_i10.GetFavoriteRestaurants>()));
   return get;
 }
 
-class _$RegisterModule extends _i19.RegisterModule {}
+class _$RegisterModule extends _i20.RegisterModule {}
