@@ -46,4 +46,10 @@ class RestaurantSearchNotifier extends ChangeNotifier {
       },
     );
   }
+
+  Future<void> setNull() async {
+    _restaurants = [];
+    _message = '';
+    notifyListeners();
+  }
 }
