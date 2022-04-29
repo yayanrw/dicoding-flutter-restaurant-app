@@ -11,6 +11,9 @@ ThemeData myThemes() {
   return ThemeData(
       scaffoldBackgroundColor: MyColors.bgScaffoldBackground,
       primaryColor: MyColors.primary,
+      colorScheme: ColorScheme.fromSwatch().copyWith(
+        secondary: MyColors.primary, // Your accent color
+      ),
       fontFamily: AppsConfig.fontFamily,
       appBarTheme: myAppBarTheme(),
       inputDecorationTheme: myInputDecorationTheme(),
