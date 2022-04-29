@@ -12,13 +12,13 @@ class RestaurantDetailNotifier extends ChangeNotifier {
 
   String _message = '';
   RequestState _requestState = RequestState.empty;
-  late RestaurantDetail _restaurantDetail;
+  RestaurantDetail? _restaurantDetail;
 
   String get message => _message;
 
   RequestState get requestState => _requestState;
 
-  RestaurantDetail get restaurant => _restaurantDetail;
+  RestaurantDetail? get restaurant => _restaurantDetail;
 
   Future<void> fetchRestaurant(String id) async {
     _requestState = RequestState.loading;

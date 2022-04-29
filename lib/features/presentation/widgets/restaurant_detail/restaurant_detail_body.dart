@@ -20,7 +20,7 @@ class _RestaurantDetailBodyState extends State<RestaurantDetailBody> {
     super.initState();
     Future.microtask(() =>
         Provider.of<RestaurantDetailNotifier>(context, listen: false)
-            .getRestaurantDetail(widget.id));
+            .fetchRestaurant(widget.id));
   }
 
   @override
@@ -33,11 +33,11 @@ class _RestaurantDetailBodyState extends State<RestaurantDetailBody> {
             child: SingleChildScrollView(
                 child: Column(
           children: [
-            Header(restaurantDetail: data.restaurant),
+            Header(restaurantDetail: data.restaurant!),
             SizedBox(height: 8),
-            RestaurantDescriptions(restaurantDetail: data.restaurant),
+            RestaurantDescriptions(restaurantDetail: data.restaurant!),
             SizedBox(height: 24),
-            Menus(restaurantDetail: data.restaurant),
+            Menus(restaurantDetail: data.restaurant!),
             SizedBox(height: 24),
           ],
         )));
