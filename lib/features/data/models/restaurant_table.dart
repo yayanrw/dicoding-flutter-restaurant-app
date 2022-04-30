@@ -1,4 +1,5 @@
-// ignore_for_file: always_specify_types, prefer_const_constructors_in_immutables
+// ignore_for_file: always_specify_types,
+// ignore_for_file: prefer_const_constructors_in_immutables
 
 import 'package:equatable/equatable.dart';
 import 'package:restaurant_app/features/domain/entities/restaurant.dart';

@@ -29,22 +29,23 @@ class _SignFormState extends State<SignForm> {
 
   Row rememberMe() {
     return Row(
-      children: [
+      children: <Widget>[
         Checkbox(
           value: _remember,
           activeColor: MyColors.primary,
-          onChanged: (value) {
+          onChanged: (bool? value) {
             setState(() {
               _remember = value!;
             });
           },
         ),
-        Flexible(child: Text(MyStrings.rememberMe)),
-        Spacer(),
+        const Flexible(child: Text(MyStrings.rememberMe)),
+        const Spacer(),
         Flexible(
           child: GestureDetector(
+            // ignore: always_specify_types
             onTap: () => {context.router.push(const UnderConstructionRoute())},
-            child: Text(
+            child: const Text(
               MyStrings.forgotPassword,
               style: TextStyle(decoration: TextDecoration.underline),
             ),
@@ -57,13 +58,14 @@ class _SignFormState extends State<SignForm> {
   TextFormField buildEmailFormField() {
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
-      decoration: InputDecoration(
-          labelText: MyStrings.email,
-          hintText: MyStrings.enterYourEmail,
-          suffixIcon: Padding(
-            padding: EdgeInsets.only(right: 25),
-            child: Icon(LineIcons.envelope),
-          )),
+      decoration: const InputDecoration(
+        labelText: MyStrings.email,
+        hintText: MyStrings.enterYourEmail,
+        suffixIcon: Padding(
+          padding: EdgeInsets.only(right: 25),
+          child: Icon(LineIcons.envelope),
+        ),
+      ),
       cursorColor: MyColors.primaryDark,
     );
   }
@@ -71,7 +73,7 @@ class _SignFormState extends State<SignForm> {
   TextFormField buildPasswordFormField() {
     return TextFormField(
       obscureText: true,
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         labelText: MyStrings.password,
         hintText: MyStrings.enterYourPassword,
         suffixIcon: Padding(
@@ -87,17 +89,17 @@ class _SignFormState extends State<SignForm> {
   Widget build(BuildContext context) {
     return Form(
       child: Column(
-        children: [
+        children: <Widget>[
           buildEmailFormField(),
-          SizedBox(
+          const SizedBox(
             height: 24,
           ),
           buildPasswordFormField(),
-          SizedBox(
+          const SizedBox(
             height: 24,
           ),
           rememberMe(),
-          SizedBox(
+          const SizedBox(
             height: 24,
           ),
           btnLogin(context)

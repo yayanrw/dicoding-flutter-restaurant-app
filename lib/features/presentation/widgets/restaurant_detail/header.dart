@@ -18,13 +18,13 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: SizeConfig.screenWidth! * 1,
       height: 250,
       child: ClipRRect(
         child: Stack(
           fit: StackFit.expand,
-          children: [
+          children: <Widget>[
             Hero(
               tag: 'restaurant_image_${restaurantDetail.pictureId}',
               child: Image.network(
@@ -34,69 +34,73 @@ class Header extends StatelessWidget {
             ),
             Container(
               decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: <Color>[
                     MyColors.secondary2.withOpacity(0.4),
                     MyColors.secondary2.withOpacity(0.15),
-                  ])),
+                  ],
+                ),
+              ),
             ),
             Positioned(
-                top: 16,
-                left: 16,
-                child: InkWell(
-                  onTap: () {
-                    context.router.pop().then((value) {
-                      Provider.of<FavoriteRestaurantNotifier>(context,
-                              listen: false)
-                          .fetchFavoriteRestaurants();
-                    });
-                  },
-                  child: Container(
-                    alignment: Alignment.center,
-                    height: 40,
-                    width: 40,
-                    padding: EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(50)),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 4),
-                      child: Icon(Icons.arrow_back_ios),
-                    ),
-                  ),
-                )),
-            Positioned(
-                top: 20,
-                right: 16,
+              top: 16,
+              left: 16,
+              child: InkWell(
+                onTap: () {
+                  context.router.pop().then((bool value) {
+                    Provider.of<FavoriteRestaurantNotifier>(
+                      context,
+                      listen: false,
+                    ).fetchFavoriteRestaurants();
+                  });
+                },
                 child: Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                  alignment: Alignment.center,
+                  height: 40,
+                  width: 40,
+                  padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(14),
+                    borderRadius: BorderRadius.circular(50),
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      const SizedBox(width: 5),
-                      Text(
-                        restaurantDetail.rating.toString(),
-                        style: const TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      Icon(
-                        LineIcons.starAlt,
-                        size: 18,
-                        color: MyColors.primaryDark,
-                      ),
-                    ],
+                  child: const Padding(
+                    padding: EdgeInsets.only(left: 4),
+                    child: Icon(Icons.arrow_back_ios),
                   ),
-                ))
+                ),
+              ),
+            ),
+            Positioned(
+              top: 20,
+              right: 16,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    const SizedBox(width: 5),
+                    Text(
+                      restaurantDetail.rating.toString(),
+                      style: const TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Icon(
+                      LineIcons.starAlt,
+                      size: 18,
+                      color: MyColors.primaryDark,
+                    ),
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),

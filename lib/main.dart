@@ -1,3 +1,5 @@
+// ignore_for_file: always_specify_types
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:restaurant_app/core/config/apps_config.dart';
@@ -16,20 +18,24 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  final _appRouter = AppRouter();
+  final AppRouter _appRouter = AppRouter();
 
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-            create: (_) => di.getIt<RestaurantListNotifier>()),
+          create: (_) => di.getIt<RestaurantListNotifier>(),
+        ),
         ChangeNotifierProvider(
-            create: (_) => di.getIt<RestaurantDetailNotifier>()),
+          create: (_) => di.getIt<RestaurantDetailNotifier>(),
+        ),
         ChangeNotifierProvider(
-            create: (_) => di.getIt<RestaurantSearchNotifier>()),
+          create: (_) => di.getIt<RestaurantSearchNotifier>(),
+        ),
         ChangeNotifierProvider(
-            create: (_) => di.getIt<FavoriteRestaurantNotifier>()),
+          create: (_) => di.getIt<FavoriteRestaurantNotifier>(),
+        ),
       ],
       child: MaterialApp.router(
         title: AppsConfig.appTitle,

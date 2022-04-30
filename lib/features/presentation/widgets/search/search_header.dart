@@ -16,7 +16,7 @@ class SearchHeader extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
+        children: <Widget>[
           CircularButton(
             icon: Icons.arrow_back_ios,
             isCountable: false,
@@ -27,23 +27,30 @@ class SearchHeader extends StatelessWidget {
           Container(
             width: SizeConfig.screenWidth! * 0.75,
             decoration: BoxDecoration(
-                color: MyColors.secondaryLight2.withOpacity(0.1),
-                borderRadius: BorderRadius.circular(16)),
+              color: MyColors.secondaryLight2.withOpacity(0.1),
+              borderRadius: BorderRadius.circular(16),
+            ),
             child: Consumer<RestaurantSearchNotifier>(
-              builder: (context, data, child) => TextField(
+              builder: (
+                BuildContext context,
+                RestaurantSearchNotifier data,
+                Widget? child,
+              ) =>
+                  TextField(
                 autofocus: true,
                 textInputAction: TextInputAction.search,
                 decoration: InputDecoration(
-                    enabledBorder: InputBorder.none,
-                    focusedBorder: InputBorder.none,
-                    hintText: MyStrings.searchRestaurants,
-                    prefixIcon: Icon(
-                      LineIcons.search,
-                      color: MyColors.dark,
-                    ),
-                    contentPadding:
-                        EdgeInsets.symmetric(horizontal: 24, vertical: 12)),
-                onSubmitted: (value) {
+                  enabledBorder: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                  hintText: MyStrings.searchRestaurants,
+                  prefixIcon: Icon(
+                    LineIcons.search,
+                    color: MyColors.dark,
+                  ),
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                ),
+                onSubmitted: (String value) {
                   Provider.of<RestaurantSearchNotifier>(context, listen: false)
                       .searchRestaurant(value);
                 },

@@ -14,15 +14,16 @@ class SignInBody extends StatelessWidget {
   Row noAccountText(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Flexible(child: Text(MyStrings.dontHaveAccount)),
+      children: <Widget>[
+        const Flexible(child: Text(MyStrings.dontHaveAccount)),
         Padding(
           padding: const EdgeInsets.only(left: 8),
           child: TextButton(
-              onPressed: () {
-                context.router.push(const UnderConstructionRoute());
-              },
-              child: Text(MyStrings.signUp)),
+            onPressed: () {
+              context.router.push(const UnderConstructionRoute());
+            },
+            child: const Text(MyStrings.signUp),
+          ),
         )
       ],
     );
@@ -31,21 +32,21 @@ class SignInBody extends StatelessWidget {
   Row socialMedia(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [
+      children: <Widget>[
         SocialCard(
-          icon: "assets/icons/google.svg",
+          icon: 'assets/icons/google.svg',
           press: () {
             context.router.push(const UnderConstructionRoute());
           },
         ),
         SocialCard(
-          icon: "assets/icons/facebook.svg",
+          icon: 'assets/icons/facebook.svg',
           press: () {
             context.router.push(const UnderConstructionRoute());
           },
         ),
         SocialCard(
-          icon: "assets/icons/twitter.svg",
+          icon: 'assets/icons/twitter.svg',
           press: () {
             context.router.push(const UnderConstructionRoute());
           },
@@ -62,26 +63,30 @@ class SignInBody extends StatelessWidget {
           width: double.infinity,
           child: Padding(
             padding: const EdgeInsets.symmetric(
-                horizontal: AppsConfig.defaultPadding * 2,
-                vertical: AppsConfig.defaultPadding),
+              horizontal: AppsConfig.defaultPadding * 2,
+              vertical: AppsConfig.defaultPadding,
+            ),
             child: Column(
-              children: [
-                SizedBox(height: 24),
-                Text(MyStrings.welcomeBack,
-                    textAlign: TextAlign.center,
-                    style: myTextTheme(
-                            color: MyColors.primary, weight: FontWeight.w700)
-                        .headline4),
+              children: <Widget>[
+                const SizedBox(height: 24),
+                Text(
+                  MyStrings.welcomeBack,
+                  textAlign: TextAlign.center,
+                  style: myTextTheme(
+                    color: MyColors.primary,
+                    weight: FontWeight.w700,
+                  ).headline4,
+                ),
                 Text(
                   MyStrings.signInWith,
                   style: myTextTheme(color: MyColors.textBlack).subtitle1,
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 40),
-                SignForm(),
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
+                const SignForm(),
+                const SizedBox(height: 40),
                 socialMedia(context),
-                SizedBox(height: 24),
+                const SizedBox(height: 24),
                 noAccountText(context)
               ],
             ),

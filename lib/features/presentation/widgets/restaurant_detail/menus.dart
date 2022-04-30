@@ -14,7 +14,7 @@ class Menus extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
+    return Column(children: <Widget>[
       SectionTitle(
         text: MyStrings.ourFoods,
         isMoreable: false,
@@ -22,24 +22,27 @@ class Menus extends StatelessWidget {
           context.router.push(const UnderConstructionRoute());
         },
       ),
-      SizedBox(height: 16),
-      Container(
+      const SizedBox(height: 16),
+      SizedBox(
         height: 130,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           shrinkWrap: true,
           itemCount: restaurantDetail.menus.foods.length,
-          itemBuilder: (context, index) {
+          itemBuilder: (
+            BuildContext context,
+            int index,
+          ) {
             return SpecialOfferCard(
                 name: restaurantDetail.menus.foods[index].name,
-                city: "",
+                city: '',
                 image: AppsConfig.imageFoodDummyUrl,
                 rating: restaurantDetail.rating,
-                press: () {});
+                press: () {},);
           },
         ),
       ),
-      SizedBox(height: 24),
+      const SizedBox(height: 24),
       SectionTitle(
         text: MyStrings.ourDrinks,
         isMoreable: false,
@@ -47,23 +50,23 @@ class Menus extends StatelessWidget {
           context.router.push(const UnderConstructionRoute());
         },
       ),
-      SizedBox(height: 16),
-      Container(
+      const SizedBox(height: 16),
+      SizedBox(
         height: 130,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           shrinkWrap: true,
           itemCount: restaurantDetail.menus.drinks.length,
-          itemBuilder: (context, index) {
+          itemBuilder: (BuildContext context, int index) {
             return SpecialOfferCard(
                 name: restaurantDetail.menus.drinks[index].name,
-                city: "",
+                city: '',
                 image: AppsConfig.imageDrinkDummyUrl,
                 rating: restaurantDetail.rating,
-                press: () {});
+                press: () {},);
           },
         ),
       ),
-    ]);
+    ],);
   }
 }

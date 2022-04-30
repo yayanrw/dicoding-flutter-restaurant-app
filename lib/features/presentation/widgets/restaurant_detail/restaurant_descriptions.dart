@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously, always_specify_types
+
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:provider/provider.dart';
@@ -26,92 +28,114 @@ class _RestaurantDescriptionsState extends State<RestaurantDescriptions> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() =>
-        Provider.of<RestaurantDetailNotifier>(context, listen: false)
-            .fetchFavoriteStatus(widget.restaurantDetail.id));
+    Future.microtask(
+      () => Provider.of<RestaurantDetailNotifier>(context, listen: false)
+          .fetchFavoriteStatus(widget.restaurantDetail.id),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<RestaurantDetailNotifier>(builder: (context, data, child) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Flexible(
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 16),
-                  child: Text.rich(TextSpan(children: [
-                    TextSpan(
-                      text: widget.restaurantDetail.name + "\n",
-                      style: myTextTheme(
+    return Consumer<RestaurantDetailNotifier>(
+      builder: (
+        BuildContext context,
+        RestaurantDetailNotifier data,
+        Widget? child,
+      ) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Flexible(
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 16),
+                    child: Text.rich(
+                      TextSpan(
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: '${widget.restaurantDetail.name}\n',
+                            style: myTextTheme(
                               color: MyColors.secondary,
-                              weight: FontWeight.w900)
-                          .headline5,
-                    ),
-                    TextSpan(
-                        text: widget.restaurantDetail.city,
-                        style: myTextTheme(color: MyColors.secondaryLight2)
-                            .bodyText2)
-                  ])),
-                ),
-              ),
-              GestureDetector(
-                onTap: () async {
-                  if (data.isFavorite) {
-                    await Provider.of<RestaurantDetailNotifier>(context,
-                            listen: false)
-                        .removeFromFavorite(widget.restaurantDetail.id);
-                  } else {
-                    await Provider.of<RestaurantDetailNotifier>(context,
-                            listen: false)
-                        .addToFavorite(Restaurant.fromRestaurantDetail(
-                            widget.restaurantDetail));
-                  }
-
-                  final message = Provider.of<RestaurantDetailNotifier>(context,
-                          listen: false)
-                      .restaurantFavoriteMessage;
-
-                  if (message == MyStrings.addedToFavorite ||
-                      message == MyStrings.removedFromFavorite) {
-                    ScaffoldMessenger.of(context)
-                        .showSnackBar(SnackBar(content: Text(message)));
-                  }
-                },
-                child: Container(
-                  padding: EdgeInsets.all(16),
-                  width: 64,
-                  decoration: BoxDecoration(
-                    color:
-                        data.isFavorite ? Color(0xFFFFE6E6) : Color(0xFFF5F6F9),
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      bottomLeft: Radius.circular(20),
+                              weight: FontWeight.w900,
+                            ).headline5,
+                          ),
+                          TextSpan(
+                            text: widget.restaurantDetail.city,
+                            style: myTextTheme(color: MyColors.secondaryLight2)
+                                .bodyText2,
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                  child: Icon(
-                    LineIcons.heartAlt,
-                    color:
-                        data.isFavorite ? Color(0xFFFF4848) : Color(0xFFDBDEE4),
+                ),
+                GestureDetector(
+                  onTap: () async {
+                    if (data.isFavorite) {
+                      await Provider.of<RestaurantDetailNotifier>(
+                        context,
+                        listen: false,
+                      ).removeFromFavorite(widget.restaurantDetail.id);
+                    } else {
+                      await Provider.of<RestaurantDetailNotifier>(
+                        context,
+                        listen: false,
+                      ).addToFavorite(
+                        Restaurant.fromRestaurantDetail(
+                          widget.restaurantDetail,
+                        ),
+                      );
+                    }
+
+                    final String message =
+                        Provider.of<RestaurantDetailNotifier>(
+                      context,
+                      listen: false,
+                    ).restaurantFavoriteMessage;
+
+                    if (message == MyStrings.addedToFavorite ||
+                        message == MyStrings.removedFromFavorite) {
+                      ScaffoldMessenger.of(context)
+                          .showSnackBar(SnackBar(content: Text(message)));
+                    }
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.all(16),
+                    width: 64,
+                    decoration: BoxDecoration(
+                      color: data.isFavorite
+                          ? const Color(0xFFFFE6E6)
+                          : const Color(0xFFF5F6F9),
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        bottomLeft: Radius.circular(20),
+                      ),
+                    ),
+                    child: Icon(
+                      LineIcons.heartAlt,
+                      color: data.isFavorite
+                          ? const Color(0xFFFF4848)
+                          : const Color(0xFFDBDEE4),
+                    ),
                   ),
                 ),
-              ),
-            ],
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 16, left: 16, right: 16),
-            child: Text(widget.restaurantDetail.description,
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
+              child: Text(
+                widget.restaurantDetail.description,
                 style: myTextTheme(color: MyColors.secondaryLight2).bodyText2,
                 textAlign: TextAlign.justify,
                 maxLines: _maxLine,
-                overflow: TextOverflow.ellipsis),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 16),
-            child: TextButton(
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 16),
+              child: TextButton(
                 onPressed: () {
                   setState(() {
                     _isMore = !_isMore;
@@ -129,25 +153,31 @@ class _RestaurantDescriptionsState extends State<RestaurantDescriptions> {
                 child: Text(
                   _isMore ? MyStrings.seeLess : MyStrings.seeMoreDetail,
                   style: myTextTheme(
-                          color: MyColors.primary, weight: FontWeight.bold)
-                      .bodyText2,
-                )),
-          ),
-          Padding(
-              padding: EdgeInsets.only(left: 16, top: 16),
-              child: Container(
+                    color: MyColors.primary,
+                    weight: FontWeight.bold,
+                  ).bodyText2,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 16, top: 16),
+              child: SizedBox(
                 height: 32,
                 child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    shrinkWrap: true,
-                    itemCount: widget.restaurantDetail.categories.length,
-                    itemBuilder: (context, index) {
-                      return ChipText(
-                          name: widget.restaurantDetail.categories[index].name);
-                    }),
-              ))
-        ],
-      );
-    });
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  itemCount: widget.restaurantDetail.categories.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return ChipText(
+                      name: widget.restaurantDetail.categories[index].name,
+                    );
+                  },
+                ),
+              ),
+            )
+          ],
+        );
+      },
+    );
   }
 }

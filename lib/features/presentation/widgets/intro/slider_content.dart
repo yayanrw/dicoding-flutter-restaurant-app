@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../../core/theme/my_colors.dart';
-import '../../../../core/utils/size_config.dart';
+import 'package:restaurant_app/core/theme/my_colors.dart';
+import 'package:restaurant_app/core/utils/size_config.dart';
 
 class SliderContent extends StatelessWidget {
   const SliderContent({Key? key, this.text, this.image}) : super(key: key);
-  final String? text, image;
+  final String? text;
+  final String? image;
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
+      children: <Widget>[
         Text(
           text!,
           style: TextStyle(color: MyColors.secondary),
           textAlign: TextAlign.center,
         ),
-        Spacer(
+        const Spacer(
           flex: 2,
         ),
         SvgPicture.asset(

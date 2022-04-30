@@ -16,11 +16,11 @@ class SocialCard extends StatelessWidget {
     return GestureDetector(
       onTap: press,
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 8),
-        padding: EdgeInsets.all(10),
+        margin: const EdgeInsets.symmetric(horizontal: 8),
+        padding: const EdgeInsets.all(10),
         height: 40,
         width: 40,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xFFF5F6F9),
           shape: BoxShape.circle,
         ),

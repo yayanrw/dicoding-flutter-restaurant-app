@@ -1,4 +1,5 @@
-// ignore_for_file: prefer_const_constructors_in_immutables, always_specify_types
+// ignore_for_file: prefer_const_constructors_in_immutables,
+// ignore_for_file: always_specify_types
 
 import 'package:equatable/equatable.dart';
 import 'package:restaurant_app/features/domain/entities/customer_review.dart';

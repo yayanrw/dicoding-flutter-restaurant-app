@@ -1,3 +1,5 @@
+// ignore_for_file: always_specify_types
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/core/config/apps_config.dart';
@@ -16,47 +18,51 @@ class IntroBody extends StatefulWidget {
 }
 
 class _IntroBodyState extends State<IntroBody> {
-  PageController pageController = PageController(
-    initialPage: 0,
-    keepPage: true,
-  );
+  PageController pageController = PageController();
 
   int _currentPage = 0;
 
   Row customDot() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children:
-          List.generate(sliderData.length, (index) => dotContent(index: index)),
+      children: List.generate(
+        sliderData.length,
+        (int index) => dotContent(index: index),
+      ),
     );
   }
 
   Expanded customSlider() {
     return Expanded(
-        flex: 3,
-        child: PageView.builder(
-            controller: pageController,
-            onPageChanged: (value) {
-              setState(() {
-                _currentPage = value;
-              });
-            },
-            itemCount: sliderData.length,
-            itemBuilder: (context, index) => SliderContent(
-                image: sliderData[index].image, text: sliderData[index].text)));
+      flex: 3,
+      child: PageView.builder(
+        controller: pageController,
+        onPageChanged: (int value) {
+          setState(() {
+            _currentPage = value;
+          });
+        },
+        itemCount: sliderData.length,
+        itemBuilder: (BuildContext context, int index) => SliderContent(
+          image: sliderData[index].image,
+          text: sliderData[index].text,
+        ),
+      ),
+    );
   }
 
   AnimatedContainer dotContent({required int index}) {
     return AnimatedContainer(
-        duration: Duration(milliseconds: 200),
-        margin: EdgeInsets.only(right: 5),
-        height: 6,
-        width: _currentPage == index ? 20 : 6,
-        decoration: BoxDecoration(
-            color: _currentPage == index
-                ? MyColors.primary
-                : MyColors.secondaryLight,
-            borderRadius: BorderRadius.circular(3)));
+      duration: const Duration(milliseconds: 200),
+      margin: const EdgeInsets.only(right: 5),
+      height: 6,
+      width: _currentPage == index ? 20 : 6,
+      decoration: BoxDecoration(
+        color:
+            _currentPage == index ? MyColors.primary : MyColors.secondaryLight,
+        borderRadius: BorderRadius.circular(3),
+      ),
+    );
   }
 
   Padding btnContinue(BuildContext context) {
@@ -69,8 +75,11 @@ class _IntroBodyState extends State<IntroBody> {
             if (_currentPage < 3) {
               setState(() {
                 _currentPage++;
-                pageController.animateToPage(_currentPage,
-                    duration: Duration(milliseconds: 500), curve: Curves.ease);
+                pageController.animateToPage(
+                  _currentPage,
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.ease,
+                );
               });
             } else {
               context.router.push(const SignInRoute());
@@ -97,14 +106,14 @@ class _IntroBodyState extends State<IntroBody> {
       child: SizedBox(
         width: double.infinity,
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 32),
+          padding: const EdgeInsets.symmetric(vertical: 32),
           child: Column(
             children: <Widget>[
               textAppName(),
               customSlider(),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               customDot(),
-              Spacer(),
+              const Spacer(),
               btnContinue(context),
             ],
           ),
