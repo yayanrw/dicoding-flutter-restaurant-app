@@ -10,12 +10,12 @@ class UnderConstructionPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(MyStrings.underConstruction),
+        title: const Text(MyStrings.underConstruction),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: <Widget>[
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32),
               child: SvgPicture.asset(

@@ -25,14 +25,17 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    _sub = Connectivity().onConnectivityChanged.listen((result) {
-      if (result == ConnectivityResult.none)
+    _sub = Connectivity()
+        .onConnectivityChanged
+        .listen((ConnectivityResult result) {
+      if (result == ConnectivityResult.none) {
         _showSnackbar(MyStrings.noInternet);
+      }
     });
   }
 
-  _showSnackbar(String message) {
-    var snackBar = SnackBar(
+  void _showSnackbar(String message) {
+    final SnackBar snackBar = SnackBar(
       content: Text(
         message,
         style: TextStyle(color: MyColors.primaryDark),
@@ -45,7 +48,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Scaffold(
+    return const Scaffold(
       body: HomeBody(),
     );
   }

@@ -8,6 +8,6 @@ class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Scaffold(body: SearchBody());
+    return const Scaffold(body: SearchBody());
   }
 }

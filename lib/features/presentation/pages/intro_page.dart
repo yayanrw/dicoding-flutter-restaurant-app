@@ -8,6 +8,6 @@ class IntroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Scaffold(body: IntroBody());
+    return const Scaffold(body: IntroBody());
   }
 }
