@@ -1,9 +1,10 @@
-// ignore_for_file: avoid_dynamic_calls
+// ignore_for_file: avoid_dynamic_calls, must_be_immutable, always_specify_types
 
+import 'package:equatable/equatable.dart';
 import 'package:restaurant_app/features/data/models/category_model.dart';
 import 'package:restaurant_app/features/domain/entities/menus.dart';
 
-class MenusModel {
+class MenusModel extends Equatable {
   MenusModel({this.foods, this.drinks});
 
   MenusModel.fromJson(Map<String, dynamic> json) {
@@ -41,4 +42,7 @@ class MenusModel {
     }
     return data;
   }
+
+  @override
+  List<Object?> get props => [foods, drinks];
 }

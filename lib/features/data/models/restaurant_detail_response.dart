@@ -1,6 +1,9 @@
+// ignore_for_file: must_be_immutable, always_specify_types
+
+import 'package:equatable/equatable.dart';
 import 'package:restaurant_app/features/data/models/restaurant_detail_model.dart';
 
-class RestaurantDetailResponse {
+class RestaurantDetailResponse extends Equatable {
   RestaurantDetailResponse({this.error, this.message, this.restaurant});
 
   RestaurantDetailResponse.fromJson(Map<String, dynamic> json) {
@@ -28,4 +31,7 @@ class RestaurantDetailResponse {
     }
     return data;
   }
+
+  @override
+  List<Object?> get props => [error, message, restaurant];
 }

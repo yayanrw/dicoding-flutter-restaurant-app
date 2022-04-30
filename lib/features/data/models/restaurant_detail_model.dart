@@ -1,11 +1,12 @@
-// ignore_for_file: avoid_dynamic_calls
+// ignore_for_file: avoid_dynamic_calls, always_specify_types, must_be_immutable
 
+import 'package:equatable/equatable.dart';
 import 'package:restaurant_app/features/data/models/category_model.dart';
 import 'package:restaurant_app/features/data/models/customer_review_model.dart';
 import 'package:restaurant_app/features/data/models/menus_model.dart';
 import 'package:restaurant_app/features/domain/entities/restaurant_detail.dart';
 
-class RestaurantDetailModel {
+class RestaurantDetailModel extends Equatable {
   RestaurantDetailModel({
     this.id,
     this.name,
@@ -96,4 +97,18 @@ class RestaurantDetailModel {
     }
     return data;
   }
+
+  @override
+  List<Object?> get props => [
+        id,
+        name,
+        description,
+        city,
+        address,
+        pictureId,
+        rating,
+        categories,
+        menus,
+        customerReviews,
+      ];
 }
