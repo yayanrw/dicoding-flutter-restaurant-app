@@ -30,4 +30,7 @@ class MyStrings {
   static const String favoriteRestaurants = 'Favorite Restaurants';
   static const String addedToFavorite = 'Added to Favorite';
   static const String removedFromFavorite = 'Removed from Favorite';
+  static const String setting = 'Setting';
+  static const String restaurantNotification = 'Restaurant Notification';
+  static const String enableNotification = 'Enable Notification';
 }

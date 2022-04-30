@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_dynamic_calls
+
 import 'package:injectable/injectable.dart';
 import 'package:restaurant_app/core/utils/error/exceptions.dart';
 import 'package:restaurant_app/core/utils/my_strings.dart';
@@ -23,8 +25,8 @@ class RestaurantLocalDataSourceImpl implements RestaurantLocalDataSource {
   @override
   Future<List<RestaurantTable>> getFavoriteRestaurants() async {
     try {
-      final List<Map<String, dynamic>> result =
-          await databaseHelper.getFavoriteRestaurants();
+      final List<Map<String, dynamic>> result = await databaseHelper
+          .getFavoriteRestaurants() as List<Map<String, dynamic>>;
       return result
           .map((Map<String, dynamic> data) => RestaurantTable.fromMap(data))
           .toList();
@@ -36,7 +38,7 @@ class RestaurantLocalDataSourceImpl implements RestaurantLocalDataSource {
   @override
   Future<RestaurantTable?> getRestaurantById(String id) async {
     final Map<String, dynamic>? result =
-        await databaseHelper.getRestaurantById(id);
+        await databaseHelper.getRestaurantById(id) as Map<String, dynamic>?;
     if (result != null) {
       return RestaurantTable.fromMap(result);
     } else {

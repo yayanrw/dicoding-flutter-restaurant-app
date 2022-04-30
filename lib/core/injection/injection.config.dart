@@ -4,7 +4,7 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
-// ignore_for_file: always_use_package_imports, require_trailing_commas, always_specify_types
+// ignore_for_file: always_use_package_imports, require_trailing_commas
 
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:http/http.dart' as _i3;
@@ -39,8 +39,9 @@ import 'register_module.dart' as _i20; // ignore_for_file: unnecessary_lambdas
 /// initializes the registration of provided dependencies inside of [GetIt]
 _i1.GetIt $initGetIt(_i1.GetIt get,
     {String? environment, _i2.EnvironmentFilter? environmentFilter}) {
-  final gh = _i2.GetItHelper(get, environment, environmentFilter);
-  final registerModule = _$RegisterModule();
+  final _i2.GetItHelper gh =
+      _i2.GetItHelper(get, environment, environmentFilter);
+  final _$RegisterModule registerModule = _$RegisterModule();
   gh.lazySingleton<_i3.Client>(() => registerModule.httpClient);
   gh.lazySingleton<_i4.DatabaseHelper>(() => _i4.DatabaseHelper());
   gh.lazySingleton<_i5.RestaurantLocalDataSource>(() =>
