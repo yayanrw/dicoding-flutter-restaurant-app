@@ -33,6 +33,7 @@ class SettingBody extends StatelessWidget {
               ],
             ),
             Switch(
+              activeColor: MyColors.primary,
               value: true,
               onChanged: (bool value) {},
             ),
