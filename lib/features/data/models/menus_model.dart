@@ -1,38 +1,44 @@
-import 'package:equatable/equatable.dart';
+// ignore_for_file: avoid_dynamic_calls
+
 import 'package:restaurant_app/features/data/models/category_model.dart';
-import 'package:restaurant_app/features/domain/entities/category.dart';
 import 'package:restaurant_app/features/domain/entities/menus.dart';
 
-class MenusModel extends Equatable {
-  MenusModel({
-    required this.foods,
-    required this.drinks,
-  });
+class MenusModel {
+  MenusModel({this.foods, this.drinks});
 
-  final List<CategoryModel> foods;
-  final List<CategoryModel> drinks;
+  MenusModel.fromJson(Map<String, dynamic> json) {
+    if (json['foods'] != null) {
+      foods = <CategoryModel>[];
+      json['foods'].forEach((Map<String, dynamic> v) {
+        foods!.add(CategoryModel.fromJson(v));
+      });
+    }
+    if (json['drinks'] != null) {
+      drinks = <CategoryModel>[];
+      json['drinks'].forEach((Map<String, dynamic> v) {
+        drinks!.add(CategoryModel.fromJson(v));
+      });
+    }
+  }
 
-  factory MenusModel.fromJson(Map<String, dynamic> json) => MenusModel(
-        foods: List<CategoryModel>.from(
-            json["foods"].map((x) => CategoryModel.fromJson(x))),
-        drinks: List<CategoryModel>.from(
-            json["drinks"].map((x) => CategoryModel.fromJson(x))),
-      );
-
-  Map<String, dynamic> toJson() => {
-        "foods": List<dynamic>.from(foods.map((x) => x.toJson())),
-        "drinks": List<dynamic>.from(drinks.map((x) => x.toJson())),
-      };
+  List<CategoryModel>? drinks;
+  List<CategoryModel>? foods;
 
   Menus toEntity() {
     return Menus(
-      foods: List<Category>.from(
-          foods.map((x) => x.toEntity())),
-      drinks: List<Category>.from(
-          drinks.map((x) => x.toEntity())),
+      foods: foods!.map((CategoryModel e) => e.toEntity()).toList(),
+      drinks: drinks!.map((CategoryModel e) => e.toEntity()).toList(),
     );
   }
 
-  @override
-  List<Object?> get props => [foods, drinks];
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (foods != null) {
+      data['foods'] = foods!.map((CategoryModel v) => v.toJson()).toList();
+    }
+    if (drinks != null) {
+      data['drinks'] = drinks!.map((CategoryModel v) => v.toJson()).toList();
+    }
+    return data;
+  }
 }

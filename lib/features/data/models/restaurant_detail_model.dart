@@ -1,88 +1,99 @@
-import 'package:equatable/equatable.dart';
+// ignore_for_file: avoid_dynamic_calls
+
 import 'package:restaurant_app/features/data/models/category_model.dart';
 import 'package:restaurant_app/features/data/models/customer_review_model.dart';
 import 'package:restaurant_app/features/data/models/menus_model.dart';
 import 'package:restaurant_app/features/domain/entities/restaurant_detail.dart';
 
-class RestaurantDetailModel extends Equatable {
+class RestaurantDetailModel {
   RestaurantDetailModel({
-    required this.id,
-    required this.name,
-    required this.description,
-    required this.city,
-    required this.address,
-    required this.pictureId,
-    required this.rating,
-    required this.categories,
-    required this.menus,
-    required this.customerReviews,
+    this.id,
+    this.name,
+    this.description,
+    this.city,
+    this.address,
+    this.pictureId,
+    this.rating,
+    this.categories,
+    this.menus,
+    this.customerReviews,
   });
 
-  final String id;
-  final String name;
-  final String description;
-  final String city;
-  final String address;
-  final String pictureId;
-  final double rating;
-  final List<CategoryModel> categories;
-  final MenusModel menus;
-  final List<CustomerReviewModel> customerReviews;
+  RestaurantDetailModel.fromJson(Map<String, dynamic> json) {
+    id = json['id'] as String;
+    name = json['name'] as String;
+    description = json['description'] as String;
+    city = json['city'] as String;
+    address = json['address'] as String;
+    pictureId = json['pictureId'] as String;
+    rating = json['rating'] as double;
+    if (json['categories'] != null) {
+      categories = <CategoryModel>[];
+      json['categories'].forEach((Map<String, dynamic> v) {
+        categories!.add(CategoryModel.fromJson(v));
+      });
+    }
+    if (json['menus'] != null) {
+      menus = MenusModel.fromJson(json['menus'] as Map<String, dynamic>);
+    } else {
+      menus = null;
+    }
+    if (json['customerReviews'] != null) {
+      customerReviews = <CustomerReviewModel>[];
+      json['customerReviews'].forEach((Map<String, dynamic> v) {
+        customerReviews!.add(CustomerReviewModel.fromJson(v));
+      });
+    }
+  }
 
-  factory RestaurantDetailModel.fromJson(Map<String, dynamic> json) =>
-      RestaurantDetailModel(
-        id: json['id'],
-        name: json['name'],
-        description: json['description'],
-        city: json['city'],
-        address: json['address'],
-        pictureId: json['pictureId'],
-        rating: json['rating'].toDouble(),
-        categories: List<CategoryModel>.from(
-            json['categories'].map((x) => CategoryModel.fromJson(x))),
-        menus: MenusModel.fromJson(json['menus']),
-        customerReviews: List<CustomerReviewModel>.from(json['customerReviews']
-            .map((x) => CustomerReviewModel.fromJson(x))),
-      );
+  String? address;
+  List<CategoryModel>? categories;
+  String? city;
+  List<CustomerReviewModel>? customerReviews;
+  String? description;
+  String? id;
+  MenusModel? menus;
+  String? name;
+  String? pictureId;
+  double? rating;
 
-  Map<String, dynamic> toJson() => {
-        'id': id,
-        'name': name,
-        'description': description,
-        'city': city,
-        'address': address,
-        'pictureId': pictureId,
-        'rating': rating,
-        'categories': List<dynamic>.from(categories.map((x) => x.toJson())),
-        'menus': menus.toJson(),
-        'customerReviews':
-            List<dynamic>.from(customerReviews.map((x) => x.toJson())),
-      };
+  RestaurantDetail toEntity() {
+    return RestaurantDetail(
+      id: id!,
+      name: name!,
+      description: description!,
+      city: city!,
+      address: address!,
+      pictureId: pictureId!,
+      rating: rating!,
+      categories: categories!.map((CategoryModel e) => e.toEntity()).toList(),
+      menus: menus!.toEntity(),
+      customerReviews: customerReviews!
+          .map((CustomerReviewModel e) => e.toEntity())
+          .toList(),
+    );
+  }
 
-  RestaurantDetail toEntity() => RestaurantDetail(
-        id: id,
-        name: name,
-        description: description,
-        city: city,
-        address: address,
-        pictureId: pictureId,
-        rating: rating,
-        categories: categories.map((x) => x.toEntity()).toList(),
-        menus: menus.toEntity(),
-        customerReviews: customerReviews.map((x) => x.toEntity()).toList(),
-      );
-
-  @override
-  List<Object?> get props => [
-        id,
-        name,
-        description,
-        city,
-        address,
-        pictureId,
-        rating,
-        categories,
-        menus,
-        customerReviews,
-      ];
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['name'] = name;
+    data['description'] = description;
+    data['city'] = city;
+    data['address'] = address;
+    data['pictureId'] = pictureId;
+    data['rating'] = rating;
+    if (categories != null) {
+      data['categories'] =
+          categories!.map((CategoryModel v) => v.toJson()).toList();
+    }
+    if (menus != null) {
+      data['menus'] = menus!.toJson();
+    }
+    if (customerReviews != null) {
+      data['customerReviews'] =
+          customerReviews!.map((CustomerReviewModel v) => v.toJson()).toList();
+    }
+    return data;
+  }
 }

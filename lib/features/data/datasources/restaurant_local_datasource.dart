@@ -23,8 +23,11 @@ class RestaurantLocalDataSourceImpl implements RestaurantLocalDataSource {
   @override
   Future<List<RestaurantTable>> getFavoriteRestaurants() async {
     try {
-      final result = await databaseHelper.getFavoriteRestaurants();
-      return result.map((data) => RestaurantTable.fromMap(data)).toList();
+      final List<Map<String, dynamic>> result =
+          await databaseHelper.getFavoriteRestaurants();
+      return result
+          .map((Map<String, dynamic> data) => RestaurantTable.fromMap(data))
+          .toList();
     } catch (e) {
       throw DatabaseException(e.toString());
     }
@@ -32,7 +35,8 @@ class RestaurantLocalDataSourceImpl implements RestaurantLocalDataSource {
 
   @override
   Future<RestaurantTable?> getRestaurantById(String id) async {
-    final result = await databaseHelper.getRestaurantById(id);
+    final Map<String, dynamic>? result =
+        await databaseHelper.getRestaurantById(id);
     if (result != null) {
       return RestaurantTable.fromMap(result);
     } else {

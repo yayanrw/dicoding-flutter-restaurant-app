@@ -1,14 +1,18 @@
+// ignore_for_file: always_specify_types
+
 import 'package:equatable/equatable.dart';
 import 'package:restaurant_app/features/domain/entities/restaurant.dart';
 
 class RestaurantTable extends Equatable {
-  RestaurantTable(
-      {required this.id,
-      required this.name,
-      required this.city,
-      required this.pictureId,
-      required this.rating,
-      required this.description});
+  /// ignore: prefer_const_constructors_in_immutables
+  RestaurantTable({
+    required this.id,
+    required this.name,
+    required this.city,
+    required this.pictureId,
+    required this.rating,
+    required this.description,
+  });
 
   factory RestaurantTable.fromEntity(Restaurant restaurant) => RestaurantTable(
         id: restaurant.id,
@@ -20,12 +24,12 @@ class RestaurantTable extends Equatable {
       );
 
   RestaurantTable.fromMap(Map<String, dynamic> map) {
-    id = map['id'];
-    name = map['name'];
-    city = map['city'];
-    pictureId = map['pictureId'];
-    rating = map['rating'];
-    description = map['description'];
+    id = map['id'] as String;
+    name = map['name'] as String;
+    city = map['city'] as String;
+    pictureId = map['pictureId'] as String;
+    rating = map['rating'] as String;
+    description = map['description'] as String;
   }
 
   late final String city;
@@ -51,7 +55,7 @@ class RestaurantTable extends Equatable {
 
   Restaurant toEntity() {
     return Restaurant(
-      id: id.toString(),
+      id: id,
       name: name,
       city: city,
       pictureId: pictureId,

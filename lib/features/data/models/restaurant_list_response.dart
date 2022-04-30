@@ -1,42 +1,45 @@
-import 'dart:convert';
+// ignore_for_file: avoid_dynamic_calls, always_specify_types, must_be_immutable
+
 import 'package:equatable/equatable.dart';
 import 'package:restaurant_app/features/data/models/restaurant_model.dart';
 
-RestaurantListResponse restaurantListResponseFromJson(String str) =>
-    RestaurantListResponse.fromJson(json.decode(str));
-
-String restaurantListResponseToJson(RestaurantListResponse data) =>
-    json.encode(data.toJson());
-
 class RestaurantListResponse extends Equatable {
   RestaurantListResponse({
-    required this.error,
-    required this.message,
-    required this.count,
-    required this.restaurants,
+    this.error,
+    this.message,
+    this.count,
+    this.restaurants,
   });
 
-  final bool error;
-  final String message;
-  final int count;
-  final List<RestaurantModel> restaurants;
+  RestaurantListResponse.fromJson(Map<String, dynamic> json) {
+    error = json['error'] as bool;
+    message = json['message'] as String;
+    count = json['count'] as int;
+    if (json['restaurants'] != null) {
+      restaurants = <RestaurantModel>[];
+      json['restaurants'].forEach((Map<String, dynamic> v) {
+        restaurants!.add(RestaurantModel.fromJson(v));
+      });
+    }
+  }
 
-  factory RestaurantListResponse.fromJson(Map<String, dynamic> json) =>
-      RestaurantListResponse(
-        error: json["error"],
-        message: json["message"],
-        count: json["count"],
-        restaurants: List<RestaurantModel>.from(
-            json["restaurants"].map((x) => RestaurantModel.fromJson(x))),
-      );
-
-  Map<String, dynamic> toJson() => {
-        "error": error,
-        "message": message,
-        "count": count,
-        "restaurants": List<dynamic>.from(restaurants.map((x) => x.toJson())),
-      };
+  int? count;
+  bool? error;
+  String? message;
+  List<RestaurantModel>? restaurants;
 
   @override
   List<Object?> get props => [error, message, count, restaurants];
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['error'] = error;
+    data['message'] = message;
+    data['count'] = count;
+    if (restaurants != null) {
+      data['restaurants'] =
+          restaurants!.map((RestaurantModel v) => v.toJson()).toList();
+    }
+    return data;
+  }
 }

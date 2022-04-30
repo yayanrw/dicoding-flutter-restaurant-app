@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors_in_immutables, always_specify_types
+
 import 'package:equatable/equatable.dart';
 import 'package:restaurant_app/features/domain/entities/customer_review.dart';
 
@@ -8,21 +10,24 @@ class CustomerReviewModel extends Equatable {
     required this.date,
   });
 
-  final String name;
-  final String review;
-  final String date;
-
   factory CustomerReviewModel.fromJson(Map<String, dynamic> json) =>
       CustomerReviewModel(
-        name: json["name"],
-        review: json["review"],
-        date: json["date"],
+        name: json['name'] as String,
+        review: json['review'] as String,
+        date: json['date'] as String,
       );
 
+  final String date;
+  final String name;
+  final String review;
+
+  @override
+  List<Object?> get props => [name, review, date];
+
   Map<String, dynamic> toJson() => {
-        "name": name,
-        "review": review,
-        "date": date,
+        'name': name,
+        'review': review,
+        'date': date,
       };
 
   CustomerReview toEntity() {
@@ -32,7 +37,4 @@ class CustomerReviewModel extends Equatable {
       date: date,
     );
   }
-
-  @override
-  List<Object?> get props => [name, review, date];
 }
