@@ -16,7 +16,7 @@ class SpecialOfferCard extends StatelessWidget {
   final String name;
   final String city;
   final String image;
-  final double rating;
+  final num rating;
   final VoidCallback press;
 
   @override

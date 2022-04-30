@@ -29,7 +29,7 @@ class Restaurant extends Equatable {
   final String id;
   final String name;
   final String pictureId;
-  final double rating;
+  final num rating;
 
   @override
   List<Object?> get props => [id, name, description, pictureId, city, rating];

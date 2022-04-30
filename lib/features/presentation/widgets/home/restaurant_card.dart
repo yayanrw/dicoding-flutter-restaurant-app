@@ -19,7 +19,7 @@ class RestaurantCard extends StatelessWidget {
   final String city;
   final String image;
   final String pictureId;
-  final double rating;
+  final num rating;
   final VoidCallback press;
 
   @override

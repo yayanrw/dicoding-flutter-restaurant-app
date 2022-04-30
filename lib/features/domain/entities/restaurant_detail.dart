@@ -26,7 +26,7 @@ class RestaurantDetail extends Equatable {
   final String city;
   final String address;
   final String pictureId;
-  final double rating;
+  final num rating;
   final List<Category> categories;
   final Menus menus;
   final List<CustomerReview> customerReviews;

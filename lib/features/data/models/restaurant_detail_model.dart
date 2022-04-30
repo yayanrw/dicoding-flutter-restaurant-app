@@ -27,7 +27,8 @@ class RestaurantDetailModel extends Equatable {
     city = json['city'] as String;
     address = json['address'] as String;
     pictureId = json['pictureId'] as String;
-    rating = json['rating'] as double;
+    rating = json['rating'] as num;
+
     if (json['categories'] != null) {
       categories = <CategoryModel>[];
       json['categories'].forEach((v) {
@@ -57,7 +58,7 @@ class RestaurantDetailModel extends Equatable {
   MenusModel? menus;
   String? name;
   String? pictureId;
-  double? rating;
+  num? rating;
 
   RestaurantDetail toEntity() {
     return RestaurantDetail(
