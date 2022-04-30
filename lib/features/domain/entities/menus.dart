@@ -1,8 +1,10 @@
+// ignore_for_file: always_specify_types
+
 import 'package:equatable/equatable.dart';
 import 'package:restaurant_app/features/domain/entities/category.dart';
 
 class Menus extends Equatable {
-  Menus({
+  const Menus({
     required this.foods,
     required this.drinks,
   });

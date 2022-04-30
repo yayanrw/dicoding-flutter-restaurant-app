@@ -1,7 +1,9 @@
+// ignore_for_file: always_specify_types
+
 import 'package:equatable/equatable.dart';
 
 class Category extends Equatable {
-  Category({
+  const Category({
     required this.name,
   });
 

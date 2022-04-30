@@ -1,7 +1,9 @@
+// ignore_for_file: always_specify_types
+
 import 'package:equatable/equatable.dart';
 
 class CustomerReview extends Equatable {
-  CustomerReview({
+  const CustomerReview({
     required this.name,
     required this.review,
     required this.date,
