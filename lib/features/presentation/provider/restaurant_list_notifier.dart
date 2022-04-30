@@ -1,5 +1,7 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
+import 'package:restaurant_app/core/utils/error/failure.dart';
 import 'package:restaurant_app/core/utils/request_state.dart';
 import 'package:restaurant_app/features/domain/entities/restaurant.dart';
 import 'package:restaurant_app/features/domain/usecases/get_restaurants.dart';
@@ -12,7 +14,7 @@ class RestaurantListNotifier extends ChangeNotifier {
 
   String _message = '';
   RequestState _requestState = RequestState.empty;
-  List<Restaurant> _restaurants = [];
+  List<Restaurant> _restaurants = <Restaurant>[];
 
   RequestState get requestState => _requestState;
 
@@ -24,15 +26,16 @@ class RestaurantListNotifier extends ChangeNotifier {
     _requestState = RequestState.loading;
     notifyListeners();
 
-    final result = await getRestaurants.call();
+    final Either<Failure, List<Restaurant>> result =
+        await getRestaurants.call();
 
     result.fold(
-      (failure) {
+      (Failure failure) {
         _requestState = RequestState.error;
         _message = failure.message;
         notifyListeners();
       },
-      (success) {
+      (List<Restaurant> success) {
         _requestState = RequestState.loaded;
         _restaurants = success;
         notifyListeners();

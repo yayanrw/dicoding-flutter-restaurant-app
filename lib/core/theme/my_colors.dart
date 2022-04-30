@@ -28,9 +28,9 @@ class HexColor extends Color {
   HexColor(final String hexColor) : super(_getColorFromHex(hexColor));
 
   static int _getColorFromHex(String hexColor) {
-    String newHexColor = '';
-    if (hexColor.toUpperCase().replaceAll('#', '').length == 6) {
-      newHexColor = 'FF$hexColor';
+    String newHexColor = hexColor.toUpperCase().replaceAll('#', '');
+    if (newHexColor.length == 6) {
+      newHexColor = 'FF$newHexColor';
     }
     return int.parse(newHexColor, radix: 16);
   }

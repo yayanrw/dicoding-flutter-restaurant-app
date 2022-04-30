@@ -21,7 +21,7 @@ class RestaurantModel extends Equatable {
         description: json['description'] as String,
         pictureId: json['pictureId'] as String,
         city: json['city'] as String,
-        rating: json['rating'] as double,
+        rating: json['rating'] as num,
       );
 
   final String city;
@@ -29,7 +29,7 @@ class RestaurantModel extends Equatable {
   final String id;
   final String name;
   final String pictureId;
-  final double rating;
+  final num rating;
 
   @override
   List<Object?> get props => [id, name, description, pictureId, city, rating];
@@ -50,7 +50,7 @@ class RestaurantModel extends Equatable {
       description: description,
       pictureId: pictureId,
       city: city,
-      rating: rating,
+      rating: rating.toDouble(),
     );
   }
 }

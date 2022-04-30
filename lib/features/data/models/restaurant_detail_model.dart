@@ -30,8 +30,8 @@ class RestaurantDetailModel extends Equatable {
     rating = json['rating'] as double;
     if (json['categories'] != null) {
       categories = <CategoryModel>[];
-      json['categories'].forEach((Map<String, dynamic> v) {
-        categories!.add(CategoryModel.fromJson(v));
+      json['categories'].forEach((v) {
+        categories!.add(CategoryModel.fromJson(v as Map<String, dynamic>));
       });
     }
     if (json['menus'] != null) {
@@ -41,8 +41,9 @@ class RestaurantDetailModel extends Equatable {
     }
     if (json['customerReviews'] != null) {
       customerReviews = <CustomerReviewModel>[];
-      json['customerReviews'].forEach((Map<String, dynamic> v) {
-        customerReviews!.add(CustomerReviewModel.fromJson(v));
+      json['customerReviews'].forEach((v) {
+        customerReviews!
+            .add(CustomerReviewModel.fromJson(v as Map<String, dynamic>));
       });
     }
   }

@@ -17,8 +17,8 @@ class RestaurantListResponse extends Equatable {
     count = json['count'] as int;
     if (json['restaurants'] != null) {
       restaurants = <RestaurantModel>[];
-      json['restaurants'].forEach((Map<String, dynamic> v) {
-        restaurants!.add(RestaurantModel.fromJson(v));
+      json['restaurants'].forEach((v) {
+        restaurants!.add(RestaurantModel.fromJson(v as Map<String, dynamic>));
       });
     }
   }

@@ -4,7 +4,7 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
-// ignore_for_file: always_use_package_imports, require_trailing_commas
+// ignore_for_file: always_use_package_imports, require_trailing_commas, always_specify_types
 
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:http/http.dart' as _i3;

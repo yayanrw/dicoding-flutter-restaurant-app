@@ -10,14 +10,14 @@ class MenusModel extends Equatable {
   MenusModel.fromJson(Map<String, dynamic> json) {
     if (json['foods'] != null) {
       foods = <CategoryModel>[];
-      json['foods'].forEach((Map<String, dynamic> v) {
-        foods!.add(CategoryModel.fromJson(v));
+      json['foods'].forEach((v) {
+        foods!.add(CategoryModel.fromJson(v as Map<String, dynamic>));
       });
     }
     if (json['drinks'] != null) {
       drinks = <CategoryModel>[];
-      json['drinks'].forEach((Map<String, dynamic> v) {
-        drinks!.add(CategoryModel.fromJson(v));
+      json['drinks'].forEach((v) {
+        drinks!.add(CategoryModel.fromJson(v as Map<String, dynamic>));
       });
     }
   }

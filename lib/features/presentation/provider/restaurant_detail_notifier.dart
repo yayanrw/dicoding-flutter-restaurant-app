@@ -1,5 +1,7 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:injectable/injectable.dart';
+import 'package:restaurant_app/core/utils/error/failure.dart';
 import 'package:restaurant_app/core/utils/request_state.dart';
 import 'package:restaurant_app/features/domain/entities/restaurant.dart';
 import 'package:restaurant_app/features/domain/entities/restaurant_detail.dart';
@@ -10,8 +12,12 @@ import 'package:restaurant_app/features/domain/usecases/save_favorite.dart';
 
 @injectable
 class RestaurantDetailNotifier extends ChangeNotifier {
-  RestaurantDetailNotifier(this.getRestaurantDetail, this.getFavoriteStatus,
-      this.saveFavorite, this.removeFavorite);
+  RestaurantDetailNotifier(
+    this.getRestaurantDetail,
+    this.getFavoriteStatus,
+    this.saveFavorite,
+    this.removeFavorite,
+  );
 
   final GetFavoriteStatus getFavoriteStatus;
   final GetRestaurantDetail getRestaurantDetail;
@@ -38,15 +44,16 @@ class RestaurantDetailNotifier extends ChangeNotifier {
     _requestState = RequestState.loading;
     notifyListeners();
 
-    final result = await getRestaurantDetail(id);
+    final Either<Failure, RestaurantDetail> result =
+        await getRestaurantDetail(id);
 
     result.fold(
-      (failure) {
+      (Failure failure) {
         _requestState = RequestState.error;
         _restaurantDetailMessage = failure.message;
         notifyListeners();
       },
-      (success) {
+      (RestaurantDetail success) {
         _requestState = RequestState.loaded;
         _restaurantDetail = success;
         notifyListeners();
@@ -55,14 +62,14 @@ class RestaurantDetailNotifier extends ChangeNotifier {
   }
 
   Future<void> addToFavorite(Restaurant restaurant) async {
-    final result = await saveFavorite(restaurant);
+    final Either<Failure, String> result = await saveFavorite(restaurant);
 
     await result.fold(
-      (failure) async {
+      (Failure failure) async {
         _restaurantFavoriteMessage = failure.message;
         notifyListeners();
       },
-      (success) async {
+      (String success) async {
         _restaurantFavoriteMessage = success;
         notifyListeners();
       },
@@ -72,14 +79,14 @@ class RestaurantDetailNotifier extends ChangeNotifier {
   }
 
   Future<void> removeFromFavorite(String id) async {
-    final result = await removeFavorite.call(id);
+    final Either<Failure, String> result = await removeFavorite.call(id);
 
     await result.fold(
-      (failure) async {
+      (Failure failure) async {
         _restaurantFavoriteMessage = failure.message;
         notifyListeners();
       },
-      (success) async {
+      (String success) async {
         _restaurantFavoriteMessage = success;
         notifyListeners();
       },
@@ -89,7 +96,7 @@ class RestaurantDetailNotifier extends ChangeNotifier {
   }
 
   Future<void> fetchFavoriteStatus(String id) async {
-    final result = await getFavoriteStatus.call(id);
+    final bool result = await getFavoriteStatus.call(id);
     _isFavorite = result;
     notifyListeners();
   }
