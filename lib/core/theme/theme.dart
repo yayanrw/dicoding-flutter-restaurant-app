@@ -14,6 +14,7 @@ ThemeData myThemes() {
     colorScheme: ColorScheme.fromSeed(
       seedColor: MyColors.primary,
       primary: MyColors.primary,
+      secondary: MyColors.primary,
     ),
     fontFamily: AppsConfig.fontFamily,
     appBarTheme: myAppBarTheme(),
