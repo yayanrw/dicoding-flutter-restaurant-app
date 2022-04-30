@@ -9,12 +9,13 @@ class FavoriteBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(MyStrings.favoriteRestaurants),
+        title: const Text(MyStrings.favoriteRestaurants),
       ),
       body: SingleChildScrollView(
-          child: Column(
-        children: [SizedBox(height: 24), RestaurantList()],
-      )),
+        child: Column(
+          children: const <Widget>[SizedBox(height: 24), RestaurantList()],
+        ),
+      ),
     );
   }
 }

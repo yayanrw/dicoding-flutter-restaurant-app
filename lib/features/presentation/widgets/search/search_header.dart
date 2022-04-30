@@ -44,7 +44,8 @@ class SearchHeader extends StatelessWidget {
                     contentPadding:
                         EdgeInsets.symmetric(horizontal: 24, vertical: 12)),
                 onSubmitted: (value) {
-                  data.searchText = value;
+                  Provider.of<RestaurantSearchNotifier>(context, listen: false)
+                      .searchRestaurant(value);
                 },
               ),
             ),

@@ -4,35 +4,37 @@ import 'package:restaurant_app/core/theme/my_colors.dart';
 import 'package:restaurant_app/core/theme/my_text_theme.dart';
 
 class SpecialOfferCard extends StatelessWidget {
-  const SpecialOfferCard(
-      {Key? key,
-      required this.name,
-      required this.image,
-      required this.press,
-      required this.city,
-      required this.rating})
-      : super(key: key);
+  const SpecialOfferCard({
+    Key? key,
+    required this.name,
+    required this.image,
+    required this.press,
+    required this.city,
+    required this.rating,
+  }) : super(key: key);
 
-  final String name, city, image;
+  final String name;
+  final String city;
+  final String image;
   final double rating;
   final VoidCallback press;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 16),
+      padding: const EdgeInsets.only(left: 16),
       child: GestureDetector(
         onTap: press,
         child: Container(
           width: 260,
           height: 130,
           decoration: BoxDecoration(
-            boxShadow: [
+            boxShadow: <BoxShadow>[
               BoxShadow(
                 color: Colors.grey.withOpacity(0.5),
                 spreadRadius: 0.6,
                 blurRadius: 7,
-                offset: Offset(1, 0), // changes position of shadow
+                offset: const Offset(1, 0), // changes position of shadow
               ),
             ],
           ),
@@ -40,39 +42,41 @@ class SpecialOfferCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             child: Stack(
               fit: StackFit.expand,
-              children: [
+              children: <Widget>[
                 Image.network(image, fit: BoxFit.cover),
                 Container(
                   decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: <Color>[
                         MyColors.secondary2.withOpacity(0.4),
                         MyColors.secondary2.withOpacity(0.15),
-                      ])),
+                      ],
+                    ),
+                  ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(
+                  padding: const EdgeInsets.symmetric(
                     horizontal: 15,
                     vertical: 10,
                   ),
                   child: Text.rich(
                     TextSpan(
-                      children: [
+                      children: <TextSpan>[
                         TextSpan(
-                          text: "$name\n",
+                          text: '$name\n',
                           style: myTextTheme(
-                                  color: MyColors.light,
-                                  weight: FontWeight.w700)
-                              .headline6,
+                            color: MyColors.light,
+                            weight: FontWeight.w700,
+                          ).headline6,
                         ),
                         TextSpan(
                           text: city,
                           style: myTextTheme(
-                                  color: MyColors.light,
-                                  weight: FontWeight.w700)
-                              .caption,
+                            color: MyColors.light,
+                            weight: FontWeight.w700,
+                          ).caption,
                         ),
                       ],
                     ),
@@ -82,14 +86,16 @@ class SpecialOfferCard extends StatelessWidget {
                   left: 15,
                   bottom: 10,
                   child: Row(
-                    children: [
-                      Icon(
+                    children: <Widget>[
+                      const Icon(
                         LineIcons.starAlt,
                         size: 14,
                         color: Colors.white,
                       ),
-                      Text(rating.toString(),
-                          style: myTextTheme(color: MyColors.light).subtitle2)
+                      Text(
+                        rating.toString(),
+                        style: myTextTheme(color: MyColors.light).subtitle2,
+                      )
                     ],
                   ),
                 )

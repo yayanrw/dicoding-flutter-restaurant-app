@@ -15,14 +15,14 @@ class ChipText extends StatelessWidget {
       margin: const EdgeInsets.only(right: 8),
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
       decoration: BoxDecoration(
-          color: Colors.transparent,
-          borderRadius: BorderRadius.circular(14),
-          border: Border.all(color: MyColors.secondaryLight2)),
+        color: Colors.transparent,
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: MyColors.secondaryLight2),
+      ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
+        children: <Widget>[
           Text(name, style: TextStyle(color: MyColors.secondary, fontSize: 12))
         ],
       ),

@@ -20,14 +20,15 @@ class SearchField extends StatelessWidget {
       child: Container(
         width: SizeConfig.screenWidth! * 0.6,
         decoration: BoxDecoration(
-            color: MyColors.secondaryLight2.withOpacity(0.1),
-            borderRadius: BorderRadius.circular(16)),
+          color: MyColors.secondaryLight2.withOpacity(0.1),
+          borderRadius: BorderRadius.circular(16),
+        ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           child: Row(
-            children: [
-              Icon(LineIcons.search),
-              SizedBox(width: 8),
+            children: <Widget>[
+              const Icon(LineIcons.search),
+              const SizedBox(width: 8),
               Text(
                 MyStrings.searchRestaurants,
                 style: TextStyle(color: MyColors.secondaryLight2),

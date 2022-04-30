@@ -18,10 +18,10 @@ class SectionTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
+        children: <Widget>[
           Text(
             text,
             style:
@@ -31,11 +31,12 @@ class SectionTitle extends StatelessWidget {
           Visibility(
             visible: isMoreable,
             child: GestureDetector(
-                onTap: press,
-                child: Text(
-                  MyStrings.seeMore,
-                  style: myTextTheme(color: MyColors.secondaryLight2).caption,
-                )),
+              onTap: press,
+              child: Text(
+                MyStrings.seeMore,
+                style: myTextTheme(color: MyColors.secondaryLight2).caption,
+              ),
+            ),
           )
         ],
       ),

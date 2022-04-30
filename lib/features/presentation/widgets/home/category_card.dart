@@ -22,22 +22,23 @@ class CategoryCard extends StatelessWidget {
       child: SizedBox(
         width: getProportionateScreenWidth(64),
         child: Column(
-          children: [
+          children: <Widget>[
             AspectRatio(
               aspectRatio: 1,
               child: Container(
-                padding: EdgeInsets.all(AppsConfig.defaultPadding / 2),
+                padding: const EdgeInsets.all(AppsConfig.defaultPadding / 2),
                 decoration: BoxDecoration(
-                    color: MyColors.primarySmooth,
-                    borderRadius:
-                        BorderRadius.circular(AppsConfig.defaultRadius / 2)),
+                  color: MyColors.primarySmooth,
+                  borderRadius:
+                      BorderRadius.circular(AppsConfig.defaultRadius / 2),
+                ),
                 child: Icon(
                   icon,
                   color: MyColors.primaryDark,
                 ),
               ),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Text(
               text,
               textAlign: TextAlign.center,

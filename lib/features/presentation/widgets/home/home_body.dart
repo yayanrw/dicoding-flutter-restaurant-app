@@ -11,22 +11,23 @@ class HomeBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: SingleChildScrollView(
-      child: Column(
-        children: [
-          SizedBox(height: 24),
-          HomeHeader(),
-          SizedBox(height: 24),
-          DiscountBanner(),
-          SizedBox(height: 24),
-          Categories(),
-          SizedBox(height: 24),
-          SpecialOffer(),
-          SizedBox(height: 24),
-          RestaurantList(),
-          SizedBox(height: 24),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: const <Widget>[
+            SizedBox(height: 24),
+            HomeHeader(),
+            SizedBox(height: 24),
+            DiscountBanner(),
+            SizedBox(height: 24),
+            Categories(),
+            SizedBox(height: 24),
+            SpecialOffer(),
+            SizedBox(height: 24),
+            RestaurantList(),
+            SizedBox(height: 24),
+          ],
+        ),
       ),
-    ));
+    );
   }
 }

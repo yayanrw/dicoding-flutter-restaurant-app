@@ -19,20 +19,27 @@ class DiscountBanner extends StatelessWidget {
           context.router.push(const UnderConstructionRoute());
         },
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
           width: double.infinity,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(32), color: MyColors.purple),
-          child: Text.rich(TextSpan(
+            borderRadius: BorderRadius.circular(32),
+            color: MyColors.purple,
+          ),
+          child: Text.rich(
+            TextSpan(
               text: MyStrings.summerSurprise,
-              style: TextStyle(color: Colors.white),
-              children: [
+              style: const TextStyle(color: Colors.white),
+              children: <TextSpan>[
                 TextSpan(
-                    text: MyStrings.cashback20,
-                    style: myTextTheme(
-                            color: MyColors.light, weight: FontWeight.w700)
-                        .headline4)
-              ])),
+                  text: MyStrings.cashback20,
+                  style: myTextTheme(
+                    color: MyColors.light,
+                    weight: FontWeight.w700,
+                  ).headline4,
+                )
+              ],
+            ),
+          ),
         ),
       ),
     );

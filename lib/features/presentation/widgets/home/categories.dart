@@ -1,3 +1,5 @@
+// ignore_for_file: always_specify_types
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/core/config/apps_config.dart';
@@ -18,15 +20,17 @@ class Categories extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+        children: <Widget>[
           ...List.generate(
-              menuCategories.length,
-              (index) => CategoryCard(
-                  press: () {
-                    context.router.push(const UnderConstructionRoute());
-                  },
-                  icon: menuCategories[index].icon,
-                  text: menuCategories[index].text)),
+            menuCategories.length,
+            (int index) => CategoryCard(
+              press: () {
+                context.router.push(const UnderConstructionRoute());
+              },
+              icon: menuCategories[index].icon,
+              text: menuCategories[index].text,
+            ),
+          ),
         ],
       ),
     );

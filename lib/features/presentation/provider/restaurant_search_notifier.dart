@@ -23,12 +23,6 @@ class RestaurantSearchNotifier extends ChangeNotifier {
 
   List<Restaurant> get restaurants => _restaurants;
 
-  set searchText(String text) {
-    _searchText = text;
-    notifyListeners();
-    fetchRestaurantSearch();
-  }
-
   Future<void> fetchRestaurantSearch() async {
     _requestState = RequestState.loading;
     notifyListeners();
@@ -48,6 +42,12 @@ class RestaurantSearchNotifier extends ChangeNotifier {
         notifyListeners();
       },
     );
+  }
+
+  Future<void> searchRestaurant(String text) async {
+    _searchText = text;
+    notifyListeners();
+    await fetchRestaurantSearch();
   }
 
   Future<void> setNull() async {
