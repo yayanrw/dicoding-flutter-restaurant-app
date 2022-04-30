@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_app/core/config/apps_config.dart';
+import 'package:restaurant_app/core/theme/my_colors.dart';
+import 'package:restaurant_app/core/theme/my_text_theme.dart';
 import 'package:restaurant_app/core/utils/my_strings.dart';
 
 class SettingBody extends StatelessWidget {
@@ -10,20 +13,31 @@ class SettingBody extends StatelessWidget {
       appBar: AppBar(
         title: const Text(MyStrings.setting),
       ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Column(
-            children: const <Widget>[
-              Text(MyStrings.restaurantNotification),
-              Text(MyStrings.enableNotification)
-            ],
-          ),
-          Switch(
-            value: true,
-            onChanged: (bool value) {},
-          ),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(AppsConfig.defaultPadding),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  MyStrings.restaurantNotification,
+                  style: myTextTheme(weight: FontWeight.bold).bodyText1,
+                ),
+                Text(
+                  MyStrings.enableNotification,
+                  style: myTextTheme(color: MyColors.textGrey).subtitle2,
+                )
+              ],
+            ),
+            Switch(
+              value: true,
+              onChanged: (bool value) {},
+            ),
+          ],
+        ),
       ),
     );
   }
