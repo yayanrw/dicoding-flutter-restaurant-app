@@ -2,33 +2,77 @@ import 'package:flutter/material.dart';
 import 'package:restaurant_app/core/theme/my_colors.dart';
 
 TextTheme myTextTheme({Color? color, FontWeight? weight}) {
-  color = color ?? MyColors.textBlack;
-  weight = weight ?? FontWeight.w500;
+  final Color newColor = color ?? MyColors.textBlack;
+  final FontWeight newWeight = weight ?? FontWeight.w500;
 
   return TextTheme(
     headline1: TextStyle(
-        fontSize: 93, fontWeight: weight, letterSpacing: -1.5, color: color),
+      fontSize: 93,
+      fontWeight: newWeight,
+      letterSpacing: -1.5,
+      color: newColor,
+    ),
     headline2: TextStyle(
-        fontSize: 58, fontWeight: weight, letterSpacing: -0.5, color: color),
-    headline3: TextStyle(fontSize: 46, fontWeight: weight, color: color),
+      fontSize: 58,
+      fontWeight: newWeight,
+      letterSpacing: -0.5,
+      color: newColor,
+    ),
+    headline3: TextStyle(fontSize: 46, fontWeight: newWeight, color: color),
     headline4: TextStyle(
-        fontSize: 33, fontWeight: weight, letterSpacing: 0.25, color: color),
-    headline5: TextStyle(fontSize: 23, fontWeight: weight, color: color),
+      fontSize: 33,
+      fontWeight: newWeight,
+      letterSpacing: 0.25,
+      color: newColor,
+    ),
+    headline5: TextStyle(fontSize: 23, fontWeight: newWeight, color: color),
     headline6: TextStyle(
-        fontSize: 19, fontWeight: weight, letterSpacing: 0.15, color: color),
+      fontSize: 19,
+      fontWeight: newWeight,
+      letterSpacing: 0.15,
+      color: newColor,
+    ),
     subtitle1: TextStyle(
-        fontSize: 15, fontWeight: weight, letterSpacing: 0.15, color: color),
+      fontSize: 15,
+      fontWeight: newWeight,
+      letterSpacing: 0.15,
+      color: newColor,
+    ),
     subtitle2: TextStyle(
-        fontSize: 15, color: color, fontWeight: weight, letterSpacing: 0.15),
+      fontSize: 15,
+      color: newColor,
+      fontWeight: newWeight,
+      letterSpacing: 0.15,
+    ),
     bodyText1: TextStyle(
-        fontSize: 16, fontWeight: weight, letterSpacing: 0.5, color: color),
+      fontSize: 16,
+      fontWeight: newWeight,
+      letterSpacing: 0.5,
+      color: newColor,
+    ),
     bodyText2: TextStyle(
-        fontSize: 14, fontWeight: weight, letterSpacing: 0.25, color: color),
+      fontSize: 14,
+      fontWeight: newWeight,
+      letterSpacing: 0.25,
+      color: newColor,
+    ),
     button: TextStyle(
-        fontSize: 14, fontWeight: weight, letterSpacing: 1.25, color: color),
+      fontSize: 14,
+      fontWeight: newWeight,
+      letterSpacing: 1.25,
+      color: newColor,
+    ),
     caption: TextStyle(
-        fontSize: 12, fontWeight: weight, letterSpacing: 0.4, color: color),
+      fontSize: 12,
+      fontWeight: newWeight,
+      letterSpacing: 0.4,
+      color: newColor,
+    ),
     overline: TextStyle(
-        fontSize: 10, fontWeight: weight, letterSpacing: 1.5, color: color),
+      fontSize: 10,
+      fontWeight: newWeight,
+      letterSpacing: 1.5,
+      color: newColor,
+    ),
   );
 }

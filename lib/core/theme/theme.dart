@@ -9,17 +9,18 @@ import 'package:restaurant_app/core/theme/my_text_theme.dart';
 
 ThemeData myThemes() {
   return ThemeData(
-      scaffoldBackgroundColor: MyColors.bgScaffoldBackground,
-      primaryColor: MyColors.primary,
-      colorScheme: ColorScheme.fromSwatch().copyWith(
-        secondary: MyColors.primary, // Your accent color
-      ),
-      fontFamily: AppsConfig.fontFamily,
-      appBarTheme: myAppBarTheme(),
-      inputDecorationTheme: myInputDecorationTheme(),
-      textTheme: myTextTheme(),
-      visualDensity: VisualDensity.adaptivePlatformDensity,
-      textSelectionTheme: myTextSelectionThemeData(),
-      elevatedButtonTheme: myElevatedButtonThemeData(),
-      textButtonTheme: myTextButtonThemeData());
+    scaffoldBackgroundColor: MyColors.bgScaffoldBackground,
+    primaryColor: MyColors.primary,
+    colorScheme: ColorScheme.fromSwatch().copyWith(
+      secondary: MyColors.primary, // Your accent color
+    ),
+    fontFamily: AppsConfig.fontFamily,
+    appBarTheme: myAppBarTheme(),
+    inputDecorationTheme: myInputDecorationTheme(),
+    textTheme: myTextTheme(),
+    visualDensity: VisualDensity.adaptivePlatformDensity,
+    textSelectionTheme: myTextSelectionThemeData(),
+    elevatedButtonTheme: myElevatedButtonThemeData(),
+    textButtonTheme: myTextButtonThemeData(),
+  );
 }

@@ -31,31 +31,31 @@ class RestaurantDetailModel extends Equatable {
 
   factory RestaurantDetailModel.fromJson(Map<String, dynamic> json) =>
       RestaurantDetailModel(
-        id: json["id"],
-        name: json["name"],
-        description: json["description"],
-        city: json["city"],
-        address: json["address"],
-        pictureId: json["pictureId"],
-        rating: json["rating"].toDouble(),
+        id: json['id'],
+        name: json['name'],
+        description: json['description'],
+        city: json['city'],
+        address: json['address'],
+        pictureId: json['pictureId'],
+        rating: json['rating'].toDouble(),
         categories: List<CategoryModel>.from(
-            json["categories"].map((x) => CategoryModel.fromJson(x))),
-        menus: MenusModel.fromJson(json["menus"]),
-        customerReviews: List<CustomerReviewModel>.from(json["customerReviews"]
+            json['categories'].map((x) => CategoryModel.fromJson(x))),
+        menus: MenusModel.fromJson(json['menus']),
+        customerReviews: List<CustomerReviewModel>.from(json['customerReviews']
             .map((x) => CustomerReviewModel.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
-        "id": id,
-        "name": name,
-        "description": description,
-        "city": city,
-        "address": address,
-        "pictureId": pictureId,
-        "rating": rating,
-        "categories": List<dynamic>.from(categories.map((x) => x.toJson())),
-        "menus": menus.toJson(),
-        "customerReviews":
+        'id': id,
+        'name': name,
+        'description': description,
+        'city': city,
+        'address': address,
+        'pictureId': pictureId,
+        'rating': rating,
+        'categories': List<dynamic>.from(categories.map((x) => x.toJson())),
+        'menus': menus.toJson(),
+        'customerReviews':
             List<dynamic>.from(customerReviews.map((x) => x.toJson())),
       };
 
