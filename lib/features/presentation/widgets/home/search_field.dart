@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:restaurant_app/core/router/router.gr.dart';
 import 'package:restaurant_app/core/theme/my_colors.dart';
-import 'package:restaurant_app/core/utils/my_strings.dart';
 import 'package:restaurant_app/core/utils/size_config.dart';
+import 'package:restaurant_app/generated/l10n.dart';
 
 class SearchField extends StatelessWidget {
   const SearchField({
@@ -30,7 +30,7 @@ class SearchField extends StatelessWidget {
               const Icon(LineIcons.search),
               const SizedBox(width: 8),
               Text(
-                MyStrings.searchRestaurants,
+                S.of(context).searchRestaurants,
                 style: TextStyle(color: MyColors.secondaryLight2),
               )
             ],

@@ -4,9 +4,9 @@ import 'package:restaurant_app/core/config/apps_config.dart';
 import 'package:restaurant_app/core/router/router.gr.dart';
 import 'package:restaurant_app/core/theme/my_colors.dart';
 import 'package:restaurant_app/core/theme/my_text_theme.dart';
-import 'package:restaurant_app/core/utils/my_strings.dart';
 import 'package:restaurant_app/features/presentation/widgets/sign_in/sign_form.dart';
 import 'package:restaurant_app/features/presentation/widgets/sign_in/social_card.dart';
+import 'package:restaurant_app/generated/l10n.dart';
 
 class SignInBody extends StatelessWidget {
   const SignInBody({Key? key}) : super(key: key);
@@ -15,14 +15,14 @@ class SignInBody extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        const Flexible(child: Text(MyStrings.dontHaveAccount)),
+        Flexible(child: Text(S.of(context).dontHaveAnAccount)),
         Padding(
           padding: const EdgeInsets.only(left: 8),
           child: TextButton(
             onPressed: () {
               context.router.push(const UnderConstructionRoute());
             },
-            child: const Text(MyStrings.signUp),
+            child: Text(S.of(context).signUp),
           ),
         )
       ],
@@ -70,7 +70,7 @@ class SignInBody extends StatelessWidget {
               children: <Widget>[
                 const SizedBox(height: 24),
                 Text(
-                  MyStrings.welcomeBack,
+                  S.of(context).welcomeBack,
                   textAlign: TextAlign.center,
                   style: myTextTheme(
                     color: MyColors.primary,
@@ -78,7 +78,7 @@ class SignInBody extends StatelessWidget {
                   ).headline4,
                 ),
                 Text(
-                  MyStrings.signInWith,
+                  S.of(context).signInWithYourEmailAndPasswordNorContinueWith,
                   style: myTextTheme(color: MyColors.textBlack).subtitle1,
                   textAlign: TextAlign.center,
                 ),

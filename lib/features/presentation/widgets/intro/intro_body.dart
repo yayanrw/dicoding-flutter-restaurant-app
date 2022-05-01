@@ -6,9 +6,9 @@ import 'package:restaurant_app/core/config/apps_config.dart';
 import 'package:restaurant_app/core/router/router.gr.dart';
 import 'package:restaurant_app/core/theme/my_colors.dart';
 import 'package:restaurant_app/core/theme/my_text_theme.dart';
-import 'package:restaurant_app/core/utils/my_strings.dart';
 import 'package:restaurant_app/features/domain/entities/slider_data.dart';
 import 'package:restaurant_app/features/presentation/widgets/intro/slider_content.dart';
+import 'package:restaurant_app/generated/l10n.dart';
 
 class IntroBody extends StatefulWidget {
   const IntroBody({Key? key}) : super(key: key);
@@ -85,7 +85,7 @@ class _IntroBodyState extends State<IntroBody> {
               context.router.push(const SignInRoute());
             }
           },
-          child: const Text(MyStrings.sContinue),
+          child: Text(S.of(context).sContinue),
         ),
       ),
     );

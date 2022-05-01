@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:restaurant_app/core/config/apps_config.dart';
 import 'package:restaurant_app/core/router/router.gr.dart';
-import 'package:restaurant_app/core/utils/my_strings.dart';
 import 'package:restaurant_app/core/utils/request_state.dart';
 import 'package:restaurant_app/features/domain/entities/restaurant.dart';
 import 'package:restaurant_app/features/presentation/provider/restaurant_list_notifier.dart';
 import 'package:restaurant_app/features/presentation/widgets/home/section_title.dart';
 import 'package:restaurant_app/features/presentation/widgets/home/special_offer_card.dart';
+import 'package:restaurant_app/generated/l10n.dart';
 
 class SpecialOffer extends StatefulWidget {
   const SpecialOffer({Key? key}) : super(key: key);
@@ -34,7 +34,7 @@ class _SpecialOfferState extends State<SpecialOffer> {
     return Column(
       children: <Widget>[
         SectionTitle(
-          text: MyStrings.ourRecommendations,
+          text: S.of(context).ourRecommendations,
           isMoreable: true,
           press: () {
             context.router.push(const UnderConstructionRoute());
@@ -73,7 +73,7 @@ class _SpecialOfferState extends State<SpecialOffer> {
                   ),
                 );
               } else {
-                return const Center(child: Text(MyStrings.noRestaurants));
+                return Center(child: Text(S.of(context).noRestaurantsFound));
               }
             } else {
               return Center(

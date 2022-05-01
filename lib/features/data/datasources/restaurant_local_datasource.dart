@@ -2,7 +2,6 @@
 
 import 'package:injectable/injectable.dart';
 import 'package:restaurant_app/core/utils/error/exceptions.dart';
-import 'package:restaurant_app/core/utils/my_strings.dart';
 import 'package:restaurant_app/features/data/datasources/db/database_helper.dart';
 import 'package:restaurant_app/features/data/models/restaurant_table.dart';
 
@@ -50,7 +49,7 @@ class RestaurantLocalDataSourceImpl implements RestaurantLocalDataSource {
   Future<String> removeRestaurant(String id) async {
     try {
       await databaseHelper.removeRestaurant(id);
-      return MyStrings.removedFromFavorite;
+      return 'Removed from favorites';
     } catch (e) {
       throw DatabaseException(e.toString());
     }
@@ -60,7 +59,7 @@ class RestaurantLocalDataSourceImpl implements RestaurantLocalDataSource {
   Future<String> saveRestaurant(RestaurantTable restaurant) async {
     try {
       await databaseHelper.saveRestaurant(restaurant);
-      return MyStrings.addedToFavorite;
+      return 'Added to favorite';
     } catch (e) {
       throw DatabaseException(e.toString());
     }

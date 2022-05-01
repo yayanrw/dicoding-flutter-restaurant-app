@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:provider/provider.dart';
 import 'package:restaurant_app/core/theme/my_colors.dart';
-import 'package:restaurant_app/core/utils/my_strings.dart';
 import 'package:restaurant_app/core/utils/size_config.dart';
 import 'package:restaurant_app/features/presentation/provider/restaurant_search_notifier.dart';
 import 'package:restaurant_app/features/presentation/widgets/home/circular_button.dart';
+import 'package:restaurant_app/generated/l10n.dart';
 
 class SearchHeader extends StatelessWidget {
   const SearchHeader({Key? key}) : super(key: key);
@@ -42,7 +42,7 @@ class SearchHeader extends StatelessWidget {
                 decoration: InputDecoration(
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
-                  hintText: MyStrings.searchRestaurants,
+                  hintText: S.of(context).searchRestaurants,
                   prefixIcon: Icon(
                     LineIcons.search,
                     color: MyColors.dark,

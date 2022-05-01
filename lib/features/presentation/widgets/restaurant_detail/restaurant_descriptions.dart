@@ -5,11 +5,11 @@ import 'package:line_icons/line_icons.dart';
 import 'package:provider/provider.dart';
 import 'package:restaurant_app/core/theme/my_colors.dart';
 import 'package:restaurant_app/core/theme/my_text_theme.dart';
-import 'package:restaurant_app/core/utils/my_strings.dart';
 import 'package:restaurant_app/features/domain/entities/restaurant.dart';
 import 'package:restaurant_app/features/domain/entities/restaurant_detail.dart';
 import 'package:restaurant_app/features/presentation/provider/restaurant_detail_notifier.dart';
 import 'package:restaurant_app/features/presentation/widgets/home/chip_text.dart';
+import 'package:restaurant_app/generated/l10n.dart';
 
 class RestaurantDescriptions extends StatefulWidget {
   const RestaurantDescriptions({Key? key, required this.restaurantDetail})
@@ -95,8 +95,8 @@ class _RestaurantDescriptionsState extends State<RestaurantDescriptions> {
                       listen: false,
                     ).restaurantFavoriteMessage;
 
-                    if (message == MyStrings.addedToFavorite ||
-                        message == MyStrings.removedFromFavorite) {
+                    if (message == S.of(context).addedToFavorite ||
+                        message == S.of(context).removedFromFavorite) {
                       ScaffoldMessenger.of(context)
                           .showSnackBar(SnackBar(content: Text(message)));
                     }
@@ -151,7 +151,7 @@ class _RestaurantDescriptionsState extends State<RestaurantDescriptions> {
                   });
                 },
                 child: Text(
-                  _isMore ? MyStrings.seeLess : MyStrings.seeMoreDetail,
+                  _isMore ? S.of(context).seeLess : S.of(context).seeMoreDetail,
                   style: myTextTheme(
                     color: MyColors.primary,
                     weight: FontWeight.bold,

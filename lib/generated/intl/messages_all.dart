@@ -3,11 +3,14 @@
 // delegating to the appropriate library.
 
 // Ignore issues from commonly used lints in this file.
-// ignore_for_file:implementation_imports, file_names, unnecessary_new
+// ignore_for_file:implementation_imports, file_names,
 // ignore_for_file:unnecessary_brace_in_string_interps, directives_ordering
 // ignore_for_file:argument_type_not_assignable, invalid_assignment
 // ignore_for_file:prefer_single_quotes, prefer_generic_function_type_aliases
-// ignore_for_file:comment_references
+// ignore_for_file:comment_references,unnecessary_new
+// ignore_for_file:always_use_package_imports, avoid_redundant_argument_values,
+// ignore_for_file:always_specify_types, prefer_final_locals
+// ignore_for_file:require_trailing_commas, depend_on_referenced_packages
 
 import 'dart:async';
 

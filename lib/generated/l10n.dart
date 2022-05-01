@@ -1,4 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: always_use_package_imports, depend_on_referenced_packages
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'intl/messages_all.dart';
@@ -11,6 +13,14 @@ import 'intl/messages_all.dart';
 // ignore_for_file: non_constant_identifier_names, lines_longer_than_80_chars
 // ignore_for_file: join_return_with_assignment, prefer_final_in_for_each
 // ignore_for_file: avoid_redundant_argument_values, avoid_escaping_inner_quotes
+// Ignore issues from commonly used lints in this file.
+// ignore_for_file:implementation_imports, file_names,, unused_import
+// ignore_for_file:unnecessary_brace_in_string_interps, directives_ordering
+// ignore_for_file:argument_type_not_assignable, invalid_assignment
+// ignore_for_file:prefer_single_quotes, prefer_generic_function_type_aliases
+// ignore_for_file:comment_references,unnecessary_new,unnecessary_string_escapes
+// ignore_for_file:always_specify_types, prefer_final_locals, annotate_overrides
+// ignore_for_file:require_trailing_commas
 
 class S {
   S();
@@ -48,6 +58,336 @@ class S {
 
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
+  }
+
+  /// `Continue`
+  String get sContinue {
+    return Intl.message(
+      'Continue',
+      name: 'sContinue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `UnderConstruction`
+  String get underConstruction {
+    return Intl.message(
+      'UnderConstruction',
+      name: 'underConstruction',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign In`
+  String get signIn {
+    return Intl.message(
+      'Sign In',
+      name: 'signIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log In`
+  String get logIn {
+    return Intl.message(
+      'Log In',
+      name: 'logIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message(
+      'Email',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your email`
+  String get enterYourEmail {
+    return Intl.message(
+      'Enter your email',
+      name: 'enterYourEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your password`
+  String get enterYourPassword {
+    return Intl.message(
+      'Enter your password',
+      name: 'enterYourPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot Password`
+  String get forgotPassword {
+    return Intl.message(
+      'Forgot Password',
+      name: 'forgotPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remember Me`
+  String get rememberMe {
+    return Intl.message(
+      'Remember Me',
+      name: 'rememberMe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome Back`
+  String get welcomeBack {
+    return Intl.message(
+      'Welcome Back',
+      name: 'welcomeBack',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign in with your email and password \nor continue with social media`
+  String get signInWithYourEmailAndPasswordNorContinueWith {
+    return Intl.message(
+      'Sign in with your email and password \\nor continue with social media',
+      name: 'signInWithYourEmailAndPasswordNorContinueWith',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account?`
+  String get dontHaveAnAccount {
+    return Intl.message(
+      'Don\'t have an account?',
+      name: 'dontHaveAnAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign Up`
+  String get signUp {
+    return Intl.message(
+      'Sign Up',
+      name: 'signUp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No internet connections`
+  String get noInternetConnections {
+    return Intl.message(
+      'No internet connections',
+      name: 'noInternetConnections',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cashback 20%`
+  String get cashback20 {
+    return Intl.message(
+      'Cashback 20%',
+      name: 'cashback20',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A Summer Surprise\n`
+  String get aSummerSurprisen {
+    return Intl.message(
+      'A Summer Surprise\\n',
+      name: 'aSummerSurprisen',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `See more`
+  String get seeMore {
+    return Intl.message(
+      'See more',
+      name: 'seeMore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search restaurants...`
+  String get searchRestaurants {
+    return Intl.message(
+      'Search restaurants...',
+      name: 'searchRestaurants',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `See more detail`
+  String get seeMoreDetail {
+    return Intl.message(
+      'See more detail',
+      name: 'seeMoreDetail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `See less`
+  String get seeLess {
+    return Intl.message(
+      'See less',
+      name: 'seeLess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to connect to the network`
+  String get failedToConnectToTheNetwork {
+    return Intl.message(
+      'Failed to connect to the network',
+      name: 'failedToConnectToTheNetwork',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Our all restaurants`
+  String get ourAllRestaurants {
+    return Intl.message(
+      'Our all restaurants',
+      name: 'ourAllRestaurants',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No restaurants found`
+  String get noRestaurantsFound {
+    return Intl.message(
+      'No restaurants found',
+      name: 'noRestaurantsFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Our recommendations`
+  String get ourRecommendations {
+    return Intl.message(
+      'Our recommendations',
+      name: 'ourRecommendations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Our foods`
+  String get ourFoods {
+    return Intl.message(
+      'Our foods',
+      name: 'ourFoods',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Our drinks`
+  String get ourDrinks {
+    return Intl.message(
+      'Our drinks',
+      name: 'ourDrinks',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Favorite Restaurants`
+  String get favoriteRestaurants {
+    return Intl.message(
+      'Favorite Restaurants',
+      name: 'favoriteRestaurants',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Added to Favorite`
+  String get addedToFavorite {
+    return Intl.message(
+      'Added to Favorite',
+      name: 'addedToFavorite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Removed from Favorite`
+  String get removedFromFavorite {
+    return Intl.message(
+      'Removed from Favorite',
+      name: 'removedFromFavorite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Setting`
+  String get setting {
+    return Intl.message(
+      'Setting',
+      name: 'setting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Restaurant Notification`
+  String get restaurantNotification {
+    return Intl.message(
+      'Restaurant Notification',
+      name: 'restaurantNotification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enable Notification`
+  String get enableNotification {
+    return Intl.message(
+      'Enable Notification',
+      name: 'enableNotification',
+      desc: '',
+      args: [],
+    );
   }
 }
 

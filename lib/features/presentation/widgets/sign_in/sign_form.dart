@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:restaurant_app/core/router/router.gr.dart';
 import 'package:restaurant_app/core/theme/my_colors.dart';
-import 'package:restaurant_app/core/utils/my_strings.dart';
+import 'package:restaurant_app/generated/l10n.dart';
 
 class SignForm extends StatefulWidget {
   const SignForm({Key? key}) : super(key: key);
@@ -22,7 +22,7 @@ class _SignFormState extends State<SignForm> {
         onPressed: () {
           context.router.push(const HomeRoute());
         },
-        child: const Text(MyStrings.logIn),
+        child: Text(S.of(context).logIn),
       ),
     );
   }
@@ -39,15 +39,15 @@ class _SignFormState extends State<SignForm> {
             });
           },
         ),
-        const Flexible(child: Text(MyStrings.rememberMe)),
+        Flexible(child: Text(S.of(context).rememberMe)),
         const Spacer(),
         Flexible(
           child: GestureDetector(
             // ignore: always_specify_types
             onTap: () => {context.router.push(const UnderConstructionRoute())},
-            child: const Text(
-              MyStrings.forgotPassword,
-              style: TextStyle(decoration: TextDecoration.underline),
+            child: Text(
+              S.of(context).forgotPassword,
+              style: const TextStyle(decoration: TextDecoration.underline),
             ),
           ),
         )
@@ -58,10 +58,10 @@ class _SignFormState extends State<SignForm> {
   TextFormField buildEmailFormField() {
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
-      decoration: const InputDecoration(
-        labelText: MyStrings.email,
-        hintText: MyStrings.enterYourEmail,
-        suffixIcon: Padding(
+      decoration: InputDecoration(
+        labelText: S.of(context).email,
+        hintText: S.of(context).enterYourEmail,
+        suffixIcon: const Padding(
           padding: EdgeInsets.only(right: 25),
           child: Icon(LineIcons.envelope),
         ),
@@ -73,10 +73,10 @@ class _SignFormState extends State<SignForm> {
   TextFormField buildPasswordFormField() {
     return TextFormField(
       obscureText: true,
-      decoration: const InputDecoration(
-        labelText: MyStrings.password,
-        hintText: MyStrings.enterYourPassword,
-        suffixIcon: Padding(
+      decoration: InputDecoration(
+        labelText: S.of(context).password,
+        hintText: S.of(context).enterYourPassword,
+        suffixIcon: const Padding(
           padding: EdgeInsets.only(right: 25),
           child: Icon(LineIcons.lock),
         ),

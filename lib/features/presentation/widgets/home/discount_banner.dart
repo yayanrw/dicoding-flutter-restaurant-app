@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:restaurant_app/core/router/router.gr.dart';
 import 'package:restaurant_app/core/theme/my_colors.dart';
 import 'package:restaurant_app/core/theme/my_text_theme.dart';
-import 'package:restaurant_app/core/utils/my_strings.dart';
+import 'package:restaurant_app/generated/l10n.dart';
 
 class DiscountBanner extends StatelessWidget {
   const DiscountBanner({
@@ -27,11 +27,11 @@ class DiscountBanner extends StatelessWidget {
           ),
           child: Text.rich(
             TextSpan(
-              text: MyStrings.summerSurprise,
+              text: S.of(context).aSummerSurprisen,
               style: const TextStyle(color: Colors.white),
               children: <TextSpan>[
                 TextSpan(
-                  text: MyStrings.cashback20,
+                  text: S.of(context).cashback20,
                   style: myTextTheme(
                     color: MyColors.light,
                     weight: FontWeight.w700,

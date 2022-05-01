@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:restaurant_app/core/theme/my_text_theme.dart';
-import 'package:restaurant_app/core/utils/my_strings.dart';
+import 'package:restaurant_app/generated/l10n.dart';
 
 class UnderConstructionPage extends StatelessWidget {
   const UnderConstructionPage({Key? key}) : super(key: key);
@@ -10,7 +10,7 @@ class UnderConstructionPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(MyStrings.underConstruction),
+        title: Text(S.of(context).underConstruction),
       ),
       body: Center(
         child: Column(
@@ -25,7 +25,7 @@ class UnderConstructionPage extends StatelessWidget {
               ),
             ),
             Text(
-              MyStrings.underConstruction,
+              S.of(context).underConstruction,
               style: myTextTheme().headline5,
             )
           ],

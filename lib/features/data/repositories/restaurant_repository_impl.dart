@@ -5,7 +5,6 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:restaurant_app/core/utils/error/exceptions.dart';
 import 'package:restaurant_app/core/utils/error/failure.dart';
-import 'package:restaurant_app/core/utils/my_strings.dart';
 import 'package:restaurant_app/features/data/datasources/restaurant_local_datasource.dart';
 import 'package:restaurant_app/features/data/datasources/restaurant_remote_datasource.dart';
 import 'package:restaurant_app/features/data/models/restaurant_detail_response.dart';
@@ -37,7 +36,7 @@ class RestaurantRepositoryImpl implements RestaurantRepository {
     } on ServerException {
       return const Left(ServerFailure(''));
     } on SocketException {
-      return const Left(ConnectionFailure(MyStrings.failedConnection));
+      return const Left(ConnectionFailure('Failed connection'));
     }
   }
 
@@ -53,7 +52,7 @@ class RestaurantRepositoryImpl implements RestaurantRepository {
     } on ServerException {
       return const Left(ServerFailure(''));
     } on SocketException {
-      return const Left(ConnectionFailure(MyStrings.failedConnection));
+      return const Left(ConnectionFailure('Failed connection'));
     }
   }
 
@@ -70,7 +69,7 @@ class RestaurantRepositoryImpl implements RestaurantRepository {
     } on ServerException {
       return const Left(ServerFailure(''));
     } on SocketException {
-      return const Left(ConnectionFailure(MyStrings.failedConnection));
+      return const Left(ConnectionFailure('Failed connection'));
     }
   }
 
@@ -86,7 +85,7 @@ class RestaurantRepositoryImpl implements RestaurantRepository {
     } on ServerException {
       return const Left(ServerFailure(''));
     } on SocketException {
-      return const Left(ConnectionFailure(MyStrings.failedConnection));
+      return const Left(ConnectionFailure('Failed connection'));
     }
   }
 

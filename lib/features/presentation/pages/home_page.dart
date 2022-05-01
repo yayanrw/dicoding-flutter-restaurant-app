@@ -4,9 +4,9 @@ import 'dart:async';
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/core/theme/my_colors.dart';
-import 'package:restaurant_app/core/utils/my_strings.dart';
 import 'package:restaurant_app/core/utils/size_config.dart';
 import 'package:restaurant_app/features/presentation/widgets/home/home_body.dart';
+import 'package:restaurant_app/generated/l10n.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
         .onConnectivityChanged
         .listen((ConnectivityResult result) {
       if (result == ConnectivityResult.none) {
-        _showSnackbar(MyStrings.noInternet);
+        _showSnackbar(S.of(context).noInternetConnections);
       }
     });
   }

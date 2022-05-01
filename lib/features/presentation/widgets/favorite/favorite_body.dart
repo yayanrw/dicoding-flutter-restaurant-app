@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/core/utils/my_strings.dart';
 import 'package:restaurant_app/features/presentation/widgets/favorite/restaurant_list.dart';
+import 'package:restaurant_app/generated/l10n.dart';
 
 class FavoriteBody extends StatelessWidget {
   const FavoriteBody({Key? key}) : super(key: key);
@@ -9,7 +9,7 @@ class FavoriteBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(MyStrings.favoriteRestaurants),
+        title: Text(S.of(context).favoriteRestaurants),
       ),
       body: SingleChildScrollView(
         child: Column(
