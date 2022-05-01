@@ -1,6 +1,7 @@
 // ignore_for_file: always_specify_types
 
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:restaurant_app/core/config/apps_config.dart';
 import 'package:restaurant_app/core/config/env.dart';
@@ -11,6 +12,7 @@ import 'package:restaurant_app/features/presentation/provider/favorite_restauran
 import 'package:restaurant_app/features/presentation/provider/restaurant_detail_notifier.dart';
 import 'package:restaurant_app/features/presentation/provider/restaurant_list_notifier.dart';
 import 'package:restaurant_app/features/presentation/provider/restaurant_search_notifier.dart';
+import 'package:restaurant_app/generated/l10n.dart';
 
 void main() {
   di.configureInjection(Env.dev);
@@ -38,6 +40,13 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp.router(
+        localizationsDelegates: const [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: S.delegate.supportedLocales,
         title: AppsConfig.appTitle,
         debugShowCheckedModeBanner: false,
         routerDelegate: _appRouter.delegate(),
