@@ -4,14 +4,11 @@
 // function name.
 
 // Ignore issues from commonly used lints in this file.
-// ignore_for_file:implementation_imports, file_names,, unused_import
-// ignore_for_file:unnecessary_brace_in_string_interps, directives_ordering
-// ignore_for_file:argument_type_not_assignable, invalid_assignment
-// ignore_for_file:prefer_single_quotes, prefer_generic_function_type_aliases
-// ignore_for_file:comment_references,unnecessary_new,unnecessary_string_escapes
-// ignore_for_file:always_use_package_imports, avoid_redundant_argument_values,
-// ignore_for_file:always_specify_types, prefer_final_locals, annotate_overrides
-// ignore_for_file:require_trailing_commas, depend_on_referenced_packages
+// ignore_for_file:unnecessary_brace_in_string_interps, unnecessary_new
+// ignore_for_file:prefer_single_quotes,comment_references, directives_ordering
+// ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
+// ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
+// ignore_for_file:unnecessary_string_interpolations, unnecessary_string_escapes
 
 import 'package:intl/intl.dart';
 import 'package:intl/message_lookup_by_library.dart';
