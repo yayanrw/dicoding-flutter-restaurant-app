@@ -1,6 +1,4 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: prefer_final_in_for_each
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'intl/messages_all.dart';
@@ -10,17 +8,9 @@ import 'intl/messages_all.dart';
 // Made by Localizely
 // **************************************************************************
 
-// Ignore issues from commonly used lints in this file.
-// ignore_for_file:implementation_imports, file_names, unnecessary_new,
-// ignore_for_file:lines_longer_than_80_chars
-// ignore_for_file:annotate_overrides, unnecessary_string_escapes
-// ignore_for_file:depend_on_referenced_packages, always_use_package_imports,
-// ignore_for_file:always_specify_types, avoid_redundant_argument_values,
-// ignore_for_file:prefer_final_locals, require_trailing_commas
-// ignore_for_file:unnecessary_brace_in_string_interps, directives_ordering
-// ignore_for_file:argument_type_not_assignable, invalid_assignment
-// ignore_for_file:prefer_single_quotes, prefer_generic_function_type_aliases
-// ignore_for_file:comment_references,  unused_import
+// ignore_for_file: non_constant_identifier_names, lines_longer_than_80_chars
+// ignore_for_file: join_return_with_assignment, prefer_final_in_for_each
+// ignore_for_file: avoid_redundant_argument_values, avoid_escaping_inner_quotes
 
 class S {
   S();
@@ -183,7 +173,7 @@ class S {
   /// `Don't have an account?`
   String get dontHaveAnAccount {
     return Intl.message(
-      "Don't have an account?",
+      'Don\'t have an account?',
       name: 'dontHaveAnAccount',
       desc: '',
       args: [],
@@ -443,7 +433,7 @@ class S {
   /// `Welcome to Restaurant App, Let's shop!`
   String get welcomeToRestaurantAppLetsShop {
     return Intl.message(
-      "Welcome to Restaurant App, Let's shop!",
+      'Welcome to Restaurant App, Let\'s shop!',
       name: 'welcomeToRestaurantAppLetsShop',
       desc: '',
       args: [],
@@ -473,7 +463,7 @@ class S {
   /// `Let's shop and eating together!`
   String get letsShopAndEatingTogether {
     return Intl.message(
-      "Let's shop and eating together!",
+      'Let\'s shop and eating together!',
       name: 'letsShopAndEatingTogether',
       desc: '',
       args: [],
