@@ -469,6 +469,26 @@ class S {
       args: [],
     );
   }
+
+  /// `<b>Restaurant Recommendation</b>`
+  String get restaurantRecommendation {
+    return Intl.message(
+      '<b>Restaurant Recommendation</b>',
+      name: 'restaurantRecommendation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load data`
+  String get failedToLoadData {
+    return Intl.message(
+      'Failed to load data',
+      name: 'failedToLoadData',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

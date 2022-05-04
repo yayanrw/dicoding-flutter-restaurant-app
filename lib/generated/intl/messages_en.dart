@@ -43,6 +43,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter your password"),
         "failedToConnectToTheNetwork": MessageLookupByLibrary.simpleMessage(
             "Failed to connect to the network"),
+        "failedToLoadData":
+            MessageLookupByLibrary.simpleMessage("Failed to load data"),
         "favoriteRestaurants":
             MessageLookupByLibrary.simpleMessage("Favorite Restaurants"),
         "forgotPassword":
@@ -70,6 +72,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Removed from favorites"),
         "restaurantNotification":
             MessageLookupByLibrary.simpleMessage("Restaurant Notification"),
+        "restaurantRecommendation": MessageLookupByLibrary.simpleMessage(
+            "<b>Restaurant Recommendation</b>"),
         "sContinue": MessageLookupByLibrary.simpleMessage("Continue"),
         "searchRestaurants":
             MessageLookupByLibrary.simpleMessage("Search restaurants..."),

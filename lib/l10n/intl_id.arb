@@ -40,5 +40,7 @@
   "welcomeToRestaurantAppLetsShop": "Selamat datang di Aplikasi Restoran, Ayo berbelanja!",
   "doYouWantAHamburger": "Apakah Anda ingin hamburger?",
   "orDoYouWantAnIceCream": "Atau, apakah Anda ingin es krim?",
-  "letsShopAndEatingTogether": "Ayo belanja dan makan bersama!"
+  "letsShopAndEatingTogether": "Ayo belanja dan makan bersama!",
+  "restaurantRecommendation": "<b>Rekomendasi Restoran</b>",
+  "failedToLoadData": "Gagal memuat data"
 }

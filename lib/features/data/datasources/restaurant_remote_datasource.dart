@@ -28,6 +28,26 @@ class RestaurantRemoteDataSourceImpl implements RestaurantRemoteDataSource {
   final http.Client client;
 
   @override
+  Future<RestaurantModel> getRandomRestaurant() async {
+    final http.Response response =
+        await client.get(Uri.parse('${AppsConfig.baseUrl}/list'));
+
+    if (response.statusCode == 200) {
+      final List<RestaurantModel>? listRestaurant =
+          RestaurantListResponse.fromJson(
+        json.decode(response.body) as Map<String, dynamic>,
+      ).restaurants;
+
+      final RestaurantModel restaurantModel =
+          listRestaurant![Random().nextInt(listRestaurant.length)];
+
+      return restaurantModel;
+    } else {
+      throw ServerException();
+    }
+  }
+
+  @override
   Future<RestaurantDetailResponse> getRestaurantDetail(String id) async {
     final http.Response response =
         await client.get(Uri.parse('${AppsConfig.baseUrl}/detail/$id'));
@@ -66,26 +86,6 @@ class RestaurantRemoteDataSourceImpl implements RestaurantRemoteDataSource {
       return RestaurantListResponse.fromJson(
         json.decode(response.body) as Map<String, dynamic>,
       );
-    } else {
-      throw ServerException();
-    }
-  }
-
-  @override
-  Future<RestaurantModel> getRandomRestaurant() async {
-    final http.Response response =
-        await client.get(Uri.parse('${AppsConfig.baseUrl}/list'));
-
-    if (response.statusCode == 200) {
-      final List<RestaurantModel>? listRestaurant =
-          RestaurantListResponse.fromJson(
-        json.decode(response.body) as Map<String, dynamic>,
-      ).restaurants;
-
-      final RestaurantModel restaurantModel =
-          listRestaurant![Random().nextInt(listRestaurant.length)];
-
-      return restaurantModel;
     } else {
       throw ServerException();
     }

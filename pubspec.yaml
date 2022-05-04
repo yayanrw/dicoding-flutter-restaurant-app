@@ -21,6 +21,7 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
+  android_alarm_manager_plus: ^2.0.5
   auto_route: ^3.2.4
   auto_route_generator: ^3.2.3
   build_runner: ^2.1.8
@@ -30,6 +31,7 @@ dependencies:
   equatable: ^2.0.3
   flutter:
     sdk: flutter
+  flutter_local_notifications: ^9.5.0
   flutter_localizations:
     sdk: flutter
   flutter_svg: ^0.22.0
@@ -40,6 +42,7 @@ dependencies:
   line_icons: ^2.0.1
   path: ^1.8.0
   provider: ^6.0.0
+  rxdart: ^0.27.3
   sqflite: ^2.0.0+4
 
 dev_dependencies:

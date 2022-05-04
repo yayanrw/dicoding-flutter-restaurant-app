@@ -40,5 +40,7 @@
   "welcomeToRestaurantAppLetsShop": "Welcome to Restaurant App, Let's shop!",
   "doYouWantAHamburger": "Do you want a hamburger?",
   "orDoYouWantAnIceCream": "Or, do you want an ice cream?",
-  "letsShopAndEatingTogether": "Let's shop and eating together!"
+  "letsShopAndEatingTogether": "Let's shop and eating together!",
+  "restaurantRecommendation": "<b>Restaurant Recommendation</b>",
+  "failedToLoadData": "Failed to load data"
 }

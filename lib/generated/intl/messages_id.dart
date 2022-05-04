@@ -43,6 +43,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Masukkan password anda"),
         "failedToConnectToTheNetwork":
             MessageLookupByLibrary.simpleMessage("Gagal terhubung ke jaringan"),
+        "failedToLoadData":
+            MessageLookupByLibrary.simpleMessage("Gagal memuat data"),
         "favoriteRestaurants":
             MessageLookupByLibrary.simpleMessage("Restoran Favorit"),
         "forgotPassword": MessageLookupByLibrary.simpleMessage("Lupa Password"),
@@ -69,6 +71,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Dihapus dari favorit"),
         "restaurantNotification":
             MessageLookupByLibrary.simpleMessage("Pemberitahuan Restoran"),
+        "restaurantRecommendation":
+            MessageLookupByLibrary.simpleMessage("<b>Rekomendasi Restoran</b>"),
         "sContinue": MessageLookupByLibrary.simpleMessage("Lanjutkan"),
         "searchRestaurants":
             MessageLookupByLibrary.simpleMessage("Cari restoran..."),
