@@ -1,4 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+
+// ignore_for_file: require_trailing_commas
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'intl/messages_all.dart';
@@ -8,6 +11,8 @@ import 'intl/messages_all.dart';
 // Made by Localizely
 // **************************************************************************
 
+// ignore_for_file: always_specify_types, depend_on_referenced_packages,
+// ignore_for_file: always_use_package_imports
 // ignore_for_file: non_constant_identifier_names, lines_longer_than_80_chars
 // ignore_for_file: join_return_with_assignment, prefer_final_in_for_each
 // ignore_for_file: avoid_redundant_argument_values, avoid_escaping_inner_quotes
@@ -26,13 +31,13 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
+    final String name = (locale.countryCode?.isEmpty ?? false)
         ? locale.languageCode
         : locale.toString();
-    final localeName = Intl.canonicalizedLocale(name);
+    final String localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
-      final instance = S();
+      final S instance = S();
       S._current = instance;
 
       return instance;
@@ -40,7 +45,7 @@ class S {
   }
 
   static S of(BuildContext context) {
-    final instance = S.maybeOf(context);
+    final S? instance = S.maybeOf(context);
     assert(instance != null,
         'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
     return instance!;
@@ -539,7 +544,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   bool shouldReload(AppLocalizationDelegate old) => false;
 
   bool _isSupported(Locale locale) {
-    for (var supportedLocale in supportedLocales) {
+    for (Locale supportedLocale in supportedLocales) {
       if (supportedLocale.languageCode == locale.languageCode) {
         return true;
       }

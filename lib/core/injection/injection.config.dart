@@ -4,6 +4,20 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
+// Ignore issues from commonly used lints in this file.
+// ignore_for_file:implementation_imports, file_names, unnecessary_new,
+//ignore_for_file: unused_import, annotate_overrides, unnecessary_string_escapes
+// ignore_for_file: require_trailing_commas, prefer_final_locals
+// ignore_for_file:unnecessary_brace_in_string_interps, directives_ordering
+// ignore_for_file:argument_type_not_assignable, invalid_assignment
+// ignore_for_file:prefer_single_quotes, prefer_generic_function_type_aliases
+// ignore_for_file:comment_references
+// ignore_for_file: always_specify_types, depend_on_referenced_packages,
+// ignore_for_file: always_use_package_imports
+// ignore_for_file: non_constant_identifier_names, lines_longer_than_80_chars
+// ignore_for_file: join_return_with_assignment, prefer_final_in_for_each
+// ignore_for_file: avoid_redundant_argument_values, avoid_escaping_inner_quotes
+
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:http/http.dart' as _i4;
 import 'package:injectable/injectable.dart' as _i2;
@@ -38,7 +52,6 @@ import '../../features/presentation/provider/schedulling_notifier.dart' as _i11;
 import '../router/router.gr.dart' as _i3;
 import 'register_module.dart' as _i24; // ignore_for_file: unnecessary_lambdas
 
-// ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
 _i1.GetIt $initGetIt(_i1.GetIt get,
     {String? environment, _i2.EnvironmentFilter? environmentFilter}) {
