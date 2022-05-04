@@ -7,7 +7,7 @@ import 'package:restaurant_app/core/config/apps_config.dart';
 import 'package:restaurant_app/core/config/env.dart';
 import 'package:restaurant_app/core/injection/injection.dart' as di;
 import 'package:restaurant_app/core/router/router.gr.dart';
-import 'package:restaurant_app/core/theme/theme.dart';
+import 'package:restaurant_app/core/theme/my_themes.dart';
 import 'package:restaurant_app/features/presentation/provider/favorite_restaurants_notifier.dart';
 import 'package:restaurant_app/features/presentation/provider/restaurant_detail_notifier.dart';
 import 'package:restaurant_app/features/presentation/provider/restaurant_list_notifier.dart';
