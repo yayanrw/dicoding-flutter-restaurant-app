@@ -11,7 +11,8 @@ import 'intl/messages_all.dart';
 // **************************************************************************
 
 // Ignore issues from commonly used lints in this file.
-// ignore_for_file:implementation_imports, file_names, unnecessary_new,, lines_longer_than_80_chars
+// ignore_for_file:implementation_imports, file_names, unnecessary_new,
+// ignore_for_file:lines_longer_than_80_chars
 // ignore_for_file:annotate_overrides, unnecessary_string_escapes
 // ignore_for_file:depend_on_referenced_packages, always_use_package_imports,
 // ignore_for_file:always_specify_types, avoid_redundant_argument_values,

@@ -14,6 +14,7 @@
 // ignore_for_file:prefer_single_quotes, prefer_generic_function_type_aliases
 // ignore_for_file:comment_references,  unused_import
 
+
 import 'package:intl/intl.dart';
 import 'package:intl/message_lookup_by_library.dart';
 
@@ -84,7 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "signIn": MessageLookupByLibrary.simpleMessage("Masuk"),
         "signInWithYourEmailAndPasswordNorContinueWith":
             MessageLookupByLibrary.simpleMessage(
-                "Sign in with your email and password \nor continue with social media"),
+                "Masuk dengan email dan password anda \natau lanjutkan dengan media sosial"),
         "signUp": MessageLookupByLibrary.simpleMessage("Daftar"),
         "underConstruction":
             MessageLookupByLibrary.simpleMessage("Dalam Perbaikan"),
