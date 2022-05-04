@@ -4,11 +4,15 @@
 // function name.
 
 // Ignore issues from commonly used lints in this file.
-// ignore_for_file:unnecessary_brace_in_string_interps, unnecessary_new
-// ignore_for_file:prefer_single_quotes,comment_references, directives_ordering
-// ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
-// ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
-// ignore_for_file:unnecessary_string_interpolations, unnecessary_string_escapes
+// ignore_for_file:implementation_imports, file_names, unnecessary_new,, lines_longer_than_80_chars
+// ignore_for_file:annotate_overrides, unnecessary_string_escapes
+// ignore_for_file:depend_on_referenced_packages, always_use_package_imports,
+// ignore_for_file:always_specify_types, avoid_redundant_argument_values,
+// ignore_for_file:prefer_final_locals, require_trailing_commas
+// ignore_for_file:unnecessary_brace_in_string_interps, directives_ordering
+// ignore_for_file:argument_type_not_assignable, invalid_assignment
+// ignore_for_file:prefer_single_quotes, prefer_generic_function_type_aliases
+// ignore_for_file:comment_references,  unused_import
 
 import 'package:intl/intl.dart';
 import 'package:intl/message_lookup_by_library.dart';
@@ -23,57 +27,70 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aSummerSurprisen":
-            MessageLookupByLibrary.simpleMessage("A Summer Surprise\\n"),
+            MessageLookupByLibrary.simpleMessage("Kejutan Musim Panas\n"),
         "addedToFavorite":
-            MessageLookupByLibrary.simpleMessage("Added to Favorite"),
+            MessageLookupByLibrary.simpleMessage("Ditambahkan ke Favorit"),
+        "bestSeller": MessageLookupByLibrary.simpleMessage("Penjualan terbaik"),
+        "budgetMeal": MessageLookupByLibrary.simpleMessage("Makan hemat"),
         "cashback20": MessageLookupByLibrary.simpleMessage("Cashback 20%"),
+        "discount": MessageLookupByLibrary.simpleMessage("Diskon"),
+        "doYouWantAHamburger": MessageLookupByLibrary.simpleMessage(
+            "Apakah Anda ingin hamburger?"),
         "dontHaveAnAccount":
-            MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
+            MessageLookupByLibrary.simpleMessage("Tidak memiliki akun?"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "enableNotification":
-            MessageLookupByLibrary.simpleMessage("Enable Notification"),
+            MessageLookupByLibrary.simpleMessage("Aktifkan Pemberitahuan"),
         "enterYourEmail":
-            MessageLookupByLibrary.simpleMessage("Enter your email"),
+            MessageLookupByLibrary.simpleMessage("Masukkan email anda"),
         "enterYourPassword":
-            MessageLookupByLibrary.simpleMessage("Enter your password"),
-        "failedToConnectToTheNetwork": MessageLookupByLibrary.simpleMessage(
-            "Failed to connect to the network"),
+            MessageLookupByLibrary.simpleMessage("Masukkan password anda"),
+        "failedToConnectToTheNetwork":
+            MessageLookupByLibrary.simpleMessage("Gagal terhubung ke jaringan"),
         "favoriteRestaurants":
-            MessageLookupByLibrary.simpleMessage("Favorite Restaurants"),
-        "forgotPassword":
-            MessageLookupByLibrary.simpleMessage("Forgot Password"),
-        "logIn": MessageLookupByLibrary.simpleMessage("Log In"),
+            MessageLookupByLibrary.simpleMessage("Restoran Favorit"),
+        "forgotPassword": MessageLookupByLibrary.simpleMessage("Lupa Password"),
+        "healthyFood": MessageLookupByLibrary.simpleMessage("Makanan sehat"),
+        "letsShopAndEatingTogether": MessageLookupByLibrary.simpleMessage(
+            "Ayo belanja dan makan bersama!"),
+        "logIn": MessageLookupByLibrary.simpleMessage("Masuk"),
+        "nearMe": MessageLookupByLibrary.simpleMessage("Dekat saya"),
         "noInternetConnections":
-            MessageLookupByLibrary.simpleMessage("No internet connections"),
-        "noRestaurantsFound":
-            MessageLookupByLibrary.simpleMessage("No restaurants found"),
+            MessageLookupByLibrary.simpleMessage("Tidak ada akses internet"),
+        "noRestaurantsFound": MessageLookupByLibrary.simpleMessage(
+            "Tidak ada restoran yang ditemukan"),
+        "orDoYouWantAnIceCream": MessageLookupByLibrary.simpleMessage(
+            "Atau, apakah Anda ingin es krim?"),
         "ourAllRestaurants":
-            MessageLookupByLibrary.simpleMessage("Our all restaurants"),
-        "ourDrinks": MessageLookupByLibrary.simpleMessage("Our drinks"),
-        "ourFoods": MessageLookupByLibrary.simpleMessage("Our foods"),
+            MessageLookupByLibrary.simpleMessage("Semua restoran kami"),
+        "ourDrinks": MessageLookupByLibrary.simpleMessage("Minuman kami"),
+        "ourFoods": MessageLookupByLibrary.simpleMessage("Makanan kami"),
         "ourRecommendations":
-            MessageLookupByLibrary.simpleMessage("Our recommendations"),
+            MessageLookupByLibrary.simpleMessage("Rekomendasi kami"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
-        "rememberMe": MessageLookupByLibrary.simpleMessage("Remember Me"),
-        "removedFromFavorite":
-            MessageLookupByLibrary.simpleMessage("Removed from Favorite"),
+        "rememberMe": MessageLookupByLibrary.simpleMessage("Ingat Saya"),
+        "removedFromFavorites":
+            MessageLookupByLibrary.simpleMessage("Dihapus dari favorit"),
         "restaurantNotification":
-            MessageLookupByLibrary.simpleMessage("Restaurant Notification"),
-        "sContinue": MessageLookupByLibrary.simpleMessage("Continue"),
+            MessageLookupByLibrary.simpleMessage("Pemberitahuan Restoran"),
+        "sContinue": MessageLookupByLibrary.simpleMessage("Lanjutkan"),
         "searchRestaurants":
-            MessageLookupByLibrary.simpleMessage("Search restaurants..."),
-        "seeLess": MessageLookupByLibrary.simpleMessage("See less"),
-        "seeMore": MessageLookupByLibrary.simpleMessage("See more"),
+            MessageLookupByLibrary.simpleMessage("Cari restoran..."),
+        "seeLess": MessageLookupByLibrary.simpleMessage("Lihat lebih sedikit"),
+        "seeMore": MessageLookupByLibrary.simpleMessage("Lihat lainnya"),
         "seeMoreDetail":
-            MessageLookupByLibrary.simpleMessage("See more detail"),
-        "setting": MessageLookupByLibrary.simpleMessage("Setting"),
-        "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
+            MessageLookupByLibrary.simpleMessage("Lihat lebih detail"),
+        "setting": MessageLookupByLibrary.simpleMessage("Pengaturan"),
+        "signIn": MessageLookupByLibrary.simpleMessage("Masuk"),
         "signInWithYourEmailAndPasswordNorContinueWith":
             MessageLookupByLibrary.simpleMessage(
-                "Sign in with your email and password \\nor continue with social media"),
-        "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
+                "Sign in with your email and password \nor continue with social media"),
+        "signUp": MessageLookupByLibrary.simpleMessage("Daftar"),
         "underConstruction":
-            MessageLookupByLibrary.simpleMessage("UnderConstruction"),
-        "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back")
+            MessageLookupByLibrary.simpleMessage("Dalam Perbaikan"),
+        "welcomeBack":
+            MessageLookupByLibrary.simpleMessage("Selamat datang kembali"),
+        "welcomeToRestaurantAppLetsShop": MessageLookupByLibrary.simpleMessage(
+            "Selamat datang di Aplikasi Restoran, Ayo berbelanja!")
       };
 }

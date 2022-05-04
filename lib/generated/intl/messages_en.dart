@@ -4,11 +4,15 @@
 // function name.
 
 // Ignore issues from commonly used lints in this file.
-// ignore_for_file:unnecessary_brace_in_string_interps, unnecessary_new
-// ignore_for_file:prefer_single_quotes,comment_references, directives_ordering
-// ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
-// ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
-// ignore_for_file:unnecessary_string_interpolations, unnecessary_string_escapes
+// ignore_for_file:implementation_imports, file_names, unnecessary_new,
+// ignore_for_file:annotate_overrides, unnecessary_string_escapes 
+// ignore_for_file:depend_on_referenced_packages, always_use_package_imports, 
+// ignore_for_file:always_specify_types, avoid_redundant_argument_values, 
+// ignore_for_file:prefer_final_locals, require_trailing_commas
+// ignore_for_file:unnecessary_brace_in_string_interps, directives_ordering
+// ignore_for_file:argument_type_not_assignable, invalid_assignment
+// ignore_for_file:prefer_single_quotes, prefer_generic_function_type_aliases
+// ignore_for_file:comment_references,  unused_import
 
 import 'package:intl/intl.dart';
 import 'package:intl/message_lookup_by_library.dart';
@@ -26,7 +30,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("A Summer Surprise\\n"),
         "addedToFavorite":
             MessageLookupByLibrary.simpleMessage("Added to Favorite"),
+        "bestSeller": MessageLookupByLibrary.simpleMessage("Best seller"),
+        "budgetMeal": MessageLookupByLibrary.simpleMessage("Budget meal"),
         "cashback20": MessageLookupByLibrary.simpleMessage("Cashback 20%"),
+        "discount": MessageLookupByLibrary.simpleMessage("Discount"),
+        "doYouWantAHamburger":
+            MessageLookupByLibrary.simpleMessage("Do you want a hamburger?"),
         "dontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
@@ -42,11 +51,17 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Favorite Restaurants"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password"),
+        "healthyFood": MessageLookupByLibrary.simpleMessage("Healthy food"),
+        "letsShopAndEatingTogether": MessageLookupByLibrary.simpleMessage(
+            "Let\'s shop and eating together!"),
         "logIn": MessageLookupByLibrary.simpleMessage("Log In"),
+        "nearMe": MessageLookupByLibrary.simpleMessage("Near me"),
         "noInternetConnections":
             MessageLookupByLibrary.simpleMessage("No internet connections"),
         "noRestaurantsFound":
             MessageLookupByLibrary.simpleMessage("No restaurants found"),
+        "orDoYouWantAnIceCream": MessageLookupByLibrary.simpleMessage(
+            "Or, do you want an ice cream?"),
         "ourAllRestaurants":
             MessageLookupByLibrary.simpleMessage("Our all restaurants"),
         "ourDrinks": MessageLookupByLibrary.simpleMessage("Our drinks"),
@@ -55,8 +70,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Our recommendations"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "rememberMe": MessageLookupByLibrary.simpleMessage("Remember Me"),
-        "removedFromFavorite":
-            MessageLookupByLibrary.simpleMessage("Removed from Favorite"),
+        "removedFromFavorites":
+            MessageLookupByLibrary.simpleMessage("Removed from favorites"),
         "restaurantNotification":
             MessageLookupByLibrary.simpleMessage("Restaurant Notification"),
         "sContinue": MessageLookupByLibrary.simpleMessage("Continue"),
@@ -74,6 +89,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "underConstruction":
             MessageLookupByLibrary.simpleMessage("UnderConstruction"),
-        "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back")
+        "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back"),
+        "welcomeToRestaurantAppLetsShop": MessageLookupByLibrary.simpleMessage(
+            "Welcome to Restaurant App, Let\'s shop!")
       };
 }

@@ -28,8 +28,17 @@
   "ourDrinks": "Our drinks",
   "favoriteRestaurants": "Favorite Restaurants",
   "addedToFavorite": "Added to Favorite",
-  "removedFromFavorite": "Removed from Favorite",
   "setting": "Setting",
   "restaurantNotification": "Restaurant Notification",
-  "enableNotification": "Enable Notification"
+  "enableNotification": "Enable Notification",
+  "removedFromFavorites": "Removed from favorites",
+  "nearMe": "Near me",
+  "bestSeller": "Best seller",
+  "budgetMeal": "Budget meal",
+  "discount": "Discount",
+  "healthyFood": "Healthy food",
+  "welcomeToRestaurantAppLetsShop": "Welcome to Restaurant App, Let's shop!",
+  "doYouWantAHamburger": "Do you want a hamburger?",
+  "orDoYouWantAnIceCream": "Or, do you want an ice cream?",
+  "letsShopAndEatingTogether": "Let's shop and eating together!"
 }

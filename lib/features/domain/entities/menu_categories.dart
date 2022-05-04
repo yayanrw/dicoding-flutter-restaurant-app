@@ -3,6 +3,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:restaurant_app/generated/l10n.dart';
 
 class MenuCategories extends Equatable {
   const MenuCategories({
@@ -18,9 +19,9 @@ class MenuCategories extends Equatable {
 }
 
 final List<MenuCategories> menuCategories = [
-  const MenuCategories(icon: LineIcons.map, text: 'Near me'),
-  const MenuCategories(icon: LineIcons.ribbon, text: 'Best seller'),
-  const MenuCategories(icon: LineIcons.piggyBank, text: 'Budget meal'),
-  const MenuCategories(icon: LineIcons.percent, text: 'Discount'),
-  const MenuCategories(icon: LineIcons.heartbeat, text: 'Healthy food'),
+  MenuCategories(icon: LineIcons.map, text: S.current.nearMe),
+  MenuCategories(icon: LineIcons.ribbon, text: S.current.bestSeller),
+  MenuCategories(icon: LineIcons.piggyBank, text: S.current.budgetMeal),
+  MenuCategories(icon: LineIcons.percent, text: S.current.discount),
+  MenuCategories(icon: LineIcons.heartbeat, text: S.current.healthyFood),
 ];

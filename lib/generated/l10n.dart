@@ -1,4 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: prefer_final_in_for_each
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'intl/messages_all.dart';
@@ -8,9 +10,16 @@ import 'intl/messages_all.dart';
 // Made by Localizely
 // **************************************************************************
 
-// ignore_for_file: non_constant_identifier_names, lines_longer_than_80_chars
-// ignore_for_file: join_return_with_assignment, prefer_final_in_for_each
-// ignore_for_file: avoid_redundant_argument_values, avoid_escaping_inner_quotes
+// Ignore issues from commonly used lints in this file.
+// ignore_for_file:implementation_imports, file_names, unnecessary_new,, lines_longer_than_80_chars
+// ignore_for_file:annotate_overrides, unnecessary_string_escapes
+// ignore_for_file:depend_on_referenced_packages, always_use_package_imports,
+// ignore_for_file:always_specify_types, avoid_redundant_argument_values,
+// ignore_for_file:prefer_final_locals, require_trailing_commas
+// ignore_for_file:unnecessary_brace_in_string_interps, directives_ordering
+// ignore_for_file:argument_type_not_assignable, invalid_assignment
+// ignore_for_file:prefer_single_quotes, prefer_generic_function_type_aliases
+// ignore_for_file:comment_references,  unused_import
 
 class S {
   S();
@@ -173,7 +182,7 @@ class S {
   /// `Don't have an account?`
   String get dontHaveAnAccount {
     return Intl.message(
-      'Don\'t have an account?',
+      "Don't have an account?",
       name: 'dontHaveAnAccount',
       desc: '',
       args: [],
@@ -340,16 +349,6 @@ class S {
     );
   }
 
-  /// `Removed from Favorite`
-  String get removedFromFavorite {
-    return Intl.message(
-      'Removed from Favorite',
-      name: 'removedFromFavorite',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Setting`
   String get setting {
     return Intl.message(
@@ -375,6 +374,106 @@ class S {
     return Intl.message(
       'Enable Notification',
       name: 'enableNotification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Removed from favorites`
+  String get removedFromFavorites {
+    return Intl.message(
+      'Removed from favorites',
+      name: 'removedFromFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Near me`
+  String get nearMe {
+    return Intl.message(
+      'Near me',
+      name: 'nearMe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Best seller`
+  String get bestSeller {
+    return Intl.message(
+      'Best seller',
+      name: 'bestSeller',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Budget meal`
+  String get budgetMeal {
+    return Intl.message(
+      'Budget meal',
+      name: 'budgetMeal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Discount`
+  String get discount {
+    return Intl.message(
+      'Discount',
+      name: 'discount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Healthy food`
+  String get healthyFood {
+    return Intl.message(
+      'Healthy food',
+      name: 'healthyFood',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome to Restaurant App, Let's shop!`
+  String get welcomeToRestaurantAppLetsShop {
+    return Intl.message(
+      "Welcome to Restaurant App, Let's shop!",
+      name: 'welcomeToRestaurantAppLetsShop',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you want a hamburger?`
+  String get doYouWantAHamburger {
+    return Intl.message(
+      'Do you want a hamburger?',
+      name: 'doYouWantAHamburger',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Or, do you want an ice cream?`
+  String get orDoYouWantAnIceCream {
+    return Intl.message(
+      'Or, do you want an ice cream?',
+      name: 'orDoYouWantAnIceCream',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Let's shop and eating together!`
+  String get letsShopAndEatingTogether {
+    return Intl.message(
+      "Let's shop and eating together!",
+      name: 'letsShopAndEatingTogether',
       desc: '',
       args: [],
     );

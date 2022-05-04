@@ -96,7 +96,7 @@ class _RestaurantDescriptionsState extends State<RestaurantDescriptions> {
                     ).restaurantFavoriteMessage;
 
                     if (message == S.of(context).addedToFavorite ||
-                        message == S.of(context).removedFromFavorite) {
+                        message == S.of(context).removedFromFavorites) {
                       ScaffoldMessenger.of(context)
                           .showSnackBar(SnackBar(content: Text(message)));
                     }

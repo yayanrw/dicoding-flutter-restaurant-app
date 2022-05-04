@@ -1,6 +1,7 @@
 // ignore_for_file: always_specify_types
 
 import 'package:equatable/equatable.dart';
+import 'package:restaurant_app/generated/l10n.dart';
 
 class SliderData extends Equatable {
   const SliderData({required this.image, required this.text});
@@ -13,20 +14,20 @@ class SliderData extends Equatable {
 }
 
 final List<SliderData> sliderData = [
-  const SliderData(
+  SliderData(
     image: 'assets/images/breakfast.svg',
-    text: "Welcome to Restaurant App, Let's shop!",
+    text: S.current.welcomeToRestaurantAppLetsShop,
   ),
-  const SliderData(
+  SliderData(
     image: 'assets/images/hamburger.svg',
-    text: 'Do you want a hamburger?',
+    text: S.current.doYouWantAHamburger,
   ),
-  const SliderData(
+  SliderData(
     image: 'assets/images/ice_cream.svg',
-    text: 'Or, do you want an ice cream?',
+    text: S.current.orDoYouWantAnIceCream,
   ),
-  const SliderData(
+  SliderData(
     image: 'assets/images/eating_together.svg',
-    text: "Let's shop and eating together!",
+    text: S.current.letsShopAndEatingTogether,
   ),
 ];
