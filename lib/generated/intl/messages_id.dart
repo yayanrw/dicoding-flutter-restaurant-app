@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "bestSeller": MessageLookupByLibrary.simpleMessage("Penjualan terbaik"),
         "budgetMeal": MessageLookupByLibrary.simpleMessage("Makan hemat"),
         "cashback20": MessageLookupByLibrary.simpleMessage("Cashback 20%"),
+        "comingSoon": MessageLookupByLibrary.simpleMessage("Coming Soon!"),
         "discount": MessageLookupByLibrary.simpleMessage("Diskon"),
         "doYouWantAHamburger": MessageLookupByLibrary.simpleMessage(
             "Apakah Anda ingin hamburger?"),
@@ -57,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Tidak ada akses internet"),
         "noRestaurantsFound": MessageLookupByLibrary.simpleMessage(
             "Tidak ada restoran yang ditemukan"),
+        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "orDoYouWantAnIceCream": MessageLookupByLibrary.simpleMessage(
             "Atau, apakah Anda ingin es krim?"),
         "ourAllRestaurants":
@@ -86,6 +88,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Masuk dengan email dan password anda \natau lanjutkan dengan media sosial"),
         "signUp": MessageLookupByLibrary.simpleMessage("Daftar"),
+        "thisFeatureWillBeComingSoon": MessageLookupByLibrary.simpleMessage(
+            "This feature will be coming soon!"),
         "underConstruction":
             MessageLookupByLibrary.simpleMessage("Dalam Perbaikan"),
         "welcomeBack":

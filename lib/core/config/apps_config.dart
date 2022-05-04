@@ -6,6 +6,10 @@ class AppsConfig {
   static const String baseUrl = 'https://restaurant-api.dicoding.dev';
   static const String imageDir =
       'https://restaurant-api.dicoding.dev/images/medium/';
+  static const String imageDirSmall =
+      'https://restaurant-api.dicoding.dev/images/small/';
+  static const String imageDirLarge =
+      'https://restaurant-api.dicoding.dev/images/large/';
   static const String imageDrinkDummyUrl =
       'https://images.pexels.com/photos/452737/pexels-photo-452737.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
   static const String imageFoodDummyUrl =

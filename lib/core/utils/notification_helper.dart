@@ -1,12 +1,14 @@
 import 'dart:convert';
+import 'dart:io';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:restaurant_app/core/injection/injection.dart';
+import 'package:http/http.dart' as http;
+import 'package:path_provider/path_provider.dart';
+import 'package:restaurant_app/core/config/apps_config.dart';
 import 'package:restaurant_app/core/router/router.gr.dart';
 import 'package:restaurant_app/features/data/models/restaurant_model.dart';
-import 'package:restaurant_app/generated/l10n.dart';
 import 'package:rxdart/rxdart.dart';
-import 'package:auto_route/auto_route.dart';
 
 final BehaviorSubject<String> selectNotificationSubject =
     BehaviorSubject<String>();
@@ -58,44 +60,66 @@ class NotificationHelper {
     const String _channelName = 'channel_01';
     const String _channelDescription = 'restaurant app channel';
 
-    const AndroidNotificationDetails androidPlatformChannelSpecifics =
+    const String titleNotification = 'Our recommendation';
+    final String titleRestaurant =
+        '${restaurant.name} is open now! Go to the app!';
+
+    final String largeIconPath = await _downloadAndSaveFile(
+      '${AppsConfig.imageDirSmall}${restaurant.pictureId}',
+      'largeIcon',
+    );
+    final String bigPicturePath = await _downloadAndSaveFile(
+      '${AppsConfig.imageDirLarge}${restaurant.pictureId}',
+      'bigPicture',
+    );
+
+    final BigPictureStyleInformation bigPictureStyleInformation =
+        BigPictureStyleInformation(
+      FilePathAndroidBitmap(bigPicturePath),
+      largeIcon: FilePathAndroidBitmap(largeIconPath),
+      contentTitle: titleNotification,
+      htmlFormatContentTitle: true,
+      summaryText: titleRestaurant,
+      htmlFormatSummaryText: true,
+    );
+
+    final AndroidNotificationDetails androidPlatformChannelSpecifics =
         AndroidNotificationDetails(
       _channelId,
       _channelName,
       channelDescription: _channelDescription,
-      importance: Importance.max,
-      priority: Priority.high,
-      ticker: 'ticker',
-      styleInformation: DefaultStyleInformation(true, true),
+      styleInformation: bigPictureStyleInformation,
     );
 
-    const IOSNotificationDetails iOSPlatformChannelSpecifics =
-        IOSNotificationDetails();
-    const NotificationDetails platformChannelSpecifics = NotificationDetails(
-      android: androidPlatformChannelSpecifics,
-      iOS: iOSPlatformChannelSpecifics,
-    );
-
-    final String titleNotification = S.current.restaurantRecommendation;
-    final String titleNews = restaurant.name;
+    final NotificationDetails platformChannelSpecifics =
+        NotificationDetails(android: androidPlatformChannelSpecifics);
 
     await flutterLocalNotificationsPlugin.show(
       0,
       titleNotification,
-      titleNews,
+      titleRestaurant,
       platformChannelSpecifics,
       payload: json.encode(restaurant.toJson()),
     );
   }
 
-  void configureSelectNotificationSubject(String route) {
+  void configureSelectNotificationSubject(BuildContext context) {
     selectNotificationSubject.stream.listen(
       (String payload) async {
         final RestaurantModel restaurantModel = RestaurantModel.fromJson(
           json.decode(payload) as Map<String, dynamic>,
         );
-        getIt<AppRouter>().push(RestaurantDetailRoute(id: restaurantModel.id));
+        context.router.push(RestaurantDetailRoute(id: restaurantModel.id));
       },
     );
+  }
+
+  Future<String> _downloadAndSaveFile(String url, String fileName) async {
+    final Directory directory = await getApplicationDocumentsDirectory();
+    final String filePath = '${directory.path}/$fileName';
+    final http.Response response = await http.get(Uri.parse(url));
+    final File file = File(filePath);
+    await file.writeAsBytes(response.bodyBytes);
+    return filePath;
   }
 }

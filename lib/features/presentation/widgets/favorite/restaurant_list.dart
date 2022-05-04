@@ -23,12 +23,10 @@ class _RestaurantListState extends State<RestaurantList> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() {
-      Provider.of<FavoriteRestaurantNotifier>(context, listen: false)
-          .fetchFavoriteRestaurants();
-      Provider.of<RandomRestaurantNotifier>(context, listen: false)
-          .fetchRandomRestaurant();
-    });
+    Future.microtask(
+      () => Provider.of<FavoriteRestaurantNotifier>(context, listen: false)
+          .fetchFavoriteRestaurants(),
+    );
   }
 
   @override

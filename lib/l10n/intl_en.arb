@@ -42,5 +42,8 @@
   "orDoYouWantAnIceCream": "Or, do you want an ice cream?",
   "letsShopAndEatingTogether": "Let's shop and eating together!",
   "restaurantRecommendation": "<b>Restaurant Recommendation</b>",
-  "failedToLoadData": "Failed to load data"
+  "failedToLoadData": "Failed to load data",
+  "comingSoon": "Coming Soon!",
+  "thisFeatureWillBeComingSoon": "This feature will be coming soon!",
+  "ok": "Ok"
 }

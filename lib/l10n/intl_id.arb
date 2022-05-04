@@ -42,5 +42,8 @@
   "orDoYouWantAnIceCream": "Atau, apakah Anda ingin es krim?",
   "letsShopAndEatingTogether": "Ayo belanja dan makan bersama!",
   "restaurantRecommendation": "<b>Rekomendasi Restoran</b>",
-  "failedToLoadData": "Gagal memuat data"
+  "failedToLoadData": "Gagal memuat data",
+  "comingSoon": "Coming Soon!",
+  "thisFeatureWillBeComingSoon": "This feature will be coming soon!",
+  "ok": "Ok"
 }

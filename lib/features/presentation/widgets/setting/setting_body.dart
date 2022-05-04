@@ -1,7 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:restaurant_app/core/config/apps_config.dart';
 import 'package:restaurant_app/core/theme/my_colors.dart';
 import 'package:restaurant_app/core/theme/my_text_theme.dart';
+import 'package:restaurant_app/features/presentation/provider/schedulling_notifier.dart';
+import 'package:restaurant_app/features/presentation/widgets/setting/custom_dialog.dart';
 import 'package:restaurant_app/generated/l10n.dart';
 
 class SettingBody extends StatelessWidget {
@@ -32,10 +37,24 @@ class SettingBody extends StatelessWidget {
                 )
               ],
             ),
-            Switch(
-              activeColor: MyColors.primary,
-              value: true,
-              onChanged: (bool value) {},
+            Consumer<SchedullingNotifier>(
+              builder: (
+                BuildContext context,
+                SchedullingNotifier data,
+                Widget? child,
+              ) {
+                return Switch.adaptive(
+                  activeColor: MyColors.primary,
+                  value: data.isScheduled,
+                  onChanged: (bool value) async {
+                    if (Platform.isIOS) {
+                      customDialog(context);
+                    } else {
+                      data.scheduledRestaurant(value: value);
+                    }
+                  },
+                );
+              },
             ),
           ],
         ),

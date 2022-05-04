@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "bestSeller": MessageLookupByLibrary.simpleMessage("Best seller"),
         "budgetMeal": MessageLookupByLibrary.simpleMessage("Budget meal"),
         "cashback20": MessageLookupByLibrary.simpleMessage("Cashback 20%"),
+        "comingSoon": MessageLookupByLibrary.simpleMessage("Coming Soon!"),
         "discount": MessageLookupByLibrary.simpleMessage("Discount"),
         "doYouWantAHamburger":
             MessageLookupByLibrary.simpleMessage("Do you want a hamburger?"),
@@ -58,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("No internet connections"),
         "noRestaurantsFound":
             MessageLookupByLibrary.simpleMessage("No restaurants found"),
+        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "orDoYouWantAnIceCream": MessageLookupByLibrary.simpleMessage(
             "Or, do you want an ice cream?"),
         "ourAllRestaurants":
@@ -87,6 +89,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Sign in with your email and password \\nor continue with social media"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
+        "thisFeatureWillBeComingSoon": MessageLookupByLibrary.simpleMessage(
+            "This feature will be coming soon!"),
         "underConstruction":
             MessageLookupByLibrary.simpleMessage("UnderConstruction"),
         "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back"),

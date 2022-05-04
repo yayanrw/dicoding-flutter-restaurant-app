@@ -19,6 +19,7 @@ import 'package:restaurant_app/features/presentation/provider/random_restaurant_
 import 'package:restaurant_app/features/presentation/provider/restaurant_detail_notifier.dart';
 import 'package:restaurant_app/features/presentation/provider/restaurant_list_notifier.dart';
 import 'package:restaurant_app/features/presentation/provider/restaurant_search_notifier.dart';
+import 'package:restaurant_app/features/presentation/provider/schedulling_notifier.dart';
 import 'package:restaurant_app/generated/l10n.dart';
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
@@ -64,6 +65,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (_) => di.getIt<RandomRestaurantNotifier>(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => di.getIt<SchedullingNotifier>(),
         ),
       ],
       child: MaterialApp.router(

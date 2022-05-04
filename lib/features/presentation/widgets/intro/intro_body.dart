@@ -6,6 +6,7 @@ import 'package:restaurant_app/core/config/apps_config.dart';
 import 'package:restaurant_app/core/router/router.gr.dart';
 import 'package:restaurant_app/core/theme/my_colors.dart';
 import 'package:restaurant_app/core/theme/my_text_theme.dart';
+import 'package:restaurant_app/core/utils/notification_helper.dart';
 import 'package:restaurant_app/features/domain/entities/slider_data.dart';
 import 'package:restaurant_app/features/presentation/widgets/intro/slider_content.dart';
 import 'package:restaurant_app/generated/l10n.dart';
@@ -21,6 +22,19 @@ class _IntroBodyState extends State<IntroBody> {
   PageController pageController = PageController();
 
   int _currentPage = 0;
+  final NotificationHelper _notificationHelper = NotificationHelper();
+
+  @override
+  void initState() {
+    super.initState();
+    _notificationHelper.configureSelectNotificationSubject(context);
+  }
+
+  @override
+  void dispose() {
+    selectNotificationSubject.close();
+    super.dispose();
+  }
 
   Row customDot() {
     return Row(
