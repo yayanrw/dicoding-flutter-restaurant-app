@@ -41,6 +41,20 @@ class RestaurantRepositoryImpl implements RestaurantRepository {
   }
 
   @override
+  Future<Either<Failure, Restaurant>> getRandomRestaurant() async {
+    try {
+      final RestaurantModel result =
+          await remoteDataSource.getRandomRestaurant();
+
+      return Right(result.toEntity());
+    } on DatabaseException catch (e) {
+      return Left(DatabaseFailure(e.message));
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
   Future<Either<Failure, RestaurantDetail>> getRestaurantDetail(
     String id,
   ) async {

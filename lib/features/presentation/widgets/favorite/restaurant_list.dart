@@ -8,6 +8,7 @@ import 'package:restaurant_app/core/router/router.gr.dart';
 import 'package:restaurant_app/core/utils/request_state.dart';
 import 'package:restaurant_app/features/domain/entities/restaurant.dart';
 import 'package:restaurant_app/features/presentation/provider/favorite_restaurants_notifier.dart';
+import 'package:restaurant_app/features/presentation/provider/random_restaurant_notifier.dart';
 import 'package:restaurant_app/features/presentation/widgets/home/restaurant_card.dart';
 import 'package:restaurant_app/generated/l10n.dart';
 
@@ -22,10 +23,12 @@ class _RestaurantListState extends State<RestaurantList> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(
-      () => Provider.of<FavoriteRestaurantNotifier>(context, listen: false)
-          .fetchFavoriteRestaurants(),
-    );
+    Future.microtask(() {
+      Provider.of<FavoriteRestaurantNotifier>(context, listen: false)
+          .fetchFavoriteRestaurants();
+      Provider.of<RandomRestaurantNotifier>(context, listen: false)
+          .fetchRandomRestaurant();
+    });
   }
 
   @override
