@@ -4,7 +4,8 @@
 // function name.
 
 // Ignore issues from commonly used lints in this file.
-// ignore_for_file:implementation_imports, file_names, unnecessary_new,, unused_import, annotate_overrides
+// ignore_for_file:implementation_imports, file_names, unnecessary_new,
+//ignore_for_file: unused_import, annotate_overrides, unnecessary_string_escapes
 // ignore_for_file: require_trailing_commas, prefer_final_locals
 // ignore_for_file:unnecessary_brace_in_string_interps, directives_ordering
 // ignore_for_file:argument_type_not_assignable, invalid_assignment
@@ -35,7 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "bestSeller": MessageLookupByLibrary.simpleMessage("Penjualan terbaik"),
         "budgetMeal": MessageLookupByLibrary.simpleMessage("Makan hemat"),
         "cashback20": MessageLookupByLibrary.simpleMessage("Cashback 20%"),
-        "comingSoon": MessageLookupByLibrary.simpleMessage("Coming Soon!"),
+        "comingSoon": MessageLookupByLibrary.simpleMessage("Segera hadir!"),
         "discount": MessageLookupByLibrary.simpleMessage("Diskon"),
         "doYouWantAHamburger": MessageLookupByLibrary.simpleMessage(
             "Apakah Anda ingin hamburger?"),
@@ -64,6 +65,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Tidak ada akses internet"),
         "noRestaurantsFound": MessageLookupByLibrary.simpleMessage(
             "Tidak ada restoran yang ditemukan"),
+        "notificationIsActivated":
+            MessageLookupByLibrary.simpleMessage("Notifikasi diaktifkan"),
+        "notificationIsDeactivated":
+            MessageLookupByLibrary.simpleMessage("Notifikasi dinonaktifkan"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "orDoYouWantAnIceCream": MessageLookupByLibrary.simpleMessage(
             "Atau, apakah Anda ingin es krim?"),
@@ -84,6 +89,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sContinue": MessageLookupByLibrary.simpleMessage("Lanjutkan"),
         "searchRestaurants":
             MessageLookupByLibrary.simpleMessage("Cari restoran..."),
+        "see": MessageLookupByLibrary.simpleMessage("Lihat"),
         "seeLess": MessageLookupByLibrary.simpleMessage("Lihat lebih sedikit"),
         "seeMore": MessageLookupByLibrary.simpleMessage("Lihat lainnya"),
         "seeMoreDetail":
@@ -95,7 +101,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Masuk dengan email dan password anda \natau lanjutkan dengan media sosial"),
         "signUp": MessageLookupByLibrary.simpleMessage("Daftar"),
         "thisFeatureWillBeComingSoon": MessageLookupByLibrary.simpleMessage(
-            "This feature will be coming soon!"),
+            "Fitur ini akan segera hadir!"),
         "underConstruction":
             MessageLookupByLibrary.simpleMessage("Dalam Perbaikan"),
         "welcomeBack":

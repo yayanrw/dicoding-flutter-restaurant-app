@@ -1,7 +1,4 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-
-// ignore_for_file: require_trailing_commas
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'intl/messages_all.dart';
@@ -11,6 +8,14 @@ import 'intl/messages_all.dart';
 // Made by Localizely
 // **************************************************************************
 
+// Ignore issues from commonly used lints in this file.
+// ignore_for_file:implementation_imports, file_names, unnecessary_new,
+//ignore_for_file: unused_import, annotate_overrides, unnecessary_string_escapes
+// ignore_for_file: require_trailing_commas, prefer_final_locals
+// ignore_for_file:unnecessary_brace_in_string_interps, directives_ordering
+// ignore_for_file:argument_type_not_assignable, invalid_assignment
+// ignore_for_file:prefer_single_quotes, prefer_generic_function_type_aliases
+// ignore_for_file:comment_references
 // ignore_for_file: always_specify_types, depend_on_referenced_packages,
 // ignore_for_file: always_use_package_imports
 // ignore_for_file: non_constant_identifier_names, lines_longer_than_80_chars
@@ -31,13 +36,13 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final String name = (locale.countryCode?.isEmpty ?? false)
+    final name = (locale.countryCode?.isEmpty ?? false)
         ? locale.languageCode
         : locale.toString();
-    final String localeName = Intl.canonicalizedLocale(name);
+    final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
-      final S instance = S();
+      final instance = S();
       S._current = instance;
 
       return instance;
@@ -45,7 +50,7 @@ class S {
   }
 
   static S of(BuildContext context) {
-    final S? instance = S.maybeOf(context);
+    final instance = S.maybeOf(context);
     assert(instance != null,
         'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
     return instance!;
@@ -524,6 +529,36 @@ class S {
       args: [],
     );
   }
+
+  /// `See`
+  String get see {
+    return Intl.message(
+      'See',
+      name: 'see',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notification is activated`
+  String get notificationIsActivated {
+    return Intl.message(
+      'Notification is activated',
+      name: 'notificationIsActivated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notification is deactivated`
+  String get notificationIsDeactivated {
+    return Intl.message(
+      'Notification is deactivated',
+      name: 'notificationIsDeactivated',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -544,7 +579,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   bool shouldReload(AppLocalizationDelegate old) => false;
 
   bool _isSupported(Locale locale) {
-    for (Locale supportedLocale in supportedLocales) {
+    for (var supportedLocale in supportedLocales) {
       if (supportedLocale.languageCode == locale.languageCode) {
         return true;
       }

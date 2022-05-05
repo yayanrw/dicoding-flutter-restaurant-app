@@ -45,5 +45,8 @@
   "failedToLoadData": "Failed to load data",
   "comingSoon": "Coming Soon!",
   "thisFeatureWillBeComingSoon": "This feature will be coming soon!",
-  "ok": "Ok"
+  "ok": "Ok",
+  "see": "See",
+  "notificationIsActivated": "Notification is activated",
+  "notificationIsDeactivated": "Notification is deactivated"
 }

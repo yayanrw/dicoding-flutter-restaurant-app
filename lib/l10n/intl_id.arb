@@ -43,7 +43,10 @@
   "letsShopAndEatingTogether": "Ayo belanja dan makan bersama!",
   "restaurantRecommendation": "<b>Rekomendasi Restoran</b>",
   "failedToLoadData": "Gagal memuat data",
-  "comingSoon": "Coming Soon!",
-  "thisFeatureWillBeComingSoon": "This feature will be coming soon!",
-  "ok": "Ok"
+  "comingSoon": "Segera hadir!",
+  "thisFeatureWillBeComingSoon": "Fitur ini akan segera hadir!",
+  "ok": "Ok",
+  "see": "Lihat",
+  "notificationIsActivated": "Notifikasi diaktifkan",
+  "notificationIsDeactivated": "Notifikasi dinonaktifkan"
 }

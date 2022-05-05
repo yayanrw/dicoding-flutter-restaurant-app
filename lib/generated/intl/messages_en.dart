@@ -66,6 +66,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("No internet connections"),
         "noRestaurantsFound":
             MessageLookupByLibrary.simpleMessage("No restaurants found"),
+        "notificationIsActivated":
+            MessageLookupByLibrary.simpleMessage("Notification is activated"),
+        "notificationIsDeactivated":
+            MessageLookupByLibrary.simpleMessage("Notification is deactivated"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "orDoYouWantAnIceCream": MessageLookupByLibrary.simpleMessage(
             "Or, do you want an ice cream?"),
@@ -86,6 +90,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sContinue": MessageLookupByLibrary.simpleMessage("Continue"),
         "searchRestaurants":
             MessageLookupByLibrary.simpleMessage("Search restaurants..."),
+        "see": MessageLookupByLibrary.simpleMessage("See"),
         "seeLess": MessageLookupByLibrary.simpleMessage("See less"),
         "seeMore": MessageLookupByLibrary.simpleMessage("See more"),
         "seeMoreDetail":
