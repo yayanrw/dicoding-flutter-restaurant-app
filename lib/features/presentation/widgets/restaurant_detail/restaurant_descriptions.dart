@@ -1,8 +1,10 @@
 // ignore_for_file: use_build_context_synchronously, always_specify_types
 
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:provider/provider.dart';
+import 'package:restaurant_app/core/router/router.gr.dart';
 import 'package:restaurant_app/core/theme/my_colors.dart';
 import 'package:restaurant_app/core/theme/my_text_theme.dart';
 import 'package:restaurant_app/features/domain/entities/restaurant.dart';
@@ -95,10 +97,23 @@ class _RestaurantDescriptionsState extends State<RestaurantDescriptions> {
                       listen: false,
                     ).restaurantFavoriteMessage;
 
-                    if (message == S.of(context).addedToFavorite ||
-                        message == S.of(context).removedFromFavorites) {
-                      ScaffoldMessenger.of(context)
-                          .showSnackBar(SnackBar(content: Text(message)));
+                    if (message == S.of(context).addedToFavorite) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(message),
+                          action: SnackBarAction(
+                            label: S.of(context).see,
+                            onPressed: () =>
+                                context.router.push(const FavoriteRoute()),
+                          ),
+                        ),
+                      );
+                    }
+
+                    if (message == S.of(context).removedFromFavorites) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text(message)),
+                      );
                     }
                   },
                   child: Container(
