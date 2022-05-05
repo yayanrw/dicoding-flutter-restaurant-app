@@ -51,6 +51,22 @@ class SettingBody extends StatelessWidget {
                       customDialog(context);
                     } else {
                       data.scheduledRestaurant(value: value);
+
+                      if (value) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content:
+                                Text(S.of(context).notificationIsActivated),
+                          ),
+                        );
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content:
+                                Text(S.of(context).notificationIsDeactivated),
+                          ),
+                        );
+                      }
                     }
                   },
                 );
