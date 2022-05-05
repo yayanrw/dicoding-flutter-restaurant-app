@@ -89,6 +89,9 @@ class NotificationHelper {
       _channelName,
       channelDescription: _channelDescription,
       styleInformation: bigPictureStyleInformation,
+      importance: Importance.max,
+      priority: Priority.high,
+      ticker: 'ticker',
     );
 
     final NotificationDetails platformChannelSpecifics =
