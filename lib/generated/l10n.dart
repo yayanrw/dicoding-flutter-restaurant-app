@@ -8,16 +8,6 @@ import 'intl/messages_all.dart';
 // Made by Localizely
 // **************************************************************************
 
-// Ignore issues from commonly used lints in this file.
-// ignore_for_file:implementation_imports, file_names, unnecessary_new,
-//ignore_for_file: unused_import, annotate_overrides, unnecessary_string_escapes
-// ignore_for_file: require_trailing_commas, prefer_final_locals
-// ignore_for_file:unnecessary_brace_in_string_interps, directives_ordering
-// ignore_for_file:argument_type_not_assignable, invalid_assignment
-// ignore_for_file:prefer_single_quotes, prefer_generic_function_type_aliases
-// ignore_for_file:comment_references
-// ignore_for_file: always_specify_types, depend_on_referenced_packages,
-// ignore_for_file: always_use_package_imports
 // ignore_for_file: non_constant_identifier_names, lines_longer_than_80_chars
 // ignore_for_file: join_return_with_assignment, prefer_final_in_for_each
 // ignore_for_file: avoid_redundant_argument_values, avoid_escaping_inner_quotes
@@ -173,7 +163,7 @@ class S {
   /// `Sign in with your email and password \nor continue with social media`
   String get signInWithYourEmailAndPasswordNorContinueWith {
     return Intl.message(
-      'Sign in with your email and password \\nor continue with social media',
+      'Sign in with your email and password \nor continue with social media',
       name: 'signInWithYourEmailAndPasswordNorContinueWith',
       desc: '',
       args: [],
@@ -223,7 +213,7 @@ class S {
   /// `A Summer Surprise\n`
   String get aSummerSurprisen {
     return Intl.message(
-      'A Summer Surprise\\n',
+      'A Summer Surprise\n',
       name: 'aSummerSurprisen',
       desc: '',
       args: [],

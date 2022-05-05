@@ -4,18 +4,11 @@
 // function name.
 
 // Ignore issues from commonly used lints in this file.
-// ignore_for_file:implementation_imports, file_names, unnecessary_new,
-//ignore_for_file: unused_import, annotate_overrides, unnecessary_string_escapes
-// ignore_for_file: require_trailing_commas, prefer_final_locals
-// ignore_for_file:unnecessary_brace_in_string_interps, directives_ordering
-// ignore_for_file:argument_type_not_assignable, invalid_assignment
-// ignore_for_file:prefer_single_quotes, prefer_generic_function_type_aliases
-// ignore_for_file:comment_references
-// ignore_for_file: always_specify_types, depend_on_referenced_packages,
-// ignore_for_file: always_use_package_imports
-// ignore_for_file: non_constant_identifier_names, lines_longer_than_80_chars
-// ignore_for_file: join_return_with_assignment, prefer_final_in_for_each
-// ignore_for_file: avoid_redundant_argument_values, avoid_escaping_inner_quotes
+// ignore_for_file:unnecessary_brace_in_string_interps, unnecessary_new
+// ignore_for_file:prefer_single_quotes,comment_references, directives_ordering
+// ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
+// ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
+// ignore_for_file:unnecessary_string_interpolations, unnecessary_string_escapes
 
 import 'package:intl/intl.dart';
 import 'package:intl/message_lookup_by_library.dart';
@@ -30,7 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aSummerSurprisen":
-            MessageLookupByLibrary.simpleMessage("A Summer Surprise\\n"),
+            MessageLookupByLibrary.simpleMessage("A Summer Surprise\n"),
         "addedToFavorite":
             MessageLookupByLibrary.simpleMessage("Added to Favorite"),
         "bestSeller": MessageLookupByLibrary.simpleMessage("Best seller"),
@@ -99,7 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
         "signInWithYourEmailAndPasswordNorContinueWith":
             MessageLookupByLibrary.simpleMessage(
-                "Sign in with your email and password \\nor continue with social media"),
+                "Sign in with your email and password \nor continue with social media"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "thisFeatureWillBeComingSoon": MessageLookupByLibrary.simpleMessage(
             "This feature will be coming soon!"),

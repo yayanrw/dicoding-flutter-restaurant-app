@@ -9,6 +9,8 @@ import 'package:restaurant_app/core/config/apps_config.dart';
 import 'package:restaurant_app/core/router/router.gr.dart';
 import 'package:restaurant_app/features/data/models/restaurant_model.dart';
 import 'package:rxdart/rxdart.dart';
+import 'package:timezone/data/latest.dart' as tz;
+import 'package:timezone/timezone.dart' as tz;
 
 final BehaviorSubject<String> selectNotificationSubject =
     BehaviorSubject<String>();
@@ -64,6 +66,8 @@ class NotificationHelper {
     final String titleRestaurant =
         '${restaurant.name} is open now! Go to the app!';
 
+    tz.initializeTimeZones();
+
     final String largeIconPath = await _downloadAndSaveFile(
       '${AppsConfig.imageDirSmall}${restaurant.pictureId}',
       'largeIcon',
@@ -97,12 +101,16 @@ class NotificationHelper {
     final NotificationDetails platformChannelSpecifics =
         NotificationDetails(android: androidPlatformChannelSpecifics);
 
-    await flutterLocalNotificationsPlugin.show(
+    await flutterLocalNotificationsPlugin.zonedSchedule(
       0,
       titleNotification,
       titleRestaurant,
+      tz.TZDateTime.now(tz.local).add(const Duration(seconds: 5)),
       platformChannelSpecifics,
       payload: json.encode(restaurant.toJson()),
+      androidAllowWhileIdle: true,
+      uiLocalNotificationDateInterpretation:
+          UILocalNotificationDateInterpretation.absoluteTime,
     );
   }
 
