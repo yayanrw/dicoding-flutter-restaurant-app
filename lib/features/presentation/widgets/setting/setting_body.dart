@@ -1,3 +1,4 @@
+// ignore_for_file: always_specify_types
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -9,8 +10,22 @@ import 'package:restaurant_app/features/presentation/provider/schedulling_notifi
 import 'package:restaurant_app/features/presentation/widgets/setting/custom_dialog.dart';
 import 'package:restaurant_app/generated/l10n.dart';
 
-class SettingBody extends StatelessWidget {
+class SettingBody extends StatefulWidget {
   const SettingBody({Key? key}) : super(key: key);
+
+  @override
+  State<SettingBody> createState() => _SettingBodyState();
+}
+
+class _SettingBodyState extends State<SettingBody> {
+  @override
+  void initState() {
+    super.initState();
+    Future.microtask(
+      () => Provider.of<SchedullingNotifier>(context, listen: false)
+          .initIsScheduled(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +58,7 @@ class SettingBody extends StatelessWidget {
                 SchedullingNotifier data,
                 Widget? child,
               ) {
-                return Switch.adaptive(
+                return Switch(
                   activeColor: MyColors.primary,
                   value: data.isScheduled,
                   onChanged: (bool value) async {
