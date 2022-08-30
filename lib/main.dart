@@ -3,6 +3,7 @@
 import 'dart:io';
 
 import 'package:android_alarm_manager_plus/android_alarm_manager_plus.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -39,7 +40,12 @@ Future<void> main() async {
   }
   await _notificationHelper.initNotifications(flutterLocalNotificationsPlugin);
 
-  runApp(MyApp());
+  runApp(
+    DevicePreview(
+      enabled: false,
+      builder: (context) => MyApp(),
+    ),
+  );
 }
 
 final appRouter = AppRouter();
@@ -71,6 +77,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp.router(
+        useInheritedMediaQuery: true,
         localizationsDelegates: const [
           S.delegate,
           GlobalMaterialLocalizations.delegate,
