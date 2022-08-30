@@ -12,10 +12,13 @@ class SliderContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Text(
-          text!,
-          style: TextStyle(color: MyColors.secondary),
-          textAlign: TextAlign.center,
+        Expanded(
+          child: Text(
+            text!,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(color: MyColors.secondary),
+            textAlign: TextAlign.center,
+          ),
         ),
         const Spacer(
           flex: 2,

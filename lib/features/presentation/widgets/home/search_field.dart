@@ -31,6 +31,7 @@ class SearchField extends StatelessWidget {
               const SizedBox(width: 8),
               Text(
                 S.of(context).searchRestaurants,
+                overflow: TextOverflow.ellipsis,
                 style: TextStyle(color: MyColors.secondaryLight2),
               )
             ],
