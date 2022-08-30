@@ -29,10 +29,12 @@ class SearchField extends StatelessWidget {
             children: <Widget>[
               const Icon(LineIcons.search),
               const SizedBox(width: 8),
-              Text(
-                S.of(context).searchRestaurants,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(color: MyColors.secondaryLight2),
+              Expanded(
+                child: Text(
+                  S.of(context).searchRestaurants,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(color: MyColors.secondaryLight2),
+                ),
               )
             ],
           ),

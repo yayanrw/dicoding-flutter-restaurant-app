@@ -23,11 +23,13 @@ class SliderContent extends StatelessWidget {
         const Spacer(
           flex: 2,
         ),
-        SvgPicture.asset(
-          image!,
-          height: getProportionateScreenHeight(200),
-          width: getProportionateScreenWidth(180),
-        ),
+        Expanded(
+          child: SvgPicture.asset(
+            image!,
+            height: getProportionateScreenHeight(200),
+            width: getProportionateScreenWidth(180),
+          ),
+        )
       ],
     );
   }
